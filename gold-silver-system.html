@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gold &amp; Silver System — Kirollos Magdy</title>
+    <link rel="icon" type="image/svg+xml" href="Assets/icon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="Css/style.css" />
+  </head>
+  <body>
+    <div class="page-loader" id="pageLoader">
+      <div class="loader">
+        <div class="loader__bar"></div>
+        <div class="loader__bar"></div>
+        <div class="loader__bar"></div>
+        <div class="loader__bar"></div>
+        <div class="loader__bar"></div>
+        <div class="loader__ball"></div>
+      </div>
+    </div>
+    <nav>
+      <div class="container">
+        <a class="logo" href="index.html">Kirollos<span>.</span></a>
+        <ul class="nav-center" id="navCenter">
+          <li><a href="index.html#home" data-section="home">Home</a></li>
+          <li><a href="index.html#about" data-section="about">About</a></li>
+          <li><a href="index.html#projects" data-section="projects" class="active">Projects</a></li>
+          <li><a href="index.html#skills" data-section="skills">Skills</a></li>
+          <li><a href="index.html#contact" data-section="contact">Contact</a></li>
+        </ul>
+        <div class="nav-right">
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+            <svg id="themeIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+          <a href="CV/CV_Kirollos_Magdy.pdf" download class="cv-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download CV
+          </a>
+          <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span id="hamburgerIcon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="mobile-dropdown" id="mobileDropdown">
+      <div class="inner">
+        <a href="index.html#home" data-section="home">Home</a>
+        <a href="index.html#about" data-section="about">About</a>
+        <a href="index.html#projects" data-section="projects">Projects</a>
+        <a href="index.html#skills" data-section="skills">Skills</a>
+        <a href="index.html#contact" data-section="contact">Contact</a>
+        <a href="CV/CV_Kirollos_Magdy.pdf" download class="cv-btn-mobile">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download CV
+        </a>
+      </div>
+    </div>
+
+    <section class="project-detail-header">
+      <div class="container">
+        <a href="index.html#projects" class="back-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          Back to Portfolio
+        </a>
+        <div class="project-detail-grid">
+          <div class="project-detail-left">
+            <div class="cat-label">// ERP</div>
+            <h1>Gold &amp;<br />Silver System</h1>
+            <div class="type-badge">
+              <span class="dot"></span>
+              <span class="type-text">Web Application</span>
+            </div>
+            <p class="project-desc-text">
+              An ERP system purpose-built for gold and silver jewelry businesses. Manages inventory of precious metals and finished pieces, tracks sales and purchases, generates detailed reports, and provides insights into stock levels and pricing — all within a specialized desktop interface.
+            </p>
+          </div>
+          <div class="project-detail-right">
+            <div class="project-actions">
+              <div class="action-btn disabled primary">
+                <span>Live Preview</span>
+                <span class="na-text">Not Available</span>
+              </div>
+              <div class="action-btn disabled secondary">
+                <span>GitHub Repo</span>
+                <span class="na-text">Not Available</span>
+              </div>
+            </div>
+            <div class="ss-count-block">
+              <div class="ss-label">SCREENSHOTS</div>
+              <div class="ss-num">2<span class="plus">+</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="screenshots-section">
+      <div class="container">
+        <div class="ss-header">
+          <div class="ss-header-left">
+            <div class="section-label">// Visual Walkthrough</div>
+            <h2>Screenshots.</h2>
+          </div>
+          <div class="ss-header-right">A full walkthrough of every screen and feature in the project.</div>
+        </div>
+        <div class="ss-grid">
+          <div class="ss-item">
+            <div class="ss-label-row"><span class="ss-slash">//</span><span class="ss-label">System Logo</span></div>
+            <img src="Assets/Gold &amp; Silver System/Gold&SilverSystem.svg" alt="Gold &amp; Silver System Logo" loading="lazy" />
+          </div>
+          <div class="ss-item">
+            <div class="ss-label-row"><span class="ss-slash">//</span><span class="ss-label">Dashboard Preview</span></div>
+            <img src="Assets/Gold &amp; Silver System/Not Available Yet.webp" alt="Dashboard Preview" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="more-projects-section">
+      <div class="container">
+        <div class="more-header">
+          <div class="more-header-left">
+            <div class="section-label">// Keep Exploring</div>
+            <h2>More Projects</h2>
+          </div>
+          <div class="more-header-right">
+            <a href="index.html#projects" class="view-all">View All Projects ↗</a>
+          </div>
+        </div>
+        <div class="more-grid">
+          <a href="word-of-the-lord.html" class="more-card">
+            <div class="mc-top">
+              <span class="mc-type">Christian Content</span>
+              <svg class="mc-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </div>
+            <div class="mc-cat">[02] &mdash; Web App</div>
+            <h3 class="mc-name">Word of the Lord</h3>
+            <p class="mc-desc">A digital content platform for Christian teachings, sermons, and spiritual resources including Bible verses and hymns.</p>
+            <span class="mc-link">View Project →</span>
+          </a>
+          <a href="div-store.html" class="more-card">
+            <div class="mc-top">
+              <span class="mc-type">E-Commerce</span>
+              <svg class="mc-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </div>
+            <div class="mc-cat">[04] &mdash; Web App</div>
+            <h3 class="mc-name">Div Store</h3>
+            <p class="mc-desc">A full-featured e-commerce store with product management, shopping cart, and secure checkout flow.</p>
+            <span class="mc-link">View Project →</span>
+          </a>
+          <a href="ip-inspector.html" class="more-card">
+            <div class="mc-top">
+              <span class="mc-type">Developer Tools</span>
+              <svg class="mc-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </div>
+            <div class="mc-cat">[08] &mdash; Web App</div>
+            <h3 class="mc-name">IP Inspector</h3>
+            <p class="mc-desc">A real-time IP intelligence tool with geolocation lookup, live connection metrics, and an interactive Leaflet map.</p>
+            <span class="mc-link">View Project →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-inner">
+          <div class="copy">&copy; <span class="year">2026</span> Kirollos Magdy. All rights reserved.</div>
+          <div class="footer-links">
+            <a href="https://github.com/kiromagdy7" target="_blank" rel="noopener" aria-label="GitHub">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/kirollos-magdy-1102a1278/" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="mailto:kiromagdy123@gmail.com" aria-label="Email">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="JavaScript/script.js"></script>
+  </body>
+</html>
