@@ -45,9 +45,13 @@ color:var(--text);transition:color 0.3s,background-color 0.3s,border-color 0.3s}
 .theme-toggle:hover{border-color:var(--text)}
 .theme-toggle svg{width:16px;height:16px;display:block}
 .cv-btn{display:inline-flex;align-items:center;gap:6px;border:2px solid var(--text);padding:8px 16px;
-font-size:14px;font-weight:600;background:transparent;color:var(--text);cursor:pointer;
-transition:background 0.2s,color 0.2s,border-color 0.2s;font-family:'Inter',sans-serif}
-.cv-btn:hover{background:var(--text);color:var(--bg)}
+font-size:14px;font-weight:600;background:transparent;color:var(--text);cursor:pointer;position:relative;
+overflow:hidden;z-index:1;transition:color 0.5s;font-family:'Inter',sans-serif}
+.cv-btn:before{content:"";position:absolute;z-index:-1;background:var(--text);border-radius:50%;
+height:150px;width:200px;top:100%;left:100%;transition:all 0.7s}
+.cv-btn:hover{color:var(--bg)}
+.cv-btn:hover:before{top:-30px;left:-30px}
+.cv-btn:active:before{background:#3a0ca3;transition:background 0s}
 .cv-btn svg{width:16px;height:16px;display:block}
 @media(max-width:639px){.cv-btn{display:none}}
 .hamburger{display:none;align-items:center;justify-content:center;padding:8px;border:none;
