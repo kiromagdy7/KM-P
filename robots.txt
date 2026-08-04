@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kiromagdy.com/sitemap.xml

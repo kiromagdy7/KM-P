@@ -1,0 +1,30 @@
+/* ============================================
+   Hi, I'm Kirollos — but most people call me Kiro.
+   Thanks for peeking under the hood. 👋
+   ============================================ */
+
+/* WHO BUILT THIS */
+Name:        Kirollos Magdy
+Role:        Full-Stack .NET Developer
+Location:    Alexandria, Egypt
+
+/* WHAT I WORK WITH */
+Languages:   C#, JavaScript, TypeScript, SQL
+Backend:     ASP.NET Core, Clean Architecture, REST APIs, EF Core
+Frontend:    React.js, Next.js, Tailwind CSS
+Tools:       Git, Docker, SQL Server, Postman
+
+/* SAY HI */
+GitHub:      https://github.com/kiromagdy7
+LinkedIn:    https://www.linkedin.com/in/kirollosmagdy7
+Email:       kiromagdy123@gmail.com
+
+/* THE SITE ITSELF */
+Built with:  Vanilla HTML, CSS & JavaScript — no framework, by choice
+Hosted on:   Cloudflare Pages
+
+/* ============================================
+   If you're a fellow developer reading this file
+   instead of just browsing the site — respect.
+   Let's build something together.
+   ============================================ */

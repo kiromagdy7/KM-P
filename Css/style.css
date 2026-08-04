@@ -255,8 +255,7 @@ footer .footer-links a{color:var(--muted);transition:color 0.2s;display:flex}
 footer .footer-links a:hover{color:var(--text)}
 footer .footer-links svg{width:16px;height:16px;display:block}
 
-/* ============== Project Detail Page ============== */
-
+/*  Project Detail Page  */
 .project-detail-header{padding-top:112px;padding-bottom:64px;border-bottom:1px solid var(--border);background:var(--bg);transition:color 0.3s,background-color 0.3s,border-color 0.3s}
 @media(min-width:1024px){.project-detail-header{padding-top:144px;padding-bottom:80px}}
 
