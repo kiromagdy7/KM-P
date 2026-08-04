@@ -113,6 +113,8 @@ transition:background 0.2s,color 0.2s;font-family:'Inter',sans-serif;font-size:1
 .fancy:hover .bottom-key-1,
 .fancy:hover .bottom-key-2 { right: 0; width: 0;}
 
+@media(max-width:768px){.hero-btns{gap:12px;flex-wrap:nowrap}.hero-btns > a{flex:1 1 0;white-space:nowrap}.fancy{float:none;width:100%;padding:10px 20px;font-size:12px}.fancy .text{font-size:1em;padding-left:1.5em;text-align:left}.fancy::before{left:1.1em;width:0.9em}.fancy .top-key{left:0.4em;width:0.9em}.fancy .bottom-key-1{right:1.2em;width:0.9em}.fancy .bottom-key-2{right:0.3em;width:0.35em}.btn-fill{width:100%;padding:10px 20px;font-size:14px}}
+@media(max-width:1024px) and (min-width:769px){.hero-btns{gap:16px;flex-wrap:nowrap}.hero-btns > a{flex:1 1 0;white-space:nowrap}.fancy{float:none;width:100%;padding:12px 24px;font-size:13px}.fancy .text{font-size:1.125em;padding-left:1.8em;text-align:left}.fancy::before{left:1.3em;width:1em}.fancy .top-key{left:0.5em;width:1em}.fancy .bottom-key-1{right:1.5em;width:1em}.fancy .bottom-key-2{right:0.4em;width:0.4em}.btn-fill{width:100%;padding:12px 24px;font-size:15px}}
 @media(min-width:1024px){.hero-right{max-width:none;justify-self:auto}}
 .photo-container{aspect-ratio:4/5;overflow:hidden;background:var(--section-bg);transition:background-color 0.3s;position:relative}
 .photo-container.loading{background:var(--section-bg)}
