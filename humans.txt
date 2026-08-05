@@ -10,9 +10,11 @@ Location:    Alexandria, Egypt
 
 /* WHAT I WORK WITH */
 Languages:   C#, JavaScript, TypeScript, SQL
-Backend:     ASP.NET Core, Clean Architecture, REST APIs, EF Core
-Frontend:    React.js, Next.js, Tailwind CSS
-Tools:       Git, Docker, SQL Server, Postman
+Frontend:    React.js, Next.js, Bootstrap, Tailwind CSS, HTML, CSS
+Backend:     ASP.NET Core, Web API, REST API Design, MVC, Clean Architecture, LINQ, JWT Authentication, WPF, .NET MAUI, Design Patterns, Dependency Injection
+Database:    SQL Server, SQLite, Entity Framework Core, Stored Procedures, Query Optimization
+Tools:       Git, GitHub, Postman, Swagger UI, SSMS, Figma, Canva, Google Search Console, Brevo / SMTP, Visual Studio
+Deployment:  Windows VPS, IIS, SSL Configuration, Azure, Oracle, AWS, Cloudflare, Docker
 
 /* SAY HI */
 GitHub:      https://github.com/kiromagdy7
