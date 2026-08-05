@@ -16,11 +16,24 @@
     <meta name="author" content="Kirollos Magdy" />
     <meta name="robots" content="index, follow" />
     <link rel="icon" type="image/svg+xml" href="Assets/icon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="Assets/apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <meta name="theme-color" content="#0a0a0a" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="image" href="Assets/main.webp" type="image/webp" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap"
       rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
     <link rel="stylesheet" href="Css/style.css" />
     <meta property="og:title" content="Kirollos Magdy | Full-Stack .NET Developer (ASP.NET Core, React, Next.js)" />
@@ -30,8 +43,12 @@
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://kiromagdy.com/" />
-    <meta property="og:image" content="https://kiromagdy.com/Assets/main.webp" />
+    <meta property="og:image" content="https://kiromagdy.com/Assets/OG.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/webp" />
     <meta property="og:site_name" content="Kirollos Magdy" />
+    <meta property="og:locale" content="en_US" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
@@ -41,7 +58,7 @@
       name="twitter:description"
       content="Kirollos Magdy — Full-Stack .NET Developer building web & desktop apps with ASP.NET Core, C#, React.js, Next.js, WPF/.NET MAUI. 12+ projects delivered."
     />
-    <meta name="twitter:image" content="https://kiromagdy.com/Assets/main.webp" />
+    <meta name="twitter:image" content="https://kiromagdy.com/Assets/OG.webp" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -75,7 +92,7 @@
           "كرلس مجدي"
         ],
         "url": "https://kiromagdy.com/",
-        "image": "https://kiromagdy.com/Assets/main.webp",
+        "image": "https://kiromagdy.com/Assets/OG.webp",
         "jobTitle": "Full-Stack .NET Developer",
                 "description": "Full Stack .NET Developer with hands-on experience building and deploying web and desktop applications using ASP.NET Core, C#, SQL Server, React.js, and WPF/.NET MAUI. Delivered 12+ projects spanning ERP systems, business web apps, and reservation-based systems, including production systems actively serving real business clients. Strong focus on clean architecture, data integrity, security, and performance. Handles the full delivery cycle — from system design to server configuration and live production deployment.",
         "sameAs": [
@@ -245,6 +262,7 @@
       </div>
     </div>
 
+    <main>
     <!-- Hero -->
     <section id="home">
       <div class="container">
@@ -282,7 +300,7 @@
           </div>
           <div class="hero-right">
             <div class="photo-container">
-              <img src="Assets/main.webp" alt="Kirollos Magdy — Full-Stack .NET Developer" />
+              <img src="Assets/main.webp" alt="Kirollos Magdy — Full-Stack .NET Developer" width="500" height="500" />
             </div>
             <div class="badge"><span class="dot"></span>Available</div>
           </div>
@@ -670,7 +688,7 @@
               <a
                 href="https://github.com/kiromagdy7"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
                 class="social-link"
                 aria-label="GitHub"
               >
@@ -687,7 +705,7 @@
               <a
                 href="https://www.linkedin.com/in/kirollosmagdy7/"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
                 class="social-link"
                 aria-label="LinkedIn"
               >
@@ -722,7 +740,7 @@
               <a
                 href="https://wa.me/+201270200486"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
                 class="social-link"
                 aria-label="WhatsApp"
               >
@@ -739,9 +757,21 @@
             </div>
             <div class="email-block">
               <div class="email-label">EMAIL</div>
-              <a href="mailto:contact@kiromagdy.com" class="email-link"
-                >contact@kiromagdy.com</a
-              >
+              <div class="email-row">
+                <a href="mailto:contact@kiromagdy.com" class="email-link" id="contactEmail"
+                  >contact@kiromagdy.com</a
+                >
+                <button
+                  type="button"
+                  class="copy-email-btn"
+                  id="copyEmailBtn"
+                  aria-label="Copy email address"
+                  title="Copy email to clipboard"
+                >
+                  <span class="material-symbols-outlined" id="copyIcon">content_copy</span>
+                </button>
+                <span class="copy-toast" id="copyToast" aria-live="polite"></span>
+              </div>
             </div>
           </div>
           <form class="contact-right" id="contactForm" action="https://formspree.io/f/mpwlerqp" method="POST">
@@ -781,6 +811,7 @@
         </div>
       </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer>
@@ -793,7 +824,7 @@
             <a
               href="https://github.com/kiromagdy7"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               aria-label="GitHub"
             >
               <svg
@@ -809,7 +840,7 @@
             <a
               href="https://www.linkedin.com/in/kirollosmagdy7/"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               aria-label="LinkedIn"
             >
               <svg

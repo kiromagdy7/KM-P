@@ -125,6 +125,39 @@
     });
   }
 
+  var copyEmailBtn = document.getElementById("copyEmailBtn");
+  var copyTimeout = null;
+
+  if (copyEmailBtn) {
+    copyEmailBtn.addEventListener("click", function () {
+      var email = "contact@kiromagdy.com";
+      var icon = document.getElementById("copyIcon");
+      var toast = document.getElementById("copyToast");
+
+      function showFeedback(ok) {
+        if (toast) { toast.textContent = ok ? "Copied!" : "Failed to copy"; toast.className = "copy-toast show" + (ok ? "" : " error"); }
+        if (ok && icon) { icon.textContent = "check"; copyEmailBtn.classList.add("copied"); }
+        clearTimeout(copyTimeout);
+        copyTimeout = setTimeout(function () {
+          if (toast) toast.className = "copy-toast";
+          if (icon) icon.textContent = "content_copy";
+          copyEmailBtn.classList.remove("copied");
+        }, 2500);
+      }
+
+      function fallback() {
+        var el = Object.assign(document.createElement("textarea"), { value: email, style: "position:fixed;left:-9999px" });
+        document.body.appendChild(el); el.select();
+        showFeedback(document.execCommand("copy"));
+        document.body.removeChild(el);
+      }
+
+      (navigator.clipboard && window.isSecureContext)
+        ? navigator.clipboard.writeText(email).then(function () { showFeedback(true); }).catch(fallback)
+        : fallback();
+    });
+  }
+
   window.addEventListener('load', function () {
     var loader = document.getElementById('pageLoader');
     if (loader) {
