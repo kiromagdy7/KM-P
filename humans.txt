@@ -19,7 +19,7 @@ Deployment:  Windows VPS, IIS, SSL Configuration, Azure, Oracle, AWS, Cloudflare
 /* SAY HI */
 GitHub:      https://github.com/kiromagdy7
 LinkedIn:    https://www.linkedin.com/in/kirollosmagdy7
-Email:       kiromagdy123@gmail.com
+Email:       contact@kiromagdy.com
 
 /* THE SITE ITSELF */
 Built with:  Vanilla HTML, CSS & JavaScript — no framework, by choice
