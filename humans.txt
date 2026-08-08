@@ -16,6 +16,13 @@ Database:    SQL Server, SQLite, Entity Framework Core, Stored Procedures, Query
 Tools:       Git, GitHub, Postman, Swagger UI, SSMS, Figma, Canva, Google Search Console, Brevo / SMTP, Visual Studio
 Deployment:  Windows VPS, IIS, SSL Configuration, Azure, Oracle, AWS, Cloudflare, Docker
 
+/* CERTIFICATIONS */
+- Full Stack .NET Web Developer — Digital Egypt Pioneers Program (DEPI), June 2025
+- Top Student — Certificate of Appreciation — DEPI / MCIT, Dec 2025
+- React Bootcamp Completion (Best Project) — IEEE Alexandria Student Branch, May 2026
+- AI Advanced — Empower Yourself — Microsoft & MCIT / Fast Lane, April 2026
+- Build with AI: Masr Edition — Google for Developers & ITI, June 2026
+
 /* SAY HI */
 GitHub:      https://github.com/kiromagdy7
 LinkedIn:    https://www.linkedin.com/in/kirollosmagdy7
@@ -24,6 +31,7 @@ Email:       contact@kiromagdy.com
 /* THE SITE ITSELF */
 Built with:  Vanilla HTML, CSS & JavaScript — no framework, by choice
 Hosted on:   Cloudflare Pages
+Last update: August 2026
 
 /* ============================================
    If you're a fellow developer reading this file

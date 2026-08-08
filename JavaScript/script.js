@@ -205,6 +205,27 @@
     });
   }
 
+  var certCards = document.querySelectorAll('.cert-card');
+  if (certCards.length > 0) {
+    var certImgs = [];
+    certCards.forEach(function (card) {
+      var src = card.getAttribute('data-cert-src');
+      var title = card.querySelector('.cert-title');
+      if (src) {
+        certImgs.push({
+          src: src,
+          alt: title ? title.textContent.trim() : ''
+        });
+      }
+    });
+
+    certCards.forEach(function (card, index) {
+      card.addEventListener('click', function (e) {
+        openLightbox(certImgs, index);
+      });
+    });
+  }
+
   var heroImg = document.querySelector('.photo-container img');
   if (heroImg) {
     var heroWrap = heroImg.closest('.photo-container');

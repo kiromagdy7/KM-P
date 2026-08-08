@@ -55,7 +55,6 @@ height:150px;width:200px;top:100%;left:100%;transition:all 0.7s}
 .cv-btn:hover{color:var(--bg)}
 .cv-btn:hover:before{top:-30px;left:-30px}
 .cv-btn:active{transform:scale(0.95)}
-.cv-btn:active:before{background:#3a0ca3;transition:background 0s}
 .cv-btn svg{width:16px;height:16px;display:block}
 @media(max-width:639px){.cv-btn{display:none}}
 .hamburger{display:none;align-items:center;justify-content:center;padding:8px;border:none;
@@ -173,7 +172,7 @@ line-height:1;color:#E5E5E5;user-select:none;transition:color 0.3s}
 /* Stats */
 .stats-section{background:var(--section-bg);border-top:1px solid var(--border);border-bottom:1px solid var(--border);
 padding:64px 0;transition:color 0.3s,background-color 0.3s,border-color 0.3s}
-@media(min-width:1024px){.stats-section{padding:96px 0}}
+@media(min-width:1024px){.stats-section{padding:64px 0}}
 .stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px}
 @media(min-width:1024px){.stats-grid{grid-template-columns:repeat(4,1fr)}}
 .stat-card{border-left:2px solid var(--text);padding-left:24px}
@@ -184,7 +183,7 @@ padding:64px 0;transition:color 0.3s,background-color 0.3s,border-color 0.3s}
 
 /* Projects */
 #projects{padding:80px 0;transition:color 0.3s,background-color 0.3s,border-color 0.3s}
-@media(min-width:1024px){#projects{padding:128px 0}}
+@media(min-width:1024px){#projects{padding:80px 0}}
 .projects-header{display:flex;flex-direction:column;gap:16px}
 @media(min-width:1024px){.projects-header{flex-direction:row;justify-content:space-between;align-items:flex-end}}
 .projects-header-left h2{font-size:36px;font-weight:900;line-height:0.95;color:var(--text)}
@@ -207,6 +206,60 @@ transition:transform 0.2s cubic-bezier(0.4,0,0.2,1),box-shadow 0.3s,border-color
 .project-link{font-size:14px;font-weight:600;color:var(--text);border-bottom:2px solid var(--text);
 padding-bottom:2px;display:inline-block;transition:color 0.2s,border-color 0.2s}
 .project-card:hover .project-link{color:#2563EB;border-bottom-color:#2563EB}
+
+/* Certificates Section */
+#certificates{padding:96px 0;border-bottom:1px solid var(--border);transition:color 0.3s,background-color 0.3s,border-color 0.3s}
+@media(min-width:1024px){#certificates{padding:112px 0}}
+
+.certificates-header{display:flex;flex-direction:column;gap:16px;margin-bottom:48px}
+@media(min-width:768px){.certificates-header{flex-direction:row;justify-content:space-between;align-items:flex-end}}
+.certificates-header-left h2{font-size:36px;font-weight:900;line-height:0.95;color:var(--text)}
+@media(min-width:1024px){.certificates-header-left h2{font-size:64px}}
+.certificates-header-right p{color:var(--muted);max-width:448px;font-size:14px;line-height:1.6}
+
+.certificates-grid{display:grid;gap:28px}
+@media(min-width:640px){.certificates-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1200px){.certificates-grid{grid-template-columns:repeat(3,1fr)}}
+
+.cert-card{display:flex;flex-direction:column;border:1px solid var(--border);background:var(--bg);padding:32px 28px 24px 28px;border-radius:16px;cursor:pointer;position:relative;transition:transform 0.2s cubic-bezier(0.4,0,0.2,1),box-shadow 0.3s,border-color 0.3s,background-color 0.3s}
+.cert-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,0.1)}
+.dark .cert-card:hover{box-shadow:0 20px 40px rgba(0,0,0,0.4)}
+.cert-card:active{transform:scale(0.97)}
+
+.cert-card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;gap:12px;width:100%}
+.cert-provider-logo{height:46px;display:flex;align-items:center;justify-content:center;padding:6px 12px;border-radius:10px;background:#ffffff;border:1px solid rgba(0,0,0,0.06);box-shadow:0 2px 6px rgba(0,0,0,0.03);transition:transform 0.2s ease,border-color 0.2s ease}
+.dark .cert-provider-logo{background:#ffffff;border-color:rgba(255,255,255,0.15)}
+.cert-provider-logo img{height:30px;max-width:120px;width:auto;object-fit:contain;display:block}
+.cert-provider-logo img[src*="depi"]{height:34px;max-width:110px}
+.cert-provider-logo img[src*="google-developers"]{height:26px;max-width:120px}
+.cert-provider-logo img[src*="Microsoft"]{height:26px;max-width:110px}
+.cert-provider-logo img[src*="ieee"]{height:28px;max-width:110px}
+
+.cert-badge{font-family:monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;padding:5px 12px;border-radius:9999px;white-space:nowrap;transition:transform 0.2s ease}
+.cert-badge.gold{background:rgba(234,179,8,0.12);color:#d97706;border:1px solid rgba(234,179,8,0.28)}
+.dark .cert-badge.gold{color:#facc15;background:rgba(234,179,8,0.18)}
+.cert-badge.blue{background:rgba(37,99,235,0.1);color:#2563EB;border:1px solid rgba(37,99,235,0.22)}
+.dark .cert-badge.blue{color:#60a5fa;background:rgba(37,99,235,0.18);border-color:rgba(37,99,235,0.35)}
+
+.cert-card-body{flex:1;display:flex;flex-direction:column;margin-bottom:20px}
+.cert-title{font-size:19px;font-weight:800;line-height:1.35;color:var(--text);margin-bottom:8px;letter-spacing:-0.01em}
+
+.cert-meta{display:flex;align-items:center;flex-wrap:wrap;gap:6px;font-size:12px;color:var(--muted);margin-bottom:12px;font-family:monospace;letter-spacing:0.02em}
+.cert-issuer{font-weight:600}
+.cert-dot{opacity:0.5}
+.cert-date{opacity:0.85}
+.cert-desc{font-size:13.5px;line-height:1.65;color:var(--muted)}
+
+.cert-card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid var(--border);margin-top:auto;transition:border-color 0.3s ease}
+.cert-action-text{font-size:13px;font-weight:700;color:var(--text);letter-spacing:0.02em;transition:color 0.2s ease}
+.cert-card:hover .cert-action-text{color:var(--accent)}
+.dark .cert-card:hover .cert-action-text{color:#60a5fa}
+
+.cert-action-icon{width:20px;height:20px;color:var(--muted);transition:color 0.3s ease,transform 0.3s ease;display:block}
+.cert-action-icon svg{width:20px;height:20px;display:block}
+.cert-card:hover .cert-action-icon{color:var(--accent);transform:translate(2px,-2px)}
+.dark .cert-card:hover .cert-action-icon{color:#60a5fa}
+.cert-btn{display:none}
 
 /* Skills */
 #skills{background:var(--section-bg);border-top:1px solid var(--border);border-bottom:1px solid var(--border);
