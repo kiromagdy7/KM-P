@@ -1,0 +1,32 @@
+# Cloudflare Pages Headers
+# https://developers.cloudflare.com/pages/configuration/headers/
+
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Content-Type: text/html; charset=UTF-8
+
+# Cache static assets aggressively (1 year)
+/Assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/Css/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/JavaScript/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/CV/*
+  Cache-Control: public, max-age=2592000
+
+# Fonts loaded from Google — no need to cache here
+
+# HTML pages — short cache, always revalidate
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/
+  Cache-Control: public, max-age=0, must-revalidate
