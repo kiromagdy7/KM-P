@@ -1,5 +1,0 @@
-# Cloudflare Pages Redirects
-# https://developers.cloudflare.com/pages/configuration/redirects/
-
-# Force www to non-www (301 permanent redirect)
-https://www.kiromagdy.com/* https://kiromagdy.com/:splat 301
