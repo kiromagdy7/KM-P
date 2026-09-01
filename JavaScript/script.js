@@ -238,6 +238,8 @@
   function openLightbox(images, index) {
     if (!images || images.length === 0) return;
 
+    var previouslyFocused = document.activeElement;
+
     var existing = document.querySelector('.lightbox-overlay');
     if (existing) {
       if (typeof existing._cleanup === 'function') existing._cleanup();
@@ -248,6 +250,9 @@
 
     var overlay = document.createElement('div');
     overlay.className = 'lightbox-overlay';
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+    overlay.setAttribute('aria-label', 'Project image viewer');
 
     var stage = document.createElement('div');
     stage.className = 'lightbox-stage';
@@ -275,6 +280,7 @@
 
     var counter = document.createElement('div');
     counter.className = 'lightbox-counter';
+    counter.setAttribute('aria-live', 'polite');
 
     var titleEl = document.createElement('div');
     titleEl.className = 'lightbox-title';
@@ -357,7 +363,10 @@
     var strip = document.createElement('div');
     strip.className = 'lightbox-strip';
     var stripItems = [];
-    var isThumbMode = images.length > 15;
+    var thumbImages = [];
+    // A real thumbnail is easier to scan than a row of dots, even for short galleries.
+    // `loading=lazy` keeps a long project gallery from competing with the active image.
+    var isThumbMode = true;
 
     if (images.length > 1) {
       images.forEach(function (item, i) {
@@ -367,21 +376,21 @@
           el.className = 'lightbox-thumb-item' + (i === index ? ' active' : '');
           el.setAttribute('aria-label', 'View ' + (item.alt || 'image ' + (i + 1)));
           var thumbImg = document.createElement('img');
-          thumbImg.src = item.src;
+          // Keep the URL off the image until it is near the visible viewport. This
+          // avoids downloading and decoding every full-size project screenshot at once.
+          thumbImg.dataset.src = item.src;
           thumbImg.alt = item.alt || '';
           thumbImg.loading = 'lazy';
+          thumbImg.decoding = 'async';
           el.appendChild(thumbImg);
+          thumbImages[i] = thumbImg;
         } else {
           el = document.createElement('button');
           el.className = 'lightbox-dot-item' + (i === index ? ' active' : '');
           el.setAttribute('aria-label', 'View ' + (item.alt || 'image ' + (i + 1)));
         }
 
-        el.addEventListener('click', function (e) {
-          e.preventDefault();
-          e.stopPropagation();
-          goTo(i);
-        });
+        bindFastAction(el, function () { goTo(i); });
 
         strip.appendChild(el);
         stripItems.push(el);
@@ -402,6 +411,37 @@
     overlay.appendChild(bottomBar);
     document.body.appendChild(overlay);
 
+    var thumbObserver = null;
+    function loadThumbAt(idx) {
+      var thumb = thumbImages[idx];
+      if (thumb && !thumb.getAttribute('src') && thumb.dataset.src) {
+        thumb.src = thumb.dataset.src;
+      }
+    }
+    function loadNearbyThumbs(idx) {
+      loadThumbAt(idx);
+      if (images.length > 1) {
+        loadThumbAt((idx + 1) % images.length);
+        loadThumbAt((idx - 1 + images.length) % images.length);
+      }
+    }
+    if (thumbImages.length && 'IntersectionObserver' in window) {
+      thumbObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var thumb = entry.target;
+            if (!thumb.getAttribute('src') && thumb.dataset.src) thumb.src = thumb.dataset.src;
+            thumbObserver.unobserve(thumb);
+          }
+        });
+      }, { root: strip, rootMargin: '160px 240px' });
+      thumbImages.forEach(function (thumb) { if (thumb) thumbObserver.observe(thumb); });
+    } else {
+      // IntersectionObserver is available in all supported browsers, but retain a
+      // small fallback for embedded/older viewers.
+      loadNearbyThumbs(index);
+    }
+
     var currentIndex = index;
     var scale = 1;
     var translateX = 0;
@@ -414,6 +454,7 @@
     var minScale = 0.5;
     var maxScale = 8;
     var currentLoadId = 0;
+    var transformRaf = 0;
 
     function getBaseImageDimensions() {
       var w = imgEl.naturalWidth || 800;
@@ -449,6 +490,10 @@
     }
 
     function applyTransform(animate) {
+      if (transformRaf) {
+        cancelAnimationFrame(transformRaf);
+        transformRaf = 0;
+      }
       if (scale > 1) {
         clampTranslate();
         stage.classList.add('is-zoomed');
@@ -468,7 +513,15 @@
       zoomDisplay.textContent = Math.round(scale * 100) + '%';
     }
 
-    function zoomToPoint(newScale, focalX, focalY, animate) {
+    function scheduleTransform(animate) {
+      if (transformRaf) return;
+      transformRaf = requestAnimationFrame(function () {
+        transformRaf = 0;
+        applyTransform(animate);
+      });
+    }
+
+    function zoomToPoint(newScale, focalX, focalY, animate, defer) {
       newScale = Math.max(minScale, Math.min(maxScale, newScale));
       if (Math.abs(newScale - scale) < 0.001) return;
 
@@ -483,12 +536,16 @@
       translateY = dy - (dy - translateY) * ratio;
       scale = newScale;
 
-      applyTransform(animate);
+      if (defer) {
+        scheduleTransform(animate);
+      } else {
+        applyTransform(animate);
+      }
     }
 
-    function zoomDelta(delta, focalX, focalY) {
+    function zoomDelta(delta, focalX, focalY, animate, defer) {
       var nextScale = scale * (1 + delta);
-      zoomToPoint(nextScale, focalX, focalY, true);
+      zoomToPoint(nextScale, focalX, focalY, animate !== false, defer);
     }
 
     function resetZoom(animate) {
@@ -498,6 +555,17 @@
       applyTransform(animate !== false);
     }
 
+    function scrollActiveThumbIntoView(item) {
+      if (!item || !strip) return;
+      var stripRect = strip.getBoundingClientRect();
+      var itemRect = item.getBoundingClientRect();
+      var left = itemRect.left - stripRect.left + strip.scrollLeft;
+      var target = left - (strip.clientWidth - item.offsetWidth) / 2;
+      // Do this synchronously. Queuing an animation frame here made fast navigation
+      // visibly trail behind the selected image.
+      strip.scrollLeft = Math.max(0, target);
+    }
+
     function updateHeaderAndStrip() {
       counter.innerHTML = '<span class="current">' + (currentIndex + 1) + '</span> / ' + images.length;
       var currentItem = images[currentIndex];
@@ -505,26 +573,41 @@
       titleEl.title = currentItem.alt || '';
 
       stripItems.forEach(function (item, i) {
+        var distance = Math.abs(i - currentIndex);
+        distance = Math.min(distance, images.length - distance);
+        item.classList.toggle('is-near', distance === 1);
+        item.classList.toggle('is-far', distance > 1);
         if (i === currentIndex) {
           item.classList.add('active');
-          if (typeof item.scrollIntoView === 'function') {
-            item.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-          }
+          scrollActiveThumbIntoView(item);
         } else {
           item.classList.remove('active');
         }
       });
+      loadNearbyThumbs(currentIndex);
     }
 
     function preloadSurroundings(idx) {
       if (images.length <= 1) return;
       var next = (idx + 1) % images.length;
       var prev = (idx - 1 + images.length) % images.length;
-      var imgNext = new Image();
-      imgNext.src = images[next].src;
-      var imgPrev = new Image();
-      imgPrev.src = images[prev].src;
+      [images[next].src, images[prev].src].forEach(function (src) {
+        if (!src || preloadSurroundings.cache[src]) return;
+        var preloaded = new Image();
+        preloaded.decoding = 'async';
+        preloaded.src = src;
+        preloadSurroundings.cache[src] = preloaded;
+        preloadSurroundings.order.push(src);
+        if (typeof preloaded.decode === 'function') {
+          preloaded.decode().catch(function () {});
+        }
+      });
+      while (preloadSurroundings.order.length > 4) {
+        delete preloadSurroundings.cache[preloadSurroundings.order.shift()];
+      }
     }
+    preloadSurroundings.cache = Object.create(null);
+    preloadSurroundings.order = [];
 
     function loadImage(idx) {
       var item = images[idx];
@@ -599,7 +682,7 @@
       var dy = e.clientY - dragStartY;
       translateX = initialTranslateX + dx;
       translateY = initialTranslateY + dy;
-      applyTransform(false);
+      scheduleTransform(false);
     }
 
     function onMouseUp(e) {
@@ -671,7 +754,7 @@
         var dy = e.touches[0].clientY - dragStartY;
         translateX = initialTranslateX + dx;
         translateY = initialTranslateY + dy;
-        applyTransform(false);
+        scheduleTransform(false);
       } else if (e.touches.length === 2) {
         e.preventDefault();
         var dx = e.touches[0].clientX - e.touches[1].clientX;
@@ -681,7 +764,7 @@
           var pinchRatio = (dist - lastPinchDist) / lastPinchDist;
           var midX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
           var midY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
-          zoomDelta(pinchRatio * 1.5, midX, midY);
+          zoomDelta(pinchRatio * 1.5, midX, midY, false, true);
         }
         lastPinchDist = dist;
       }
@@ -726,35 +809,54 @@
       }
     }, { passive: true });
 
-    prevBtn.addEventListener('click', function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-      goTo(currentIndex - 1);
-    });
+    function bindFastAction(button, action) {
+      var suppressClick = false;
+      var suppressTimer = 0;
+      function triggerPointerAction() {
+        suppressClick = true;
+        clearTimeout(suppressTimer);
+        suppressTimer = setTimeout(function () { suppressClick = false; }, 1000);
+        action();
+      }
+      button.addEventListener('pointerdown', function (e) {
+        if (e.button !== undefined && e.button !== 0) return;
+        e.preventDefault();
+        e.stopPropagation();
+        triggerPointerAction();
+      });
+      // Older WebViews may not expose PointerEvent; keep their touch controls
+      // immediate as well instead of falling back to the delayed click event.
+      if (!window.PointerEvent) {
+        button.addEventListener('touchstart', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          triggerPointerAction();
+        }, { passive: false });
+      }
+      button.addEventListener('pointerup', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      });
+      button.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        // Keep keyboard activation, but ignore the click generated after pointerup.
+        if (suppressClick) {
+          suppressClick = false;
+          clearTimeout(suppressTimer);
+          return;
+        }
+        action();
+      });
+    }
 
-    nextBtn.addEventListener('click', function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-      goTo(currentIndex + 1);
-    });
-
-    zoomInBtn.addEventListener('click', function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-      zoomDelta(0.3);
-    });
-
-    zoomOutBtn.addEventListener('click', function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-      zoomDelta(-0.3);
-    });
-
-    resetBtn.addEventListener('click', function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-      resetZoom(true);
-    });
+    bindFastAction(prevBtn, function () { goTo(currentIndex - 1); });
+    bindFastAction(nextBtn, function () { goTo(currentIndex + 1); });
+    // Toolbar actions intentionally skip the transition: this makes repeated presses
+    // feel immediate instead of continuously restarting an 180ms animation.
+    bindFastAction(zoomInBtn, function () { zoomDelta(0.3, undefined, undefined, false); });
+    bindFastAction(zoomOutBtn, function () { zoomDelta(-0.3, undefined, undefined, false); });
+    bindFastAction(resetBtn, function () { resetZoom(false); });
 
     function isFullscreenActive() {
       return !!(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement);
@@ -787,11 +889,7 @@
       } catch (err) {}
     }
 
-    fsBtn.addEventListener('click', function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-      toggleFullscreen();
-    });
+    bindFastAction(fsBtn, toggleFullscreen);
 
     function onFullscreenChange() {
       var active = isFullscreenActive();
@@ -805,22 +903,22 @@
     document.addEventListener('mozfullscreenchange', onFullscreenChange);
 
     function closeLightbox() {
+      if (!overlay.parentNode) return;
       overlay.classList.remove('open');
       document.body.classList.remove('lightbox-open');
       if (isFullscreenActive() && document.exitFullscreen) {
         document.exitFullscreen().catch(function () {});
       }
       cleanup();
+      if (previouslyFocused && typeof previouslyFocused.focus === 'function' && previouslyFocused.isConnected) {
+        previouslyFocused.focus({ preventScroll: true });
+      }
       setTimeout(function () {
         if (overlay.parentNode) overlay.remove();
       }, 250);
     }
 
-    closeBtn.addEventListener('click', function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-      closeLightbox();
-    });
+    bindFastAction(closeBtn, closeLightbox);
 
     overlay.addEventListener('click', function (e) {
       if (e.target === overlay) {
@@ -874,12 +972,18 @@
       document.removeEventListener('webkitfullscreenchange', onFullscreenChange);
       document.removeEventListener('mozfullscreenchange', onFullscreenChange);
       window.removeEventListener('resize', onWindowResize);
+      if (transformRaf) {
+        cancelAnimationFrame(transformRaf);
+        transformRaf = 0;
+      }
+      if (thumbObserver) thumbObserver.disconnect();
     }
     overlay._cleanup = cleanup;
 
     loadImage(currentIndex);
     requestAnimationFrame(function () {
       overlay.classList.add('open');
+      if (typeof closeBtn.focus === 'function') closeBtn.focus({ preventScroll: true });
     });
   }
 })();
