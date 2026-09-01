@@ -1,9 +1,14 @@
 {
-  "name": "Kirollos Magdy — Full-Stack .NET Developer",
-  "short_name": "Kirollos Magdy",
-"description": "Full-Stack .NET Developer building web & desktop apps with ASP.NET Core, C#, React.js, Next.js. 12+ projects delivered. Certified by DEPI, IEEE & Microsoft — AI training with Google for Developers.",
+  "name": "Kirollos Magdy — Full-Stack .NET Developer Portfolio",
+  "short_name": "Kirollos Magdy Portfolio",
+  "description": "Full-Stack .NET Developer portfolio featuring scalable ASP.NET Core, C#, React.js, Next.js, and .NET MAUI web and desktop projects.",
+  "lang": "en",
+  "dir": "ltr",
+  "id": "/",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
+  "categories": ["portfolio", "developer", "business"],
   "background_color": "#0a0a0a",
   "theme_color": "#0a0a0a",
   "icons": [

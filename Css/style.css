@@ -546,7 +546,7 @@ cursor:pointer;border-radius:4px;transition:all 0.12s ease;font-size:15px;line-h
 .lightbox-zoom-display{font-family:monospace;font-size:11px;color:#a1a1aa;min-width:40px;text-align:center;user-select:none}
 
 .lightbox-strip{max-width:92vw;overflow-x:auto;overflow-y:hidden;display:flex;align-items:center;gap:6px;padding:4px 6px;
-pointer-events:auto;scrollbar-width:none;-ms-overflow-style:none;overscroll-behavior-x:contain;touch-action:pan-x}
+pointer-events:auto;scrollbar-width:none;-ms-overflow-style:none;overscroll-behavior-x:contain;scroll-behavior:auto;touch-action:pan-x}
 .lightbox-strip::-webkit-scrollbar{display:none}
 .lightbox-dot-item{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.25);border:none;cursor:pointer;padding:0;
 transition:all 0.2s cubic-bezier(0.16,1,0.3,1);flex-shrink:0;touch-action:manipulation;-webkit-tap-highlight-color:transparent}

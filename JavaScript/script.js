@@ -267,6 +267,8 @@
     imgEl.draggable = false;
     imgEl.alt = '';
     imgEl.className = 'loading';
+    imgEl.decoding = 'async';
+    imgEl.fetchPriority = 'high';
 
     imgWrap.appendChild(spinner);
     imgWrap.appendChild(imgEl);
@@ -364,8 +366,6 @@
     strip.className = 'lightbox-strip';
     var stripItems = [];
     var thumbImages = [];
-    // A real thumbnail is easier to scan than a row of dots, even for short galleries.
-    // `loading=lazy` keeps a long project gallery from competing with the active image.
     var isThumbMode = true;
 
     if (images.length > 1) {
@@ -382,6 +382,7 @@
           thumbImg.alt = item.alt || '';
           thumbImg.loading = 'lazy';
           thumbImg.decoding = 'async';
+          thumbImg.fetchPriority = 'low';
           el.appendChild(thumbImg);
           thumbImages[i] = thumbImg;
         } else {
@@ -807,6 +808,13 @@
           }
         }
       }
+    }, { passive: true });
+
+    stage.addEventListener('touchcancel', function () {
+      isDragging = false;
+      lastPinchDist = 0;
+      stage.classList.remove('is-dragging');
+      applyTransform(false);
     }, { passive: true });
 
     function bindFastAction(button, action) {
