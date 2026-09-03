@@ -242,4 +242,180 @@
       }, { passive: true });
     }
   }
+
+  // 4. MOTION SYSTEM FOR PROJECT PAGES
+  var projectHeader = document.querySelector('.project-detail-header');
+  if (projectHeader && !projectHeader.querySelector('.project-ambient-glow')) {
+    var glow = document.createElement('div');
+    glow.className = 'project-ambient-glow';
+    glow.setAttribute('aria-hidden', 'true');
+    glow.innerHTML = '<div class="glow-orb glow-orb-1"></div><div class="glow-orb glow-orb-2"></div>';
+    projectHeader.insertBefore(glow, projectHeader.firstChild);
+  }
+
+  var revealHeaderSelectors = [
+    { sel: '.project-breadcrumb', delay: 'project-reveal-delay-1' },
+    { sel: '.project-meta-strip', delay: 'project-reveal-delay-1' },
+    { sel: '.project-detail-left h1', delay: 'project-reveal-delay-2' },
+    { sel: '.project-desc-text', delay: 'project-reveal-delay-3' },
+    { sel: '.project-tech-strip', delay: 'project-reveal-delay-4' },
+    { sel: '.project-actions', delay: 'project-reveal-delay-3' },
+    { sel: '.ss-meta-grid', delay: 'project-reveal-delay-4' }
+  ];
+
+  revealHeaderSelectors.forEach(function (item) {
+    var el = document.querySelector(item.sel);
+    if (el) {
+      el.classList.add('project-reveal', item.delay);
+    }
+  });
+
+  function triggerProjectLoaded() {
+    document.body.classList.add('project-loaded');
+  }
+
+  var loader = document.getElementById('pageLoader');
+  if (!loader || loader.classList.contains('hidden')) {
+    triggerProjectLoaded();
+  } else {
+    window.addEventListener('load', function () {
+      setTimeout(triggerProjectLoaded, 80);
+    });
+    setTimeout(triggerProjectLoaded, 1200);
+  }
+
+  var sectionHeaders = document.querySelectorAll('.highlights-header, .ss-header, .more-header');
+  sectionHeaders.forEach(function (h) {
+    h.classList.add('scroll-reveal');
+  });
+
+  var highlightCards = document.querySelectorAll('.highlight-card');
+  highlightCards.forEach(function (c, i) {
+    c.classList.add('interactive-card', 'scroll-reveal');
+    c.style.setProperty('--reveal-delay', (i % 3) + 1);
+  });
+
+  var matrixCards = document.querySelectorAll('.matrix-card');
+  matrixCards.forEach(function (m, i) {
+    m.classList.add('interactive-card', 'scroll-reveal');
+    m.style.setProperty('--reveal-delay', (i % 4) + 1);
+  });
+
+  var ssFrames = document.querySelectorAll('.ss-item');
+  ssFrames.forEach(function (s, i) {
+    s.classList.add('scroll-reveal');
+    s.style.setProperty('--reveal-delay', (i % 2) + 1);
+    var frame = s.querySelector('.ss-window-frame');
+    if (frame) frame.classList.add('interactive-card');
+  });
+
+  var moreCards = document.querySelectorAll('.more-card');
+  moreCards.forEach(function (mc, i) {
+    mc.classList.add('interactive-card', 'scroll-reveal');
+    mc.style.setProperty('--reveal-delay', (i % 3) + 1);
+  });
+
+  var scrollRevealElements = document.querySelectorAll('.scroll-reveal');
+  if ('IntersectionObserver' in window && scrollRevealElements.length > 0) {
+    var revealObserver = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    scrollRevealElements.forEach(function (el) {
+      revealObserver.observe(el);
+    });
+  } else {
+    scrollRevealElements.forEach(function (el) {
+      el.classList.add('in-view');
+    });
+  }
+
+  var isFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  var interactiveCards = document.querySelectorAll('.interactive-card');
+
+  if (isFinePointer && interactiveCards.length > 0) {
+    var maxTilt = 4.0;
+
+    interactiveCards.forEach(function (card) {
+      var rafId = null;
+      var targetTiltX = 0;
+      var targetTiltY = 0;
+      var targetMouseX = 50;
+      var targetMouseY = 50;
+
+      function updateCardTransform() {
+        card.style.setProperty('--tilt-x', targetTiltX.toFixed(2) + 'deg');
+        card.style.setProperty('--tilt-y', targetTiltY.toFixed(2) + 'deg');
+        card.style.setProperty('--mouse-x', targetMouseX.toFixed(1) + '%');
+        card.style.setProperty('--mouse-y', targetMouseY.toFixed(1) + '%');
+        rafId = null;
+      }
+
+      card.addEventListener('mousemove', function (e) {
+        var rect = card.getBoundingClientRect();
+        var x = e.clientX - rect.left;
+        var y = e.clientY - rect.top;
+
+        var pctX = (x / rect.width);
+        var pctY = (y / rect.height);
+
+        targetMouseX = pctX * 100;
+        targetMouseY = pctY * 100;
+
+        targetTiltY = (pctX - 0.5) * (maxTilt * 2);
+        targetTiltX = (0.5 - pctY) * (maxTilt * 2);
+
+        if (!rafId) {
+          rafId = requestAnimationFrame(updateCardTransform);
+        }
+      });
+
+      card.addEventListener('mouseleave', function () {
+        if (rafId) {
+          cancelAnimationFrame(rafId);
+          rafId = null;
+        }
+        card.style.setProperty('--tilt-x', '0deg');
+        card.style.setProperty('--tilt-y', '0deg');
+        card.style.setProperty('--mouse-x', '50%');
+        card.style.setProperty('--mouse-y', '50%');
+      });
+    });
+  }
+
+  var magneticTargets = document.querySelectorAll('.action-btn.primary, .action-btn.secondary, .action-btn.share-btn');
+  if (isFinePointer && magneticTargets.length > 0) {
+    magneticTargets.forEach(function (btn) {
+      var btnRaf = null;
+
+      btn.addEventListener('mousemove', function (e) {
+        var rect = btn.getBoundingClientRect();
+        var dx = (e.clientX - (rect.left + rect.width / 2)) * 0.15;
+        var dy = (e.clientY - (rect.top + rect.height / 2)) * 0.15;
+
+        dx = Math.max(-6, Math.min(6, dx));
+        dy = Math.max(-6, Math.min(6, dy));
+
+        if (!btnRaf) {
+          btnRaf = requestAnimationFrame(function () {
+            btn.style.transform = 'translate3d(' + dx.toFixed(1) + 'px, ' + dy.toFixed(1) + 'px, 0)';
+            btnRaf = null;
+          });
+        }
+      });
+
+      btn.addEventListener('mouseleave', function () {
+        if (btnRaf) cancelAnimationFrame(btnRaf);
+        btn.style.transform = '';
+      });
+    });
+  }
 })();

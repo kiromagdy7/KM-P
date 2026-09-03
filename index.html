@@ -299,15 +299,20 @@
     <main>
     <!-- Hero -->
     <section id="home">
+      <!-- Ambient Aurora Glow -->
+      <div class="hero-ambient-glow" aria-hidden="true">
+        <div class="glow-orb glow-orb-1"></div>
+        <div class="glow-orb glow-orb-2"></div>
+      </div>
       <div class="container">
-        <div class="section-label">// Portfolio / <span class="year">2026</span></div>
+        <div class="section-label hero-reveal hero-reveal-delay-1">// Portfolio / <span class="year">2026</span></div>
         <div class="hero-grid">
           <div class="hero-left">
-            <h1>Kirollos<br />Magdy<span class="dot"></span><span class="sr-only"> — Full-Stack .NET Developer</span></h1>
-            <p>
+            <h1 class="hero-reveal hero-reveal-delay-2">Kirollos<br />Magdy<span class="dot"></span><span class="sr-only"> — Full-Stack .NET Developer</span></h1>
+            <p class="hero-reveal hero-reveal-delay-3">
               <strong>Full Stack .NET Developer</strong> working with ASP.NET Core, React, and Next.js. I build web applications, APIs, and business systems from the Backend to the Frontend.
             </p>
-            <div class="hero-btns">
+            <div class="hero-btns hero-reveal hero-reveal-delay-4">
               <a href="#projects" class="btn-fill">
                 View Projects
                 <svg
@@ -332,23 +337,23 @@
             </div>
           </div>
           <div class="hero-right">
-            <div class="photo-container">
+            <div class="photo-container hero-photo-reveal">
               <img src="/Assets/main.webp" alt="Kirollos Magdy — Full-Stack .NET Developer" width="500" height="500" />
             </div>
             <div class="badge"><span class="dot"></span>Available</div>
           </div>
         </div>
         <div class="services-strip">
-          <div class="service-card">
+          <div class="service-card scroll-reveal" style="--reveal-delay: 1;">
             <span class="num">01</span><span class="label">Backend</span>
           </div>
-          <div class="service-card">
+          <div class="service-card scroll-reveal" style="--reveal-delay: 2;">
             <span class="num">02</span><span class="label">Database</span>
           </div>
-          <div class="service-card">
+          <div class="service-card scroll-reveal" style="--reveal-delay: 3;">
             <span class="num">03</span><span class="label">Frontend</span>
           </div>
-          <div class="service-card">
+          <div class="service-card scroll-reveal" style="--reveal-delay: 4;">
             <span class="num">04</span><span class="label">Deployment</span>
           </div>
         </div>
@@ -359,11 +364,11 @@
     <section id="about">
       <div class="container">
         <div class="about-grid">
-          <div class="about-left">
+          <div class="about-left scroll-reveal">
             <div class="section-label">// Who I Am</div>
             <h2>About<br />the developer</h2>
           </div>
-          <div class="about-right">
+          <div class="about-right scroll-reveal" style="--reveal-delay: 1;">
               <p>
               Full Stack .NET Developer with hands-on experience building and deploying web and desktop applications using ASP.NET Core, C#, SQL Server, React.js, and WPF/.NET MAUI. Delivered <strong class="accent">12+ projects</strong> spanning ERP systems, business web apps, and reservation-based systems, including production systems actively serving real business clients. Strong focus on clean architecture, data integrity, security, and performance. Handles the full delivery cycle — from system design to server configuration and live production deployment.
             </p>
@@ -376,20 +381,20 @@
     <div class="stats-section">
       <div class="container">
         <div class="stats-grid">
-          <div class="stat-card">
-            <div class="stat-number">12<span class="suffix">+</span></div>
+          <div class="stat-card scroll-reveal" style="--reveal-delay: 1;">
+            <div class="stat-number" data-target="12" data-suffix="+">12<span class="suffix">+</span></div>
             <div class="stat-label">Projects Delivered</div>
           </div>
-          <div class="stat-card">
-            <div class="stat-number">1<span class="suffix">+</span></div>
+          <div class="stat-card scroll-reveal" style="--reveal-delay: 2;">
+            <div class="stat-number" data-target="1" data-suffix="+">1<span class="suffix">+</span></div>
             <div class="stat-label">Years Experience</div>
           </div>
-          <div class="stat-card">
-            <div class="stat-number">100<span class="suffix">%</span></div>
+          <div class="stat-card scroll-reveal" style="--reveal-delay: 3;">
+            <div class="stat-number" data-target="100" data-suffix="%">100<span class="suffix">%</span></div>
             <div class="stat-label">Client Satisfaction</div>
           </div>
-          <div class="stat-card">
-            <div class="stat-number">15<span class="suffix">+</span></div>
+          <div class="stat-card scroll-reveal" style="--reveal-delay: 4;">
+            <div class="stat-number" data-target="15" data-suffix="+">15<span class="suffix">+</span></div>
             <div class="stat-label">Technologies & Tools</div>
           </div>
         </div>
@@ -399,7 +404,7 @@
     <!-- Projects -->
     <section id="projects">
       <div class="container">
-        <div class="projects-header">
+        <div class="projects-header scroll-reveal">
           <div class="projects-header-left">
             <div class="section-label">// Selected Work</div>
             <h2>Projects</h2>
@@ -412,7 +417,7 @@
           </div>
         </div>
         <div class="projects-grid">
-          <a href="jewelry-system" class="project-card">
+          <a href="jewelry-system" class="project-card interactive-card scroll-reveal" style="--reveal-delay: 1;">
             <div class="project-top">
               <span class="project-index">[01]</span
               ><svg
@@ -437,7 +442,7 @@
             </p>
             <span class="project-link">View Details</span>
           </a>
-          <a href="ip-inspector" class="project-card">
+          <a href="ip-inspector" class="project-card interactive-card scroll-reveal" style="--reveal-delay: 2;">
             <div class="project-top">
               <span class="project-index">[02]</span
               ><svg
@@ -462,7 +467,7 @@
             </p>
             <span class="project-link">View Details</span>
           </a>
-          <a href="kmz-hub" class="project-card">
+          <a href="kmz-hub" class="project-card interactive-card scroll-reveal" style="--reveal-delay: 3;">
             <div class="project-top">
               <span class="project-index">[03]</span
               ><svg
@@ -487,7 +492,7 @@
             </p>
             <span class="project-link">View Details</span>
           </a>
-          <a href="travely" class="project-card">
+          <a href="travely" class="project-card interactive-card scroll-reveal" style="--reveal-delay: 4;">
             <div class="project-top">
               <span class="project-index">[04]</span
               ><svg
@@ -512,7 +517,7 @@
             </p>
             <span class="project-link">View Details</span>
           </a>
-          <a href="teta-kitchen" class="project-card">
+          <a href="teta-kitchen" class="project-card interactive-card scroll-reveal" style="--reveal-delay: 1;">
             <div class="project-top">
               <span class="project-index">[05]</span
               ><svg
@@ -537,7 +542,7 @@
             </p>
             <span class="project-link">View Details</span>
           </a>
-          <a href="word-of-the-lord" class="project-card">
+          <a href="word-of-the-lord" class="project-card interactive-card scroll-reveal" style="--reveal-delay: 2;">
             <div class="project-top">
               <span class="project-index">[06]</span
               ><svg
@@ -562,7 +567,7 @@
             </p>
             <span class="project-link">View Details</span>
           </a>
-          <a href="code-crate" class="project-card">
+          <a href="code-crate" class="project-card interactive-card scroll-reveal" style="--reveal-delay: 3;">
             <div class="project-top">
               <span class="project-index">[07]</span
               ><svg
@@ -587,7 +592,7 @@
             </p>
             <span class="project-link">View Details</span>
           </a>
-          <a href="div-store" class="project-card">
+          <a href="div-store" class="project-card interactive-card scroll-reveal" style="--reveal-delay: 4;">
             <div class="project-top">
               <span class="project-index">[08]</span
               ><svg
@@ -619,7 +624,7 @@
     <!-- Certificates -->
     <section id="certificates">
       <div class="container">
-        <div class="certificates-header">
+        <div class="certificates-header scroll-reveal">
           <div class="certificates-header-left">
             <div class="section-label">// Honors &amp; Certifications</div>
             <h2>Certificates</h2>
@@ -631,7 +636,7 @@
           </div>
         </div>
         <div class="certificates-grid">
-          <div class="cert-card" data-cert-src="/Assets/Certificates/DEPI.webp" data-cert-index="1">
+          <div class="cert-card interactive-card scroll-reveal" style="--reveal-delay: 1;" data-cert-src="/Assets/Certificates/DEPI.webp" data-cert-index="1">
             <div class="cert-card-top">
               <div class="cert-provider-logo">
                 <img src="/Assets/Certificates/Providers/depi.webp" alt="DEPI Logo" loading="lazy" />
@@ -660,7 +665,7 @@
             </div>
           </div>
 
-          <div class="cert-card" data-cert-src="/Assets/Certificates/DEPI-Top-student.webp" data-cert-index="0">
+          <div class="cert-card interactive-card scroll-reveal" style="--reveal-delay: 2;" data-cert-src="/Assets/Certificates/DEPI-Top-student.webp" data-cert-index="0">
             <div class="cert-card-top">
               <div class="cert-provider-logo">
                 <img src="/Assets/Certificates/Providers/depi.webp" alt="DEPI Logo" loading="lazy" />
@@ -689,7 +694,7 @@
             </div>
           </div>
 
-          <div class="cert-card" data-cert-src="/Assets/Certificates/IEEE.webp" data-cert-index="4">
+          <div class="cert-card interactive-card scroll-reveal" style="--reveal-delay: 3;" data-cert-src="/Assets/Certificates/IEEE.webp" data-cert-index="4">
             <div class="cert-card-top">
               <div class="cert-provider-logo">
                 <img src="/Assets/Certificates/Providers/ieee.webp" alt="IEEE Logo" loading="lazy" />
@@ -718,7 +723,7 @@
             </div>
           </div>
 
-          <div class="cert-card" data-cert-src="/Assets/Certificates/Microsoft.webp" data-cert-index="2">
+          <div class="cert-card interactive-card scroll-reveal" style="--reveal-delay: 1;" data-cert-src="/Assets/Certificates/Microsoft.webp" data-cert-index="2">
             <div class="cert-card-top">
               <div class="cert-provider-logo">
                 <img src="/Assets/Certificates/Providers/Microsoft.webp" alt="Microsoft Logo" loading="lazy" />
@@ -747,7 +752,7 @@
             </div>
           </div>
 
-          <div class="cert-card" data-cert-src="/Assets/Certificates/Google-Developers.webp" data-cert-index="3">
+          <div class="cert-card interactive-card scroll-reveal" style="--reveal-delay: 2;" data-cert-src="/Assets/Certificates/Google-Developers.webp" data-cert-index="3">
             <div class="cert-card-top">
               <div class="cert-provider-logo">
                 <img src="/Assets/Certificates/Providers/google-developers.webp" alt="Google Developers Logo" loading="lazy" />
@@ -782,12 +787,12 @@
     <!-- Skills -->
     <section id="skills">
       <div class="container">
-        <div class="skills-header">
+        <div class="skills-header scroll-reveal">
           <div class="section-label">// Tech Stack</div>
           <h2>Skills &amp; Tools</h2>
         </div>
         <div class="skills-grid">
-          <div>
+          <div class="scroll-reveal" style="--reveal-delay: 1;">
             <div class="skill-cat-header">
               <span class="slash">//</span>
               <span class="cat-name">Frontend</span>
@@ -801,7 +806,7 @@
               <span class="skill-pill">Tailwind CSS</span>
             </div>
           </div>
-          <div>
+          <div class="scroll-reveal" style="--reveal-delay: 2;">
             <div class="skill-cat-header">
               <span class="slash">//</span><span class="cat-name">Backend</span>
             </div>
@@ -820,7 +825,7 @@
               <span class="skill-pill">Dependency Injection</span>
             </div>
           </div>
-          <div>
+          <div class="scroll-reveal" style="--reveal-delay: 3;">
             <div class="skill-cat-header">
               <span class="slash">//</span>
               <span class="cat-name">Database</span>
@@ -833,7 +838,7 @@
               <span class="skill-pill">Query Optimization</span>
             </div>
           </div>
-          <div>
+          <div class="scroll-reveal" style="--reveal-delay: 4;">
             <div class="skill-cat-header">
               <span class="slash">//</span><span class="cat-name">Tools</span>
             </div>
@@ -850,7 +855,7 @@
                   <span class="skill-pill">Visual Studio</span>
             </div>
           </div>
-          <div>
+          <div class="scroll-reveal" style="--reveal-delay: 5;">
             <div class="skill-cat-header">
               <span class="slash">//</span><span class="cat-name">Deployment &amp; Cloud</span>
             </div>
@@ -873,7 +878,7 @@
     <section id="contact">
       <div class="container">
         <div class="contact-grid">
-          <div class="contact-left">
+          <div class="contact-left scroll-reveal">
             <div class="section-label">// Get In Touch</div>
             <h2>Let's build<br />something<span class="dot"></span></h2>
             <p class="sub">
@@ -970,7 +975,7 @@
               </div>
             </div>
           </div>
-          <form class="contact-right" id="contactForm" action="https://formspree.io/f/mpwlerqp" method="POST">
+          <form class="contact-right scroll-reveal" style="--reveal-delay: 2;" id="contactForm" action="https://formspree.io/f/mpwlerqp" method="POST">
             <div class="form-group">
               <label for="name">Name</label>
               <input type="text" id="name" name="name" required />
