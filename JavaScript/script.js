@@ -1105,8 +1105,70 @@
     document.body.removeChild(temp);
   }
 
-  // 3. Project Subnav Scrollspy
+  // 3. Project Subnav: Drag-to-scroll, Wheel Scroll & Scrollspy
+  var subnavContainer = document.querySelector('.project-subnav-links');
   var subnavLinks = document.querySelectorAll('.project-subnav-link');
+
+  function scrollSubnavIntoView(linkEl) {
+    if (!subnavContainer || !linkEl) return;
+    var containerWidth = subnavContainer.clientWidth;
+    var linkLeft = linkEl.offsetLeft;
+    var linkWidth = linkEl.offsetWidth;
+    var targetScroll = linkLeft - (containerWidth / 2) + (linkWidth / 2);
+    subnavContainer.scrollTo({
+      left: Math.max(0, targetScroll),
+      behavior: 'smooth'
+    });
+  }
+
+  if (subnavContainer) {
+    var isSubnavDown = false;
+    var subnavStartX = 0;
+    var subnavScrollLeft = 0;
+    var subnavHasMoved = false;
+
+    subnavContainer.addEventListener('mousedown', function (e) {
+      if (e.button !== 0) return;
+      isSubnavDown = true;
+      subnavHasMoved = false;
+      subnavContainer.classList.add('is-dragging');
+      subnavStartX = e.pageX - subnavContainer.offsetLeft;
+      subnavScrollLeft = subnavContainer.scrollLeft;
+    });
+
+    window.addEventListener('mousemove', function (e) {
+      if (!isSubnavDown) return;
+      var x = e.pageX - subnavContainer.offsetLeft;
+      var walk = x - subnavStartX;
+      if (Math.abs(walk) > 4) {
+        subnavHasMoved = true;
+      }
+      subnavContainer.scrollLeft = subnavScrollLeft - walk;
+    });
+
+    window.addEventListener('mouseup', function () {
+      if (!isSubnavDown) return;
+      isSubnavDown = false;
+      subnavContainer.classList.remove('is-dragging');
+    });
+
+    subnavContainer.addEventListener('click', function (e) {
+      if (subnavHasMoved) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    }, true);
+
+    subnavContainer.addEventListener('wheel', function (e) {
+      if (e.deltaY !== 0 && Math.abs(e.deltaX) < Math.abs(e.deltaY)) {
+        if (subnavContainer.scrollWidth > subnavContainer.clientWidth) {
+          e.preventDefault();
+          subnavContainer.scrollLeft += e.deltaY;
+        }
+      }
+    }, { passive: false });
+  }
+
   if (subnavLinks.length > 0) {
     var subnavSections = [];
     subnavLinks.forEach(function (link) {
@@ -1115,16 +1177,25 @@
         var sec = document.querySelector(href);
         if (sec) subnavSections.push({ link: link, el: sec });
       }
+
+      link.addEventListener('click', function () {
+        scrollSubnavIntoView(link);
+      });
     });
 
     if (subnavSections.length > 0) {
+      var currentActiveSubnavLink = null;
       window.addEventListener('scroll', function () {
         var scrollPos = window.scrollY + 140;
         for (var i = subnavSections.length - 1; i >= 0; i--) {
           var item = subnavSections[i];
           if (scrollPos >= item.el.offsetTop) {
-            subnavLinks.forEach(function (l) { l.classList.remove('active'); });
-            item.link.classList.add('active');
+            if (currentActiveSubnavLink !== item.link) {
+              subnavLinks.forEach(function (l) { l.classList.remove('active'); });
+              item.link.classList.add('active');
+              currentActiveSubnavLink = item.link;
+              scrollSubnavIntoView(item.link);
+            }
             break;
           }
         }
