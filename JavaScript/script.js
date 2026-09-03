@@ -193,10 +193,10 @@
       else { img.addEventListener('load', ssRemoveLoading); img.addEventListener('error', ssRemoveLoading); }
 
       wrap.addEventListener('click', function () {
-        var allImgs = document.querySelectorAll('.ss-item img');
+        var visibleImgs = document.querySelectorAll('.ss-item:not(.is-hidden) img');
         var idx = 0;
         var imgs = [];
-        allImgs.forEach(function (i, index) {
+        visibleImgs.forEach(function (i, index) {
           imgs.push({ src: i.getAttribute('src'), alt: i.getAttribute('alt') || '' });
           if (i === img) idx = index;
         });
@@ -987,11 +987,148 @@
       if (thumbObserver) thumbObserver.disconnect();
     }
     overlay._cleanup = cleanup;
-
     loadImage(currentIndex);
     requestAnimationFrame(function () {
       overlay.classList.add('open');
       if (typeof closeBtn.focus === 'function') closeBtn.focus({ preventScroll: true });
     });
+  }
+
+  /* ==========================================================================
+     Project Detail Page Enhancements: Filter, Search, Copy Link & Subnav
+     ========================================================================== */
+
+  // 1. Gallery Filtering & Search
+  var galleryToolbar = document.querySelector('.gallery-toolbar');
+  if (galleryToolbar) {
+    var filterBtns = document.querySelectorAll('.gallery-filter-btn');
+    var searchInput = document.querySelector('.gallery-search-input');
+    var statusCount = document.querySelector('.gallery-count-text');
+    var ssItems = document.querySelectorAll('.ss-item');
+    var activeCategory = 'all';
+    var searchQuery = '';
+
+    // Dynamically synchronize the All button with actual DOM elements
+    var allFilterBtn = document.querySelector('.gallery-filter-btn[data-filter="all"]');
+    if (allFilterBtn) {
+      allFilterBtn.textContent = 'All (' + ssItems.length + ')';
+    }
+
+    function filterGallery() {
+      var visibleCount = 0;
+      ssItems.forEach(function (item) {
+        var itemCat = (item.getAttribute('data-category') || '').toLowerCase();
+        var titleEl = item.querySelector('.ss-window-title') || item.querySelector('.ss-label');
+        var itemTitle = (titleEl ? titleEl.textContent : '').toLowerCase();
+        var imgEl = item.querySelector('img');
+        var imgAlt = (imgEl && imgEl.alt ? imgEl.alt : '').toLowerCase();
+
+        var matchCat = (activeCategory === 'all' || itemCat === activeCategory);
+        var matchSearch = (!searchQuery || itemTitle.indexOf(searchQuery) !== -1 || imgAlt.indexOf(searchQuery) !== -1);
+
+        if (matchCat && matchSearch) {
+          item.classList.remove('is-hidden');
+          visibleCount++;
+        } else {
+          item.classList.add('is-hidden');
+        }
+      });
+
+      if (statusCount) {
+        statusCount.textContent = 'Showing ' + visibleCount + ' of ' + ssItems.length + ' screens';
+      }
+    }
+
+    filterBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        filterBtns.forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        activeCategory = (btn.getAttribute('data-filter') || 'all').toLowerCase();
+        filterGallery();
+      });
+    });
+
+    if (searchInput) {
+      searchInput.addEventListener('input', function () {
+        searchQuery = searchInput.value.trim().toLowerCase();
+        filterGallery();
+      });
+    }
+  }
+
+  // 2. Copy Project Link & Toast
+  function showToast(msg) {
+    var toast = document.getElementById('projectToast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'projectToast';
+      toast.className = 'project-toast';
+      toast.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span id="toastMsg"></span>';
+      document.body.appendChild(toast);
+    }
+    toast.querySelector('#toastMsg').textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toast._timer);
+    toast._timer = setTimeout(function () {
+      toast.classList.remove('show');
+    }, 2800);
+  }
+
+  var shareBtns = document.querySelectorAll('.share-btn');
+  shareBtns.forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      var url = window.location.href;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(function () {
+          showToast('Project link copied to clipboard!');
+        }).catch(function () {
+          fallbackCopy(url);
+        });
+      } else {
+        fallbackCopy(url);
+      }
+    });
+  });
+
+  function fallbackCopy(text) {
+    var temp = document.createElement('input');
+    temp.value = text;
+    document.body.appendChild(temp);
+    temp.select();
+    try {
+      document.execCommand('copy');
+      showToast('Project link copied to clipboard!');
+    } catch (err) {
+      showToast('Link: ' + text);
+    }
+    document.body.removeChild(temp);
+  }
+
+  // 3. Project Subnav Scrollspy
+  var subnavLinks = document.querySelectorAll('.project-subnav-link');
+  if (subnavLinks.length > 0) {
+    var subnavSections = [];
+    subnavLinks.forEach(function (link) {
+      var href = link.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        var sec = document.querySelector(href);
+        if (sec) subnavSections.push({ link: link, el: sec });
+      }
+    });
+
+    if (subnavSections.length > 0) {
+      window.addEventListener('scroll', function () {
+        var scrollPos = window.scrollY + 140;
+        for (var i = subnavSections.length - 1; i >= 0; i--) {
+          var item = subnavSections[i];
+          if (scrollPos >= item.el.offsetTop) {
+            subnavLinks.forEach(function (l) { l.classList.remove('active'); });
+            item.link.classList.add('active');
+            break;
+          }
+        }
+      }, { passive: true });
+    }
   }
 })();

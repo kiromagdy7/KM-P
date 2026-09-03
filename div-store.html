@@ -6,11 +6,11 @@
     <title>Div Store | Kirollos Magdy — Full-Stack .NET Developer</title>
     <meta
       name="description"
-      content="Explore Div Store, an ASP.NET Core MVC e-commerce platform with product management, shopping carts, and secure checkout for a streamlined buying experience."
+      content="Explore Div Store, an 18-page multi-category electronics e-commerce frontend prototype featuring dynamic localStorage state transfer, product variant selectors, and responsive catalog grids."
     />
     <meta
       name="keywords"
-      content="Kirollos Magdy, Kirollos, Kiro Magdy, Kiro, Kero Magdy, Kero, Koko Magdy, Koko, Kerolos, Kerollos, Kiryllos, kiromagdy7, kiromagdy_7, kirollos7, kiromagdy77, kirollosmagdy7, Full-Stack Developer, Developer, ASP.NET Core Developer, E-Commerce, Online Store, Shopping Cart, Secure Checkout, ASP.NET Core MVC"
+      content="Kirollos Magdy, Kirollos, Kiro Magdy, Kiro, Kero Magdy, Kero, Koko Magdy, Koko, Kerolos, Kerollos, Kiryllos, kiromagdy7, kiromagdy_7, kirollos7, kiromagdy77, kirollosmagdy7, Full-Stack Developer, Developer, .NET Developer, Div Store, E-Commerce Prototype, Frontend Store, LocalStorage State, Laptops, Mobiles, Accessories"
     />
     <link rel="canonical" href="https://kiromagdy.com/div-store" />
     <meta name="author" content="Kirollos Magdy" />
@@ -26,7 +26,7 @@
     <meta property="og:title" content="Div Store | Kirollos Magdy — Full-Stack .NET Developer" />
     <meta
       property="og:description"
-      content="Explore Div Store, an ASP.NET Core MVC e-commerce platform with product management, shopping carts, and secure checkout for a streamlined buying experience."
+      content="Explore Div Store, an 18-page multi-category electronics e-commerce frontend prototype featuring dynamic localStorage state transfer, product variant selectors, and responsive catalog grids."
     />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://kiromagdy.com/div-store" />
@@ -34,7 +34,7 @@
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:type" content="image/webp" />
-    <meta property="og:image:alt" content="Div Store — ASP.NET Core e-commerce project" />
+    <meta property="og:image:alt" content="Div Store — Multi-category e-commerce frontend prototype" />
     <meta property="og:updated_time" content="2026-09-01T00:00:00Z" />
     <meta property="og:site_name" content="Kirollos Magdy" />
     <meta property="og:locale" content="en_US" />
@@ -45,18 +45,18 @@
     />
     <meta
       name="twitter:description"
-      content="Explore Div Store, an ASP.NET Core MVC e-commerce platform with product management, shopping carts, and secure checkout for a streamlined buying experience."
+      content="Explore Div Store, an 18-page multi-category electronics e-commerce frontend prototype featuring dynamic localStorage state transfer, product variant selectors, and responsive catalog grids."
     />
     <meta name="twitter:image" content="https://kiromagdy.com/Assets/OG.webp" />
     <meta name="twitter:url" content="https://kiromagdy.com/div-store" />
-    <meta name="twitter:image:alt" content="Div Store — ASP.NET Core e-commerce project" />
+    <meta name="twitter:image:alt" content="Div Store — Multi-category e-commerce frontend prototype" />
     <meta property="article:modified_time" content="2026-09-01T00:00:00Z" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "CreativeWork",
         "name": "Div Store",
-        "description": "A full-featured e-commerce store built with ASP.NET Core MVC. Div Store includes product management across multiple categories (laptops, mobiles, accessories), a fully functional shopping cart, secure checkout process, and detailed product pages with image galleries.",
+        "description": "An 18-page multi-category electronics e-commerce frontend prototype. Features 5 product departments (laptops, mobiles, smartwatches, covers, accessories), client-side state transfer via localStorage, dynamic RAM and storage configuration selectors, keyframe typing animations, and promotional slideshow carousels.",
         "url": "https://kiromagdy.com/div-store",
         "image": "https://kiromagdy.com/Assets/OG.webp",
         "inLanguage": "en",
@@ -68,7 +68,7 @@
         },
         "dateCreated": "2025-05-01",
         "dateModified": "2026-09-01",
-        "keywords": "E-Commerce, Online Store, Shopping Cart, Secure Checkout, Product Management, ASP.NET Core MVC, Laptops, Mobiles, Accessories, Web Application, Egypt"
+        "keywords": "Div Store, E-Commerce Prototype, Frontend Store, LocalStorage State, Multi-Page Web App, Laptops, Mobiles, Smartwatches, Vanilla JavaScript"
       }
     </script>
     <script type="application/ld+json">
@@ -109,7 +109,7 @@
         <div class="loader__ball"></div>
       </div>
     </div>
-    <nav>
+    <nav class="main-nav">
       <div class="container">
         <a class="logo" href="/">Kirollos<span>.</span></a>
         <ul class="nav-center" id="navCenter">
@@ -151,49 +151,74 @@
     </div>
 
     <main>
-    <section class="project-detail-header">
+        <section class="project-detail-header" id="overview">
       <div class="container">
-        <a href="/#projects" class="back-link">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-          Back to Portfolio
-        </a>
+        <div class="project-breadcrumb" aria-label="Breadcrumb">
+          <a href="/#home">Home</a>
+          <span class="bc-sep">/</span>
+          <a href="/#projects">Projects</a>
+          <span class="bc-sep">/</span>
+          <span class="bc-current">Div Store</span>
+        </div>
         <div class="project-detail-grid">
           <div class="project-detail-left">
-            <div class="cat-label">// E-Commerce</div>
-            <h1>Div Store — E-Commerce Platform</h1>
-            <div class="type-badge">
-              <span class="dot"></span>
-              <span class="type-text">Web Application</span>
+            <div class="project-meta-strip">
+              <div class="meta-segment project-id">
+                <span class="meta-num">08</span>
+                <span class="meta-slash">/</span>
+                <span class="meta-cat">E-Commerce Prototype</span>
+              </div>
+              <div class="meta-segment">
+                <span class="meta-label">Platform</span>
+                <span class="meta-val">Multi-Page Web App</span>
+              </div>
+              <div class="meta-segment">
+                <span class="meta-dot live"></span>
+                <span class="meta-val">Live Web Prototype</span>
+              </div>
             </div>
+            <h1>Div Store<span class="project-title-sub">E-Commerce Prototype</span></h1>
             <p class="project-desc-text">
-              A full-featured e-commerce store built with ASP.NET Core MVC. Div Store includes product management across multiple categories (laptops, mobiles, accessories), a fully functional shopping cart, secure checkout process, and detailed product pages with image galleries.
+              An 18-page multi-category electronics e-commerce frontend prototype. Features 5 product departments (laptops, mobiles, smartwatches, covers, accessories), client-side state transfer via localStorage, dynamic RAM & storage spec selectors, animated promotional carousels, and dedicated policy pages.
             </p>
+            <div class="project-tech-strip">
+              <span class="tech-tag">HTML5 / CSS3 (18 Pages)</span>
+              <span class="tech-tag">Vanilla JavaScript (11 Scripts)</span>
+              <span class="tech-tag">LocalStorage State Engine</span>
+            </div>
           </div>
           <div class="project-detail-right">
             <div class="project-actions">
               <a href="https://kiromagdy7.github.io/Div-Store/" target="_blank" rel="noopener noreferrer" class="action-btn primary">
-                <span>Live Preview</span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                <span>Launch Live Preview</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               </a>
-              <div class="action-btn disabled secondary">
-                <span>GitHub Repo</span>
-                <span class="na-text">Not Available</span>
+              <div class="action-btn proprietary">
+                <span>Repository Access</span>
+                <span class="prop-tag">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  Private Repo
+                </span>
               </div>
+              <button type="button" class="action-btn share-btn" aria-label="Share project link">
+                <span>Share Project Link</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+              </button>
             </div>
             <div class="ss-meta-grid">
               <div class="ss-meta-item">
                 <div class="ss-label">SCREENSHOTS</div>
-                <div class="ss-val ss-num">6<span class="plus">+</span></div>
+                <div class="ss-val ss-num">6</div>
               </div>
               <div class="ss-meta-item">
-                <div class="ss-label">DURATION</div>
+                <div class="ss-label">TIMELINE</div>
                 <div class="ss-val">
                   <svg class="ss-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
                   <span>1 Month</span>
                 </div>
               </div>
               <div class="ss-meta-item">
-                <div class="ss-label">PROJECT LEVEL</div>
+                <div class="ss-label">LEVEL</div>
                 <div class="ss-val">
                   <svg class="ss-icon accent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M3 17h3v4H3v-4zm5-4h3v8H8v-8zm5-4h3v12h-3V9zm5-6h3v18h-3V3z"/></svg>
                   <span>Starter</span>
@@ -205,39 +230,217 @@
       </div>
     </section>
 
-    <section class="screenshots-section">
+    <div class="project-subnav" aria-label="Project Sub Navigation">
+      <div class="container">
+        <div class="project-subnav-inner">
+          <div class="project-subnav-links">
+            <a href="#overview" class="project-subnav-link active">01. Overview</a>
+            <a href="#highlights" class="project-subnav-link">02. Engineering Highlights</a>
+            <a href="#tech-specs" class="project-subnav-link">03. Tech Matrix</a>
+            <a href="#screenshots" class="project-subnav-link">04. Screenshots (6)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="project-highlights-section" id="highlights">
+      <div class="container">
+        <div class="highlights-header">
+          <h2>Engineering Highlights.</h2>
+        </div>
+        <div class="highlights-grid">
+          <div class="highlight-card">
+            <div class="hl-top">
+              <span class="hl-num">[01]</span>
+              <div class="hl-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+              </div>
+            </div>
+            <h3 class="hl-title">LocalStorage Client State Transfer</h3>
+            <p class="hl-desc">Cross-page state persistence architecture where viewProduct() serializes complete product objects to localStorage, dynamically hydrating galleries, specs, and prices on product pages.</p>
+            <span class="hl-tag">LocalStorage State Transfer</span>
+          </div>
+          <div class="highlight-card">
+            <div class="hl-top">
+              <span class="hl-num">[02]</span>
+              <div class="hl-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              </div>
+            </div>
+            <h3 class="hl-title">Dynamic Hardware Variant Configurator</h3>
+            <p class="hl-desc">Client-side configuration engine generating interactive radio selectors for RAM and storage tiers on laptops and mobiles, automatically synchronizing spec tables and browser tab titles.</p>
+            <span class="hl-tag">Dynamic Radio Selectors</span>
+          </div>
+          <div class="highlight-card">
+            <div class="hl-top">
+              <span class="hl-num">[03]</span>
+              <div class="hl-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+              </div>
+            </div>
+            <h3 class="hl-title">Multi-Department 18-Page Architecture</h3>
+            <p class="hl-desc">Extensive 18-page layout spanning 5 product departments (Laptops, Mobiles, Smartwatches, Covers, Accessories), modulo-driven banner slideshows, and legal terms and privacy policies.</p>
+            <span class="hl-tag">18-Page Multi-Route Layout</span>
+          </div>
+        </div>
+
+        <div class="tech-matrix-grid" id="tech-specs">
+          <div class="matrix-card">
+            <div class="matrix-header">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              <h3>Frontend Core</h3>
+            </div>
+            <ul class="matrix-list">
+              <li class="matrix-item">18 Semantic HTML5 Pages</li>
+              <li class="matrix-item">Vanilla JavaScript (11 Scripts)</li>
+              <li class="matrix-item">LocalStorage State Transfer</li>
+            </ul>
+          </div>
+          <div class="matrix-card">
+            <div class="matrix-header">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/></svg>
+              <h3>Catalog & Departments</h3>
+            </div>
+            <ul class="matrix-list">
+              <li class="matrix-item">Dynamic RAM & Storage Tiers</li>
+              <li class="matrix-item">Modulo Slideshow Carousel (%)</li>
+              <li class="matrix-item">Suggested Items Grid (12 Items)</li>
+            </ul>
+          </div>
+          <div class="matrix-card">
+            <div class="matrix-header">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+              <h3>Styling & Motion</h3>
+            </div>
+            <ul class="matrix-list">
+              <li class="matrix-item">3 Dedicated CSS Stylesheets</li>
+              <li class="matrix-item">CSS Custom Properties (:root)</li>
+              <li class="matrix-item">@keyframes Typing & Blink FX</li>
+              <li class="matrix-item">Cal Sans & Roboto Condensed</li>
+            </ul>
+          </div>
+          <div class="matrix-card">
+            <div class="matrix-header">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <h3>UI Modules & Assets</h3>
+            </div>
+            <ul class="matrix-list">
+              <li class="matrix-item">Font Awesome 6.5.1 Icons</li>
+              <li class="matrix-item">Cart & Auth UI Prototype Views</li>
+              <li class="matrix-item">Comprehensive Legal Pages</li>
+              <li class="matrix-item">GitHub Pages Deployment</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="screenshots-section" id="screenshots">
       <div class="container">
         <div class="ss-header">
-          <div class="ss-header-left">
-            <div class="section-label">// Visual Walkthrough</div>
-            <h2>Screenshots.</h2>
+          <h2>Screenshots.</h2>
+        </div>
+
+        <div class="gallery-toolbar">
+          <div class="gallery-filters">
+            <button type="button" class="gallery-filter-btn active" data-filter="all">All (6)</button>
+            <button type="button" class="gallery-filter-btn" data-filter="catalog">Catalog & Products</button>
+            <button type="button" class="gallery-filter-btn" data-filter="checkout">Cart & Checkout</button>
           </div>
-          <div class="ss-header-right">A full walkthrough of every screen and feature in the project.</div>
+          <div class="gallery-search-wrap">
+            <svg class="gallery-search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" class="gallery-search-input" placeholder="Filter screens by name..." aria-label="Filter screens by name" />
+          </div>
+        </div>
+
+        <div class="gallery-status-bar">
+          <span class="gallery-count-text">Showing 6 of 6 screens</span>
+          <span>Click any image to zoom &amp; inspect</span>
         </div>
         <div class="ss-grid">
-          <div class="ss-item">
-            <div class="ss-label-row"><span class="ss-slash">//</span><span class="ss-label">Home Page</span></div>
-            <img src="/Assets/Div Store/Home.webp" alt="Home Page" loading="lazy" />
+                    <div class="ss-item" data-category="catalog">
+            <div class="ss-window-frame">
+              <div class="ss-window-bar">
+                <div class="ss-window-dots">
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                </div>
+                <span class="ss-window-title">Home Page</span>
+                <span class="ss-window-badge">Catalog</span>
+              </div>
+              <img src="/Assets/Div Store/Home.webp" alt="Home Page" loading="lazy" />
+            </div>
           </div>
-          <div class="ss-item">
-            <div class="ss-label-row"><span class="ss-slash">//</span><span class="ss-label">Laptops Section</span></div>
-            <img src="/Assets/Div Store/Laptops Section.webp" alt="Laptops Section" loading="lazy" />
+                    <div class="ss-item" data-category="catalog">
+            <div class="ss-window-frame">
+              <div class="ss-window-bar">
+                <div class="ss-window-dots">
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                </div>
+                <span class="ss-window-title">Laptops Section</span>
+                <span class="ss-window-badge">Catalog</span>
+              </div>
+              <img src="/Assets/Div Store/Laptops Section.webp" alt="Laptops Section" loading="lazy" />
+            </div>
           </div>
-          <div class="ss-item">
-            <div class="ss-label-row"><span class="ss-slash">//</span><span class="ss-label">Mobiles Section</span></div>
-            <img src="/Assets/Div Store/Mobiles Section.webp" alt="Mobiles Section" loading="lazy" />
+                    <div class="ss-item" data-category="catalog">
+            <div class="ss-window-frame">
+              <div class="ss-window-bar">
+                <div class="ss-window-dots">
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                </div>
+                <span class="ss-window-title">Mobiles Section</span>
+                <span class="ss-window-badge">Catalog</span>
+              </div>
+              <img src="/Assets/Div Store/Mobiles Section.webp" alt="Mobiles Section" loading="lazy" />
+            </div>
           </div>
-          <div class="ss-item">
-            <div class="ss-label-row"><span class="ss-slash">//</span><span class="ss-label">Accessories Section</span></div>
-            <img src="/Assets/Div Store/Accessories Section.webp" alt="Accessories Section" loading="lazy" />
+                    <div class="ss-item" data-category="catalog">
+            <div class="ss-window-frame">
+              <div class="ss-window-bar">
+                <div class="ss-window-dots">
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                </div>
+                <span class="ss-window-title">Accessories Section</span>
+                <span class="ss-window-badge">Catalog</span>
+              </div>
+              <img src="/Assets/Div Store/Accessories Section.webp" alt="Accessories Section" loading="lazy" />
+            </div>
           </div>
-          <div class="ss-item">
-            <div class="ss-label-row"><span class="ss-slash">//</span><span class="ss-label">Product Details</span></div>
-            <img src="/Assets/Div Store/Product Details.webp" alt="Product Details" loading="lazy" />
+                    <div class="ss-item" data-category="catalog">
+            <div class="ss-window-frame">
+              <div class="ss-window-bar">
+                <div class="ss-window-dots">
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                </div>
+                <span class="ss-window-title">Product Details</span>
+                <span class="ss-window-badge">Catalog</span>
+              </div>
+              <img src="/Assets/Div Store/Product Details.webp" alt="Product Details" loading="lazy" />
+            </div>
           </div>
-          <div class="ss-item">
-            <div class="ss-label-row"><span class="ss-slash">//</span><span class="ss-label">Product Details 2</span></div>
-            <img src="/Assets/Div Store/Product Details 2.webp" alt="Product Details Alt" loading="lazy" />
+                    <div class="ss-item" data-category="catalog">
+            <div class="ss-window-frame">
+              <div class="ss-window-bar">
+                <div class="ss-window-dots">
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                </div>
+                <span class="ss-window-title">Product Details 2</span>
+                <span class="ss-window-badge">Catalog</span>
+              </div>
+              <img src="/Assets/Div Store/Product Details 2.webp" alt="Product Details Alt" loading="lazy" />
+            </div>
           </div>
         </div>
       </div>
@@ -265,14 +468,14 @@
             <p class="mc-desc">A travel agency platform for booking trips, managing itineraries, and exploring destinations worldwide.</p>
             <span class="mc-link">View Project →</span>
           </a>
-          <a href="gold-silver-system" class="more-card">
+          <a href="jewelry-system" class="more-card">
             <div class="mc-top">
               <span class="mc-type">ERP</span>
               <svg class="mc-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
             </div>
             <div class="mc-cat">[07] &mdash; Web App</div>
-            <h3 class="mc-name">Gold &amp; Silver System</h3>
-            <p class="mc-desc">An ERP system for gold and silver inventory management, sales tracking, and reporting.</p>
+            <h3 class="mc-name">Jewelry System</h3>
+            <p class="mc-desc">An enterprise .NET 10 ERP featuring DynamicExpresso formula pricing, dual-currency accounting, and QuestPDF RTL generation.</p>
             <span class="mc-link">View Project →</span>
           </a>
           <a href="ip-inspector" class="more-card">

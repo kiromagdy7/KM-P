@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Lord's Word | Kirollos Magdy — Full-Stack .NET Developer</title>
+    <title>Word of the Lord | Kirollos Magdy — Full-Stack .NET Developer</title>
     <meta
       name="description"
       content="Explore Word of the Lord, a digital platform for Coptic Christian teachings, sermons, Bible reading, liturgical texts, and spiritual resources for reflection."
@@ -56,7 +56,7 @@
         "@context": "https://schema.org",
         "@type": "CreativeWork",
         "name": "Word of the Lord",
-        "description": "A digital platform for Coptic Christian teachings, sermons, and spiritual resources. Features an integrated Bible reader, liturgical texts including the Agpya and Al Asrar (The Mysteries), and a collection of Coptic hymns (Ezaat) — all in one beautifully designed mobile experience.",
+        "description": "A digital spiritual platform for Coptic Orthodox teachings and scriptures. Built as a multi-page web application featuring a daily verse generator, dynamic 9-book scripture reader, hour-by-hour Agpeya prayers, the 7 Holy Church Sacraments, and a curated video directory of Coptic fathers on YouTube.",
         "url": "https://kiromagdy.com/word-of-the-lord",
         "image": "https://kiromagdy.com/Assets/OG.webp",
         "inLanguage": "en",
@@ -68,7 +68,7 @@
         },
         "dateCreated": "2025-01-15",
         "dateModified": "2026-09-01",
-        "keywords": "Christian Content, Coptic Orthodox, Bible Reader, Agpya, Al Asrar, Ezaat, Hymns, Mobile Experience, Web Application, Egypt"
+        "keywords": "Word of the Lord, Coptic Orthodox, Bible Reader, Agpeya, Church Sacraments, Christian Sermons, Vanilla JavaScript, Fetch API, Egypt"
       }
     </script>
     <script type="application/ld+json">
@@ -109,7 +109,7 @@
         <div class="loader__ball"></div>
       </div>
     </div>
-    <nav>
+    <nav class="main-nav">
       <div class="container">
         <a class="logo" href="/">Kirollos<span>.</span></a>
         <ul class="nav-center" id="navCenter">
@@ -151,49 +151,74 @@
     </div>
 
     <main>
-    <section class="project-detail-header">
+        <section class="project-detail-header" id="overview">
       <div class="container">
-        <a href="/#projects" class="back-link">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-          Back to Portfolio
-        </a>
+        <div class="project-breadcrumb" aria-label="Breadcrumb">
+          <a href="/#home">Home</a>
+          <span class="bc-sep">/</span>
+          <a href="/#projects">Projects</a>
+          <span class="bc-sep">/</span>
+          <span class="bc-current">Word Of The Lord</span>
+        </div>
         <div class="project-detail-grid">
           <div class="project-detail-left">
-            <div class="cat-label">// Christian Content</div>
-            <h1>Word of the Lord Spiritual Platform</h1>
-            <div class="type-badge">
-              <span class="dot"></span>
-              <span class="type-text">Web Application</span>
+            <div class="project-meta-strip">
+              <div class="meta-segment project-id">
+                <span class="meta-num">06</span>
+                <span class="meta-slash">/</span>
+                <span class="meta-cat">Spiritual Platform</span>
+              </div>
+              <div class="meta-segment">
+                <span class="meta-label">Platform</span>
+                <span class="meta-val">Web App</span>
+              </div>
+              <div class="meta-segment">
+                <span class="meta-dot live"></span>
+                <span class="meta-val">Live Web Platform</span>
+              </div>
             </div>
+            <h1>Word of the Lord<span class="project-title-sub">Spiritual Platform</span></h1>
             <p class="project-desc-text">
-              A digital platform for Coptic Christian teachings, sermons, and spiritual resources. Features an integrated Bible reader, liturgical texts including the Agpya and Al Asrar (The Mysteries), and a collection of Coptic hymns (Ezaat) — all in one beautifully designed mobile experience.
+              A digital Coptic Orthodox platform built with Vanilla JavaScript and local JSON datasets. Features a dynamic random verse of the day, an interactive 9-book scripture reader, hour-by-hour Agpeya canonical prayers, detailed exposition of the 7 Church Sacraments, and a curated YouTube sermons directory.
             </p>
+            <div class="project-tech-strip">
+              <span class="tech-tag">HTML5 / CSS3</span>
+              <span class="tech-tag">Vanilla JavaScript</span>
+              <span class="tech-tag">Fetch API & Local JSON</span>
+            </div>
           </div>
           <div class="project-detail-right">
             <div class="project-actions">
               <a href="https://kiromagdy7.github.io/word-of-the.lord/" target="_blank" rel="noopener noreferrer" class="action-btn primary">
-                <span>Live Preview</span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                <span>Launch Live Preview</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               </a>
-              <div class="action-btn disabled secondary">
-                <span>GitHub Repo</span>
-                <span class="na-text">Not Available</span>
+              <div class="action-btn proprietary">
+                <span>Repository Access</span>
+                <span class="prop-tag">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  Private Repo
+                </span>
               </div>
+              <button type="button" class="action-btn share-btn" aria-label="Share project link">
+                <span>Share Project Link</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+              </button>
             </div>
             <div class="ss-meta-grid">
               <div class="ss-meta-item">
                 <div class="ss-label">SCREENSHOTS</div>
-                <div class="ss-val ss-num">5<span class="plus">+</span></div>
+                <div class="ss-val ss-num">5</div>
               </div>
               <div class="ss-meta-item">
-                <div class="ss-label">DURATION</div>
+                <div class="ss-label">TIMELINE</div>
                 <div class="ss-val">
                   <svg class="ss-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
                   <span>1 Month</span>
                 </div>
               </div>
               <div class="ss-meta-item">
-                <div class="ss-label">PROJECT LEVEL</div>
+                <div class="ss-label">LEVEL</div>
                 <div class="ss-val">
                   <svg class="ss-icon accent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M3 17h3v4H3v-4zm5-4h3v8H8v-8zm5-4h3v12h-3V9zm5-6h3v18h-3V3z"/></svg>
                   <span>Starter</span>
@@ -205,35 +230,204 @@
       </div>
     </section>
 
-    <section class="screenshots-section">
+    <div class="project-subnav" aria-label="Project Sub Navigation">
+      <div class="container">
+        <div class="project-subnav-inner">
+          <div class="project-subnav-links">
+            <a href="#overview" class="project-subnav-link active">01. Overview</a>
+            <a href="#highlights" class="project-subnav-link">02. Engineering Highlights</a>
+            <a href="#tech-specs" class="project-subnav-link">03. Tech Matrix</a>
+            <a href="#screenshots" class="project-subnav-link">04. Screenshots (5)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="project-highlights-section" id="highlights">
+      <div class="container">
+        <div class="highlights-header">
+          <h2>Engineering Highlights.</h2>
+        </div>
+        <div class="highlights-grid">
+          <div class="highlight-card">
+            <div class="hl-top">
+              <span class="hl-num">[01]</span>
+              <div class="hl-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+              </div>
+            </div>
+            <h3 class="hl-title">Dynamic 9-Book Scripture Reader</h3>
+            <p class="hl-desc">Three-tier cascading dropdown architecture (Book, Chapter, Verse) fetching structured local JSON across 5 Old Testament books and 4 New Testament Gospels with full chapter and verse rendering.</p>
+            <span class="hl-tag">Cascading Dropdowns & JSON</span>
+          </div>
+          <div class="highlight-card">
+            <div class="hl-top">
+              <span class="hl-num">[02]</span>
+              <div class="hl-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+              </div>
+            </div>
+            <h3 class="hl-title">Agpeya Canonical Hours Engine</h3>
+            <p class="hl-desc">Interactive prayer selector across 9 Coptic canonical hours, dynamically fetching JSON prayer datasets to populate navigable sub-sections (Psalms, Gospel passages, and liturgical absolutions).</p>
+            <span class="hl-tag">Asynchronous Prayer Loader</span>
+          </div>
+          <div class="highlight-card">
+            <div class="hl-top">
+              <span class="hl-num">[03]</span>
+              <div class="hl-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.08"/></svg>
+              </div>
+            </div>
+            <h3 class="hl-title">Sacraments & Curated Sermons Directory</h3>
+            <p class="hl-desc">Comprehensive doctrinal expositions for all 7 Church Sacraments with dedicated artwork, paired with an 8-speaker directory linking directly to curated Coptic sermons on YouTube.</p>
+            <span class="hl-tag">Liturgical Texts & Video Directory</span>
+          </div>
+        </div>
+
+        <div class="tech-matrix-grid" id="tech-specs">
+          <div class="matrix-card">
+            <div class="matrix-header">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              <h3>Core Architecture</h3>
+            </div>
+            <ul class="matrix-list">
+              <li class="matrix-item">Semantic HTML5 (5 Pages)</li>
+              <li class="matrix-item">Vanilla JavaScript (ES6+)</li>
+              <li class="matrix-item">Asynchronous Fetch API</li>
+            </ul>
+          </div>
+          <div class="matrix-card">
+            <div class="matrix-header">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+              <h3>Data & Datasets</h3>
+            </div>
+            <ul class="matrix-list">
+              <li class="matrix-item">Local JSON Datasets</li>
+              <li class="matrix-item">9 Bible Books (Pentateuch & Gospels)</li>
+              <li class="matrix-item">9 Agpeya Canonical Hours Datasets</li>
+              <li class="matrix-item">Randomized Daily Verse Loader</li>
+            </ul>
+          </div>
+          <div class="matrix-card">
+            <div class="matrix-header">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/></svg>
+              <h3>Styling & UX</h3>
+            </div>
+            <ul class="matrix-list">
+              <li class="matrix-item">CSS3 Custom Properties (:root)</li>
+              <li class="matrix-item">Backdrop Filter Glassmorphism</li>
+              <li class="matrix-item">CSS Grid & Flexbox Layouts</li>
+              <li class="matrix-item">Google Fonts (Roboto, Merienda, Rubik)</li>
+            </ul>
+          </div>
+          <div class="matrix-card">
+            <div class="matrix-header">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/></svg>
+              <h3>Media & External</h3>
+            </div>
+            <ul class="matrix-list">
+              <li class="matrix-item">Font Awesome 6 (Social Icons)</li>
+              <li class="matrix-item">Google Material Symbols</li>
+              <li class="matrix-item">Curated YouTube Video Links</li>
+              <li class="matrix-item">GitHub Pages Deployment</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="screenshots-section" id="screenshots">
       <div class="container">
         <div class="ss-header">
-          <div class="ss-header-left">
-            <div class="section-label">// Visual Walkthrough</div>
-            <h2>Screenshots.</h2>
+          <h2>Screenshots.</h2>
+        </div>
+
+        <div class="gallery-toolbar">
+          <div class="gallery-filters">
+            <button type="button" class="gallery-filter-btn active" data-filter="all">All (5)</button>
+            <button type="button" class="gallery-filter-btn" data-filter="reader">Scripture Reader</button>
+            <button type="button" class="gallery-filter-btn" data-filter="audio">Prayers & Audio</button>
           </div>
-          <div class="ss-header-right">A full walkthrough of every screen and feature in the project.</div>
+          <div class="gallery-search-wrap">
+            <svg class="gallery-search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" class="gallery-search-input" placeholder="Filter screens by name..." aria-label="Filter screens by name" />
+          </div>
+        </div>
+
+        <div class="gallery-status-bar">
+          <span class="gallery-count-text">Showing 5 of 5 screens</span>
+          <span>Click any image to zoom &amp; inspect</span>
         </div>
         <div class="ss-grid">
-          <div class="ss-item">
-            <div class="ss-label-row"><span class="ss-slash">//</span><span class="ss-label">Home Screen</span></div>
-            <img src="/Assets/Word Of The Lord/Home.webp" alt="Home Screen" loading="lazy" />
+                    <div class="ss-item" data-category="reader">
+            <div class="ss-window-frame">
+              <div class="ss-window-bar">
+                <div class="ss-window-dots">
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                </div>
+                <span class="ss-window-title">Home Screen</span>
+                <span class="ss-window-badge">Reader</span>
+              </div>
+              <img src="/Assets/Word Of The Lord/Home.webp" alt="Home Screen" loading="lazy" />
+            </div>
           </div>
-          <div class="ss-item">
-            <div class="ss-label-row"><span class="ss-slash">//</span><span class="ss-label">Bible Reader</span></div>
-            <img src="/Assets/Word Of The Lord/Bible.webp" alt="Bible Reader" loading="lazy" />
+                    <div class="ss-item" data-category="reader">
+            <div class="ss-window-frame">
+              <div class="ss-window-bar">
+                <div class="ss-window-dots">
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                </div>
+                <span class="ss-window-title">Bible Reader</span>
+                <span class="ss-window-badge">Reader</span>
+              </div>
+              <img src="/Assets/Word Of The Lord/Bible.webp" alt="Bible Reader" loading="lazy" />
+            </div>
           </div>
-          <div class="ss-item">
-            <div class="ss-label-row"><span class="ss-slash">//</span><span class="ss-label">Agpya</span></div>
-            <img src="/Assets/Word Of The Lord/Agpya.webp" alt="Agpya" loading="lazy" />
+                    <div class="ss-item" data-category="audio">
+            <div class="ss-window-frame">
+              <div class="ss-window-bar">
+                <div class="ss-window-dots">
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                </div>
+                <span class="ss-window-title">Agpya</span>
+                <span class="ss-window-badge">Prayers</span>
+              </div>
+              <img src="/Assets/Word Of The Lord/Agpya.webp" alt="Agpya" loading="lazy" />
+            </div>
           </div>
-          <div class="ss-item">
-            <div class="ss-label-row"><span class="ss-slash">//</span><span class="ss-label">Al Asrar</span></div>
-            <img src="/Assets/Word Of The Lord/Al Asrar.webp" alt="Al Asrar" loading="lazy" />
+                    <div class="ss-item" data-category="reader">
+            <div class="ss-window-frame">
+              <div class="ss-window-bar">
+                <div class="ss-window-dots">
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                </div>
+                <span class="ss-window-title">Al Asrar</span>
+                <span class="ss-window-badge">Reader</span>
+              </div>
+              <img src="/Assets/Word Of The Lord/Al Asrar.webp" alt="Al Asrar" loading="lazy" />
+            </div>
           </div>
-          <div class="ss-item">
-            <div class="ss-label-row"><span class="ss-slash">//</span><span class="ss-label">Ezaat (Hymns)</span></div>
-            <img src="/Assets/Word Of The Lord/Ezaat.webp" alt="Ezaat" loading="lazy" />
+                    <div class="ss-item" data-category="audio">
+            <div class="ss-window-frame">
+              <div class="ss-window-bar">
+                <div class="ss-window-dots">
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                </div>
+                <span class="ss-window-title">Ezaat (Hymns)</span>
+                <span class="ss-window-badge">Prayers</span>
+              </div>
+              <img src="/Assets/Word Of The Lord/Ezaat.webp" alt="Ezaat" loading="lazy" />
+            </div>
           </div>
         </div>
       </div>
@@ -253,12 +447,12 @@
         <div class="more-grid">
           <a href="kmz-hub" class="more-card">
             <div class="mc-top">
-              <span class="mc-type">HUB Management</span>
+              <span class="mc-type">Gaming Center</span>
               <svg class="mc-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
             </div>
-            <div class="mc-cat">[01] &mdash; Desktop App</div>
+            <div class="mc-cat">[03] &mdash; Desktop App</div>
             <h3 class="mc-name">KMZ Hub</h3>
-            <p class="mc-desc">A comprehensive hub management platform with POS, session tracking, inventory, and reporting capabilities.</p>
+            <p class="mc-desc">An offline-first Windows desktop platform (.NET 10 MAUI Blazor Hybrid) with multi-rate timers, POS, and thermal printing.</p>
             <span class="mc-link">View Project →</span>
           </a>
           <a href="code-crate" class="more-card">

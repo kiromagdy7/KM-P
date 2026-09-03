@@ -6,11 +6,11 @@
     <title>KMZ Hub | Kirollos Magdy — Full-Stack .NET Developer</title>
     <meta
       name="description"
-      content="Explore KMZ Hub, a management platform for PlayStation gaming centers built with ASP.NET Core and .NET MAUI Blazor Hybrid for efficient daily operations."
+      content="Explore KMZ Hub, an offline-first Windows desktop platform (.NET 10 MAUI Blazor Hybrid) for PlayStation centers featuring multi-rate timers, POS, and thermal printing."
     />
     <meta
       name="keywords"
-      content="Kirollos Magdy, Kirollos, Kiro Magdy, Kiro, Kero Magdy, Kero, Koko Magdy, Koko, Kerolos, Kerollos, Kiryllos, kiromagdy7, kiromagdy_7, kirollos7, kiromagdy77, kirollosmagdy7, Full-Stack Developer, Developer, .NET Developer, ASP.NET Developer, ASP.NET Core Developer, KMZ Hub, hub management, POS system, ERP"
+      content="Kirollos Magdy, Kirollos, Kiro Magdy, Kiro, Kero Magdy, Kero, Koko Magdy, Koko, Kerolos, Kerollos, Kiryllos, kiromagdy7, kiromagdy_7, kirollos7, kiromagdy77, kirollosmagdy7, Full-Stack Developer, Developer, .NET Developer, KMZ Hub, PlayStation Center, Gaming Hub, .NET 10, .NET MAUI, Blazor Hybrid, SQLite, EF Core 10, POS, Thermal Printing, Windows Desktop"
     />
     <link rel="canonical" href="https://kiromagdy.com/kmz-hub" />
     <meta name="author" content="Kirollos Magdy" />
@@ -26,7 +26,7 @@
     <meta property="og:title" content="KMZ Hub | Kirollos Magdy — Full-Stack .NET Developer" />
     <meta
       property="og:description"
-      content="Explore KMZ Hub, a management platform for PlayStation gaming centers built with ASP.NET Core and .NET MAUI Blazor Hybrid for efficient daily operations."
+      content="Explore KMZ Hub, an offline-first Windows desktop platform (.NET 10 MAUI Blazor Hybrid) for PlayStation centers featuring multi-rate timers, POS, and thermal printing."
     />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://kiromagdy.com/kmz-hub" />
@@ -34,7 +34,7 @@
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:type" content="image/webp" />
-    <meta property="og:image:alt" content="KMZ Hub — PlayStation center management platform" />
+    <meta property="og:image:alt" content="KMZ Hub — PlayStation center desktop management platform" />
     <meta property="og:updated_time" content="2026-09-01T00:00:00Z" />
     <meta property="og:site_name" content="Kirollos Magdy" />
     <meta property="og:locale" content="en_US" />
@@ -45,18 +45,18 @@
     />
     <meta
       name="twitter:description"
-      content="Explore KMZ Hub, a management platform for PlayStation gaming centers built with ASP.NET Core and .NET MAUI Blazor Hybrid for efficient daily operations."
+      content="Explore KMZ Hub, an offline-first Windows desktop platform (.NET 10 MAUI Blazor Hybrid) for PlayStation centers featuring multi-rate timers, POS, and thermal printing."
     />
     <meta name="twitter:image" content="https://kiromagdy.com/Assets/OG.webp" />
     <meta name="twitter:url" content="https://kiromagdy.com/kmz-hub" />
-    <meta name="twitter:image:alt" content="KMZ Hub — PlayStation center management platform" />
+    <meta name="twitter:image:alt" content="KMZ Hub — PlayStation center desktop management platform" />
     <meta property="article:modified_time" content="2026-09-01T00:00:00Z" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "CreativeWork",
+        "@type": "SoftwareApplication",
         "name": "KMZ Hub",
-        "description": "A comprehensive hub management platform for PlayStation gaming centers built with ASP.NET Core and .NET MAUI Blazor Hybrid. Covers complete daily operations including real-time session tracking, fully integrated POS terminal, inventory and product management, room booking with shift control, detailed financial reporting with PDF export, and role-based user management.",
+        "description": "An offline-first Windows desktop platform (WinExe) purpose-built for PlayStation gaming centers and cafes using .NET 10.0 and .NET MAUI Blazor Hybrid. Features local SQLite storage with EF Core 10 across 16 DbSets, concurrent multi-rate session timers with quarter-hour rounding algorithms, cafeteria POS with live inventory tracking, shift drawer audit controls, direct 80mm thermal receipt printing via dedicated STA threads, and PBKDF2 password security.",
         "url": "https://kiromagdy.com/kmz-hub",
         "image": "https://kiromagdy.com/Assets/OG.webp",
         "inLanguage": "en",
@@ -68,7 +68,9 @@
         },
         "dateCreated": "2025-06-01",
         "dateModified": "2026-09-01",
-        "keywords": "ASP.NET Core, .NET MAUI, Blazor Hybrid, POS, Inventory Management, Hub Management, Desktop Application, Egypt"
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Windows 10, Windows 11",
+        "keywords": ".NET 10, .NET MAUI, Blazor Hybrid, Windows Desktop, SQLite, EF Core 10, POS, Thermal Printing, Gaming Hub, PBKDF2"
       }
     </script>
     <script type="application/ld+json">
@@ -109,7 +111,7 @@
         <div class="loader__ball"></div>
       </div>
     </div>
-    <nav>
+    <nav class="main-nav">
       <div class="container">
         <a class="logo" href="/">Kirollos<span>.</span></a>
         <ul class="nav-center" id="navCenter">
@@ -151,52 +153,73 @@
     </div>
 
     <main>
-    <section class="project-detail-header">
+        <section class="project-detail-header" id="overview">
       <div class="container">
-        <a href="/#projects" class="back-link">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-          Back to Portfolio
-        </a>
+        <div class="project-breadcrumb" aria-label="Breadcrumb">
+          <a href="/#home">Home</a>
+          <span class="bc-sep">/</span>
+          <a href="/#projects">Projects</a>
+          <span class="bc-sep">/</span>
+          <span class="bc-current">KMZ Hub</span>
+        </div>
         <div class="project-detail-grid">
           <div class="project-detail-left">
-            <div class="cat-label">// HUB Management</div>
-            <h1>KMZ Hub Gaming Center Platform</h1>
-            <div class="type-badge">
-              <span class="dot"></span>
-              <span class="type-text">Desktop Application</span>
+            <div class="project-meta-strip">
+              <div class="meta-segment project-id">
+                <span class="meta-num">03</span>
+                <span class="meta-slash">/</span>
+                <span class="meta-cat">Gaming Center &amp; POS</span>
+              </div>
+              <div class="meta-segment">
+                <span class="meta-label">Platform</span>
+                <span class="meta-val">Windows Desktop (.NET 10 MAUI Blazor)</span>
+              </div>
+              <div class="meta-segment">
+                <span class="meta-dot software"></span>
+                <span class="meta-val">Production Software</span>
+              </div>
             </div>
+            <h1>KMZ Hub<span class="project-title-sub">PlayStation Center Platform</span></h1>
             <p class="project-desc-text">
-                A PlayStation gaming center management system built with ASP.NET Core and .NET MAUI Blazor Hybrid. 
-                Covers complete daily operations including real-time session tracking, fully integrated POS terminal, 
-                inventory and product management, room booking with shift control, detailed financial reporting with 
-                PDF export, and role-based user management.
+              An offline-first Windows desktop platform (.NET 10 MAUI Blazor Hybrid) purpose-built for PlayStation gaming centers and cafes. Operates with local SQLite storage across 16 DbSets, concurrent multi-rate session stopwatches with quarter-hour rounding algorithms, cafeteria POS with live inventory tracking, shift drawer audit controls, direct receipt printing via dedicated STA threads, and PBKDF2 password security.
             </p>
+            <div class="project-tech-strip">
+              <span class="tech-tag">.NET 10.0</span>
+              <span class="tech-tag">.NET MAUI Blazor Hybrid</span>
+              <span class="tech-tag">C#</span>
+              <span class="tech-tag">SQLite</span>
+              <span class="tech-tag">EF Core 10.0.3</span>
+              <span class="tech-tag">POS & Shift Control</span>
+            </div>
           </div>
           <div class="project-detail-right">
             <div class="project-actions">
-              <div class="action-btn disabled primary">
-                <span>Live Preview</span>
-                <span class="na-text">Not Available</span>
+              <div class="action-btn proprietary">
+                <span>Repository Access</span>
+                <span class="prop-tag">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  Private Repo
+                </span>
               </div>
-              <div class="action-btn disabled secondary">
-                <span>GitHub Repo</span>
-                <span class="na-text">Not Available</span>
-              </div>
+              <button type="button" class="action-btn share-btn" aria-label="Share project link">
+                <span>Share Project Link</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+              </button>
             </div>
             <div class="ss-meta-grid">
               <div class="ss-meta-item">
                 <div class="ss-label">SCREENSHOTS</div>
-                <div class="ss-val ss-num">31<span class="plus">+</span></div>
+                <div class="ss-val ss-num">31</div>
               </div>
               <div class="ss-meta-item">
-                <div class="ss-label">DURATION</div>
+                <div class="ss-label">TIMELINE</div>
                 <div class="ss-val">
                   <svg class="ss-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
                   <span>2 Month</span>
                 </div>
               </div>
               <div class="ss-meta-item">
-                <div class="ss-label">PROJECT LEVEL</div>
+                <div class="ss-label">LEVEL</div>
                 <div class="ss-val">
                   <svg class="ss-icon accent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M3 17h3v4H3v-4zm5-4h3v8H8v-8zm5-4h3v12h-3V9zm5-6h3v18h-3V3z"/></svg>
                   <span>Advanced</span>
@@ -208,139 +231,603 @@
       </div>
     </section>
 
-    <section class="screenshots-section">
+    <div class="project-subnav" aria-label="Project Sub Navigation">
+      <div class="container">
+        <div class="project-subnav-inner">
+          <div class="project-subnav-links">
+            <a href="#overview" class="project-subnav-link active">01. Overview</a>
+            <a href="#highlights" class="project-subnav-link">02. Engineering Highlights</a>
+            <a href="#tech-specs" class="project-subnav-link">03. Tech Matrix</a>
+            <a href="#screenshots" class="project-subnav-link">04. Screenshots (31)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="project-highlights-section" id="highlights">
+      <div class="container">
+        <div class="highlights-header">
+          <h2>Engineering Highlights.</h2>
+        </div>
+        <div class="highlights-grid">
+          <div class="highlight-card">
+            <div class="hl-top">
+              <span class="hl-num">[01]</span>
+              <div class="hl-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+            </div>
+            <h3 class="hl-title">Multi-Rate Session Timers &amp; Quarter-Hour Calculator</h3>
+            <p class="hl-desc">Independent precision stopwatches per PlayStation device, supporting dynamic Single and Multiplayer rate transitions in real-time. Employs a specialized mathematical rounding algorithm: first 15 minutes free, followed by 15-minute segments (&lt;10 mins rounds down, &ge;10 mins rounds up to next quarter-hour).</p>
+            <span class="hl-tag">C# Precision Timers / SessionCalculator</span>
+          </div>
+          <div class="highlight-card">
+            <div class="hl-top">
+              <span class="hl-num">[02]</span>
+              <div class="hl-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6"/><rect x="6" y="14" width="12" height="8" rx="1"/></svg>
+              </div>
+            </div>
+            <h3 class="hl-title">Direct 80mm ESC/POS Thermal Printing (STA Thread)</h3>
+            <p class="hl-desc">Low-level receipt rendering pipeline utilizing System.Drawing.Printing.PrintDocument. Generates itemized receipt layouts (shop header, logo, session duration breakdown, cafeteria orders, and cashier signature) directed to default 80mm printers on an isolated STA thread to prevent UI freezing.</p>
+            <span class="hl-tag">System.Drawing.Printing / 80mm STA Pipe</span>
+          </div>
+          <div class="highlight-card">
+            <div class="hl-top">
+              <span class="hl-num">[03]</span>
+              <div class="hl-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+              </div>
+            </div>
+            <h3 class="hl-title">Offline-First Local SQLite Architecture (16 DbSets)</h3>
+            <p class="hl-desc">Self-contained local desktop data layer stored at %LocalAppData%\KMZ_Hub_app.db. Managed by Entity Framework Core 10.0.3 across 16 relational DbSets, coupled with an automated DatabaseInitializerService that auto-creates the schema, applies migrations, and seeds default administrators on first launch.</p>
+            <span class="hl-tag">SQLite / EF Core 10.0.3 (16 DbSets)</span>
+          </div>
+          <div class="highlight-card">
+            <div class="hl-top">
+              <span class="hl-num">[04]</span>
+              <div class="hl-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              </div>
+            </div>
+            <h3 class="hl-title">Integrated Cafeteria POS &amp; Stock Control</h3>
+            <p class="hl-desc">Dual-mode point-of-sale terminal supporting direct walk-in sales (DirectSales) and open session billing (SessionProducts). Features real-time stock deduction, product cost analysis, margin tracking, and low-stock replenishment threshold warnings.</p>
+            <span class="hl-tag">POS Terminal / Real-Time Inventory</span>
+          </div>
+          <div class="highlight-card">
+            <div class="hl-top">
+              <span class="hl-num">[05]</span>
+              <div class="hl-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+              </div>
+            </div>
+            <h3 class="hl-title">Shift Control &amp; Mandatory Cash Reconciliation</h3>
+            <p class="hl-desc">Strict financial shift auditing with opening balance logging, live transaction tracking (income and expenses), and mandatory end-of-shift cash drawer reconciliation comparing actual cash against software totals before cashier sign-off.</p>
+            <span class="hl-tag">Financial Shift Audit / Cash Drawer Handover</span>
+          </div>
+          <div class="highlight-card">
+            <div class="hl-top">
+              <span class="hl-num">[06]</span>
+              <div class="hl-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+              </div>
+            </div>
+            <h3 class="hl-title">PBKDF2 Cryptography &amp; Soft-Delete Recycle Bin</h3>
+            <p class="hl-desc">Enterprise-grade user authentication leveraging Microsoft KeyDerivation PBKDF2 with HMAC-SHA256 (10,000 iterations, 16-byte random salt). Features non-destructive soft-delete data protection (IsDeleted = true) paired with a RecycleBin.razor recovery console.</p>
+            <span class="hl-tag">PBKDF2 HMAC-SHA256 / Soft-Delete Recovery</span>
+          </div>
+        </div>
+
+        <div class="tech-matrix-grid" id="tech-specs">
+          <div class="matrix-card">
+            <div class="matrix-header">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/></svg>
+              <h3>Desktop &amp; UI Engine</h3>
+            </div>
+            <ul class="matrix-list">
+              <li class="matrix-item">.NET 10.0 Windows (WinExe)</li>
+              <li class="matrix-item">.NET MAUI Blazor Hybrid</li>
+              <li class="matrix-item">Razor Components</li>
+              <li class="matrix-item">Custom Dialog &amp; Toast Services</li>
+            </ul>
+          </div>
+          <div class="matrix-card">
+            <div class="matrix-header">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+              <h3>Database &amp; Storage</h3>
+            </div>
+            <ul class="matrix-list">
+              <li class="matrix-item">SQLite Offline-First</li>
+              <li class="matrix-item">Entity Framework Core 10.0.3</li>
+              <li class="matrix-item">16 Relational Entity Tables (DbSets)</li>
+              <li class="matrix-item">DatabaseInitializerService Auto-Seed</li>
+            </ul>
+          </div>
+          <div class="matrix-card">
+            <div class="matrix-header">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6"/><rect x="6" y="14" width="12" height="8" rx="1"/></svg>
+              <h3>Hardware &amp; POS Printing</h3>
+            </div>
+            <ul class="matrix-list">
+              <li class="matrix-item">80mm ESC/POS Thermal Receipt Printing</li>
+              <li class="matrix-item">System.Drawing.Printing.PrintDocument</li>
+              <li class="matrix-item">Dedicated STA Thread Execution</li>
+              <li class="matrix-item">Direct Sales &amp; Session Billing</li>
+            </ul>
+          </div>
+          <div class="matrix-card">
+            <div class="matrix-header">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <h3>Security &amp; Governance</h3>
+            </div>
+            <ul class="matrix-list">
+              <li class="matrix-item">PBKDF2 HMAC-SHA256 (10k Iterations)</li>
+              <li class="matrix-item">16-Byte Cryptographic Salt</li>
+              <li class="matrix-item">Cash Drawer Shift Audits &amp; Handovers</li>
+              <li class="matrix-item">Soft-Delete &amp; RecycleBin.razor</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="screenshots-section" id="screenshots">
       <div class="container">
         <div class="ss-header">
-          <div class="ss-header-left">
-            <div class="section-label">// Visual Walkthrough</div>
-            <h2>Screenshots.</h2>
+          <h2>Screenshots.</h2>
+        </div>
+
+        <div class="gallery-toolbar">
+          <div class="gallery-filters">
+            <button type="button" class="gallery-filter-btn active" data-filter="all">All (31)</button>
+            <button type="button" class="gallery-filter-btn" data-filter="sessions">Sessions & Timers</button>
+            <button type="button" class="gallery-filter-btn" data-filter="pos">POS & Orders</button>
+            <button type="button" class="gallery-filter-btn" data-filter="inventory">Stock & Items</button>
+            <button type="button" class="gallery-filter-btn" data-filter="reports">Reports & Shifts</button>
           </div>
-          <div class="ss-header-right">A full walkthrough of every screen and feature in the project.</div>
+          <div class="gallery-search-wrap">
+            <svg class="gallery-search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" class="gallery-search-input" placeholder="Filter screens by name..." aria-label="Filter screens by name" />
+          </div>
+        </div>
+
+        <div class="gallery-status-bar">
+          <span class="gallery-count-text">Showing 31 of 31 screens</span>
+          <span>Click any image to zoom &amp; inspect</span>
         </div>
         <div class="ss-grid">
-          <div class="ss-item">
-            <div class="ss-label-row"><span class="ss-slash">//</span><span class="ss-label">Login Page</span></div>
-            <img src="/Assets/KMZ Hub/LogIn.webp" alt="Login Page" loading="lazy" />
+                    <div class="ss-item" data-category="reports">
+            <div class="ss-window-frame">
+              <div class="ss-window-bar">
+                <div class="ss-window-dots">
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                </div>
+                <span class="ss-window-title">Login Page</span>
+                <span class="ss-window-badge">Reports</span>
+              </div>
+              <img src="/Assets/KMZ Hub/LogIn.webp" alt="Login Page" loading="lazy" />
+            </div>
           </div>
-          <div class="ss-item">
-            <div class="ss-label-row"><span class="ss-slash">//</span><span class="ss-label">Home Dashboard</span></div>
-            <img src="/Assets/KMZ Hub/Home.webp" alt="Home Dashboard" loading="lazy" />
+                    <div class="ss-item" data-category="reports">
+            <div class="ss-window-frame">
+              <div class="ss-window-bar">
+                <div class="ss-window-dots">
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                </div>
+                <span class="ss-window-title">Home Dashboard</span>
+                <span class="ss-window-badge">Reports</span>
+              </div>
+              <img src="/Assets/KMZ Hub/Home.webp" alt="Home Dashboard" loading="lazy" />
+            </div>
           </div>
-          <div class="ss-item">
-            <div class="ss-label-row"><span class="ss-slash">//</span><span class="ss-label">Users List</span></div>
-            <img src="/Assets/KMZ Hub/Users-List.webp" alt="Users List" loading="lazy" />
+                    <div class="ss-item" data-category="reports">
+            <div class="ss-window-frame">
+              <div class="ss-window-bar">
+                <div class="ss-window-dots">
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                </div>
+                <span class="ss-window-title">Users List</span>
+                <span class="ss-window-badge">Reports</span>
+              </div>
+              <img src="/Assets/KMZ Hub/Users-List.webp" alt="Users List" loading="lazy" />
+            </div>
           </div>
-          <div class="ss-item">
-            <div class="ss-label-row"><span class="ss-slash">//</span><span class="ss-label">User Details</span></div>
-            <img src="/Assets/KMZ Hub/User-Details.webp" alt="User Details" loading="lazy" />
+                    <div class="ss-item" data-category="reports">
+            <div class="ss-window-frame">
+              <div class="ss-window-bar">
+                <div class="ss-window-dots">
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                </div>
+                <span class="ss-window-title">User Details</span>
+                <span class="ss-window-badge">Reports</span>
+              </div>
+              <img src="/Assets/KMZ Hub/User-Details.webp" alt="User Details" loading="lazy" />
+            </div>
           </div>
-          <div class="ss-item">
-            <div class="ss-label-row"><span class="ss-slash">//</span><span class="ss-label">Customers List</span></div>
-            <img src="/Assets/KMZ Hub/Customers-List.webp" alt="Customers List" loading="lazy" />
+                    <div class="ss-item" data-category="reports">
+            <div class="ss-window-frame">
+              <div class="ss-window-bar">
+                <div class="ss-window-dots">
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                </div>
+                <span class="ss-window-title">Customers List</span>
+                <span class="ss-window-badge">Reports</span>
+              </div>
+              <img src="/Assets/KMZ Hub/Customers-List.webp" alt="Customers List" loading="lazy" />
+            </div>
           </div>
-          <div class="ss-item">
-            <div class="ss-label-row"><span class="ss-slash">//</span><span class="ss-label">Customer Details</span></div>
-            <img src="/Assets/KMZ Hub/Customer-Details.webp" alt="Customer Details" loading="lazy" />
+                    <div class="ss-item" data-category="reports">
+            <div class="ss-window-frame">
+              <div class="ss-window-bar">
+                <div class="ss-window-dots">
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                </div>
+                <span class="ss-window-title">Customer Details</span>
+                <span class="ss-window-badge">Reports</span>
+              </div>
+              <img src="/Assets/KMZ Hub/Customer-Details.webp" alt="Customer Details" loading="lazy" />
+            </div>
           </div>
-          <div class="ss-item">
-            <div class="ss-label-row"><span class="ss-slash">//</span><span class="ss-label">Products List</span></div>
-            <img src="/Assets/KMZ Hub/Products-List.webp" alt="Products List" loading="lazy" />
+                    <div class="ss-item" data-category="inventory">
+            <div class="ss-window-frame">
+              <div class="ss-window-bar">
+                <div class="ss-window-dots">
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                </div>
+                <span class="ss-window-title">Products List</span>
+                <span class="ss-window-badge">Inventory</span>
+              </div>
+              <img src="/Assets/KMZ Hub/Products-List.webp" alt="Products List" loading="lazy" />
+            </div>
           </div>
-          <div class="ss-item">
-            <div class="ss-label-row"><span class="ss-slash">//</span><span class="ss-label">Create Product</span></div>
-            <img src="/Assets/KMZ Hub/Create-Product.webp" alt="Create Product" loading="lazy" />
+                    <div class="ss-item" data-category="inventory">
+            <div class="ss-window-frame">
+              <div class="ss-window-bar">
+                <div class="ss-window-dots">
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                </div>
+                <span class="ss-window-title">Create Product</span>
+                <span class="ss-window-badge">Inventory</span>
+              </div>
+              <img src="/Assets/KMZ Hub/Create-Product.webp" alt="Create Product" loading="lazy" />
+            </div>
           </div>
-          <div class="ss-item">
-            <div class="ss-label-row"><span class="ss-slash">//</span><span class="ss-label">Rooms List</span></div>
-            <img src="/Assets/KMZ Hub/Rooms-List.webp" alt="Rooms List" loading="lazy" />
+                    <div class="ss-item" data-category="sessions">
+            <div class="ss-window-frame">
+              <div class="ss-window-bar">
+                <div class="ss-window-dots">
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                </div>
+                <span class="ss-window-title">Rooms List</span>
+                <span class="ss-window-badge">Sessions</span>
+              </div>
+              <img src="/Assets/KMZ Hub/Rooms-List.webp" alt="Rooms List" loading="lazy" />
+            </div>
           </div>
-          <div class="ss-item">
-            <div class="ss-label-row"><span class="ss-slash">//</span><span class="ss-label">Room Details</span></div>
-            <img src="/Assets/KMZ Hub/Room-Details.webp" alt="Room Details" loading="lazy" />
+                    <div class="ss-item" data-category="sessions">
+            <div class="ss-window-frame">
+              <div class="ss-window-bar">
+                <div class="ss-window-dots">
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                </div>
+                <span class="ss-window-title">Room Details</span>
+                <span class="ss-window-badge">Sessions</span>
+              </div>
+              <img src="/Assets/KMZ Hub/Room-Details.webp" alt="Room Details" loading="lazy" />
+            </div>
           </div>
-          <div class="ss-item">
-            <div class="ss-label-row"><span class="ss-slash">//</span><span class="ss-label">Create Room</span></div>
-            <img src="/Assets/KMZ Hub/Create-Room.webp" alt="Create Room" loading="lazy" />
+                    <div class="ss-item" data-category="sessions">
+            <div class="ss-window-frame">
+              <div class="ss-window-bar">
+                <div class="ss-window-dots">
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                </div>
+                <span class="ss-window-title">Create Room</span>
+                <span class="ss-window-badge">Sessions</span>
+              </div>
+              <img src="/Assets/KMZ Hub/Create-Room.webp" alt="Create Room" loading="lazy" />
+            </div>
           </div>
-          <div class="ss-item">
-            <div class="ss-label-row"><span class="ss-slash">//</span><span class="ss-label">Sessions List</span></div>
-            <img src="/Assets/KMZ Hub/Sessions-List.webp" alt="Sessions List" loading="lazy" />
+                    <div class="ss-item" data-category="sessions">
+            <div class="ss-window-frame">
+              <div class="ss-window-bar">
+                <div class="ss-window-dots">
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                </div>
+                <span class="ss-window-title">Sessions List</span>
+                <span class="ss-window-badge">Sessions</span>
+              </div>
+              <img src="/Assets/KMZ Hub/Sessions-List.webp" alt="Sessions List" loading="lazy" />
+            </div>
           </div>
-          <div class="ss-item">
-            <div class="ss-label-row"><span class="ss-slash">//</span><span class="ss-label">Start Session</span></div>
-            <img src="/Assets/KMZ Hub/Start-Session.webp" alt="Start Session" loading="lazy" />
+                    <div class="ss-item" data-category="sessions">
+            <div class="ss-window-frame">
+              <div class="ss-window-bar">
+                <div class="ss-window-dots">
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                </div>
+                <span class="ss-window-title">Start Session</span>
+                <span class="ss-window-badge">Sessions</span>
+              </div>
+              <img src="/Assets/KMZ Hub/Start-Session.webp" alt="Start Session" loading="lazy" />
+            </div>
           </div>
-          <div class="ss-item">
-            <div class="ss-label-row"><span class="ss-slash">//</span><span class="ss-label">Session Details 1</span></div>
-            <img src="/Assets/KMZ Hub/Session-Details-1.webp" alt="Session Details 1" loading="lazy" />
+                    <div class="ss-item" data-category="sessions">
+            <div class="ss-window-frame">
+              <div class="ss-window-bar">
+                <div class="ss-window-dots">
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                </div>
+                <span class="ss-window-title">Session Details 1</span>
+                <span class="ss-window-badge">Sessions</span>
+              </div>
+              <img src="/Assets/KMZ Hub/Session-Details-1.webp" alt="Session Details 1" loading="lazy" />
+            </div>
           </div>
-          <div class="ss-item">
-            <div class="ss-label-row"><span class="ss-slash">//</span><span class="ss-label">Session Details 2</span></div>
-            <img src="/Assets/KMZ Hub/Session-Details-2.webp" alt="Session Details 2" loading="lazy" />
+                    <div class="ss-item" data-category="sessions">
+            <div class="ss-window-frame">
+              <div class="ss-window-bar">
+                <div class="ss-window-dots">
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                </div>
+                <span class="ss-window-title">Session Details 2</span>
+                <span class="ss-window-badge">Sessions</span>
+              </div>
+              <img src="/Assets/KMZ Hub/Session-Details-2.webp" alt="Session Details 2" loading="lazy" />
+            </div>
           </div>
-          <div class="ss-item">
-            <div class="ss-label-row"><span class="ss-slash">//</span><span class="ss-label">Session Receipt</span></div>
-            <img src="/Assets/KMZ Hub/Session-Resipt.webp" alt="Session Receipt" loading="lazy" />
+                    <div class="ss-item" data-category="sessions">
+            <div class="ss-window-frame">
+              <div class="ss-window-bar">
+                <div class="ss-window-dots">
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                </div>
+                <span class="ss-window-title">Session Receipt</span>
+                <span class="ss-window-badge">Sessions</span>
+              </div>
+              <img src="/Assets/KMZ Hub/Session-Resipt.webp" alt="Session Receipt" loading="lazy" />
+            </div>
           </div>
-          <div class="ss-item">
-            <div class="ss-label-row"><span class="ss-slash">//</span><span class="ss-label">Closed Session</span></div>
-            <img src="/Assets/KMZ Hub/Closed-Session.webp" alt="Closed Session" loading="lazy" />
+                    <div class="ss-item" data-category="sessions">
+            <div class="ss-window-frame">
+              <div class="ss-window-bar">
+                <div class="ss-window-dots">
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                </div>
+                <span class="ss-window-title">Closed Session</span>
+                <span class="ss-window-badge">Sessions</span>
+              </div>
+              <img src="/Assets/KMZ Hub/Closed-Session.webp" alt="Closed Session" loading="lazy" />
+            </div>
           </div>
-          <div class="ss-item">
-            <div class="ss-label-row"><span class="ss-slash">//</span><span class="ss-label">POS 1</span></div>
-            <img src="/Assets/KMZ Hub/POS-1.webp" alt="POS 1" loading="lazy" />
+                    <div class="ss-item" data-category="pos">
+            <div class="ss-window-frame">
+              <div class="ss-window-bar">
+                <div class="ss-window-dots">
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                </div>
+                <span class="ss-window-title">POS 1</span>
+                <span class="ss-window-badge">POS</span>
+              </div>
+              <img src="/Assets/KMZ Hub/POS-1.webp" alt="POS 1" loading="lazy" />
+            </div>
           </div>
-          <div class="ss-item">
-            <div class="ss-label-row"><span class="ss-slash">//</span><span class="ss-label">POS 2</span></div>
-            <img src="/Assets/KMZ Hub/POS-2.webp" alt="POS 2" loading="lazy" />
+                    <div class="ss-item" data-category="pos">
+            <div class="ss-window-frame">
+              <div class="ss-window-bar">
+                <div class="ss-window-dots">
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                </div>
+                <span class="ss-window-title">POS 2</span>
+                <span class="ss-window-badge">POS</span>
+              </div>
+              <img src="/Assets/KMZ Hub/POS-2.webp" alt="POS 2" loading="lazy" />
+            </div>
           </div>
-          <div class="ss-item">
-            <div class="ss-label-row"><span class="ss-slash">//</span><span class="ss-label">POS Details</span></div>
-            <img src="/Assets/KMZ Hub/POS-Details.webp" alt="POS Details" loading="lazy" />
+                    <div class="ss-item" data-category="pos">
+            <div class="ss-window-frame">
+              <div class="ss-window-bar">
+                <div class="ss-window-dots">
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                </div>
+                <span class="ss-window-title">POS Details</span>
+                <span class="ss-window-badge">POS</span>
+              </div>
+              <img src="/Assets/KMZ Hub/POS-Details.webp" alt="POS Details" loading="lazy" />
+            </div>
           </div>
-          <div class="ss-item">
-            <div class="ss-label-row"><span class="ss-slash">//</span><span class="ss-label">POS Receipt</span></div>
-            <img src="/Assets/KMZ Hub/POS-Resipt.webp" alt="POS Receipt" loading="lazy" />
+                    <div class="ss-item" data-category="pos">
+            <div class="ss-window-frame">
+              <div class="ss-window-bar">
+                <div class="ss-window-dots">
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                </div>
+                <span class="ss-window-title">POS Receipt</span>
+                <span class="ss-window-badge">POS</span>
+              </div>
+              <img src="/Assets/KMZ Hub/POS-Resipt.webp" alt="POS Receipt" loading="lazy" />
+            </div>
           </div>
-          <div class="ss-item">
-            <div class="ss-label-row"><span class="ss-slash">//</span><span class="ss-label">Shift Control</span></div>
-            <img src="/Assets/KMZ Hub/Shift-Control.webp" alt="Shift Control" loading="lazy" />
+                    <div class="ss-item" data-category="reports">
+            <div class="ss-window-frame">
+              <div class="ss-window-bar">
+                <div class="ss-window-dots">
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                </div>
+                <span class="ss-window-title">Shift Control</span>
+                <span class="ss-window-badge">Reports</span>
+              </div>
+              <img src="/Assets/KMZ Hub/Shift-Control.webp" alt="Shift Control" loading="lazy" />
+            </div>
           </div>
-          <div class="ss-item">
-            <div class="ss-label-row"><span class="ss-slash">//</span><span class="ss-label">Open Shift</span></div>
-            <img src="/Assets/KMZ Hub/Open-Shift.webp" alt="Open Shift" loading="lazy" />
+                    <div class="ss-item" data-category="reports">
+            <div class="ss-window-frame">
+              <div class="ss-window-bar">
+                <div class="ss-window-dots">
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                </div>
+                <span class="ss-window-title">Open Shift</span>
+                <span class="ss-window-badge">Reports</span>
+              </div>
+              <img src="/Assets/KMZ Hub/Open-Shift.webp" alt="Open Shift" loading="lazy" />
+            </div>
           </div>
-          <div class="ss-item">
-            <div class="ss-label-row"><span class="ss-slash">//</span><span class="ss-label">Close Shift Review</span></div>
-            <img src="/Assets/KMZ Hub/Close-Shift-Review.webp" alt="Close Shift Review" loading="lazy" />
+                    <div class="ss-item" data-category="reports">
+            <div class="ss-window-frame">
+              <div class="ss-window-bar">
+                <div class="ss-window-dots">
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                </div>
+                <span class="ss-window-title">Close Shift Review</span>
+                <span class="ss-window-badge">Reports</span>
+              </div>
+              <img src="/Assets/KMZ Hub/Close-Shift-Review.webp" alt="Close Shift Review" loading="lazy" />
+            </div>
           </div>
-          <div class="ss-item">
-            <div class="ss-label-row"><span class="ss-slash">//</span><span class="ss-label">Shift Report</span></div>
-            <img src="/Assets/KMZ Hub/Shift-Report.webp" alt="Shift Report" loading="lazy" />
+                    <div class="ss-item" data-category="reports">
+            <div class="ss-window-frame">
+              <div class="ss-window-bar">
+                <div class="ss-window-dots">
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                </div>
+                <span class="ss-window-title">Shift Report</span>
+                <span class="ss-window-badge">Reports</span>
+              </div>
+              <img src="/Assets/KMZ Hub/Shift-Report.webp" alt="Shift Report" loading="lazy" />
+            </div>
           </div>
-          <div class="ss-item">
-            <div class="ss-label-row"><span class="ss-slash">//</span><span class="ss-label">General Reports</span></div>
-            <img src="/Assets/KMZ Hub/General-Reports.webp" alt="General Reports" loading="lazy" />
+                    <div class="ss-item" data-category="reports">
+            <div class="ss-window-frame">
+              <div class="ss-window-bar">
+                <div class="ss-window-dots">
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                </div>
+                <span class="ss-window-title">General Reports</span>
+                <span class="ss-window-badge">Reports</span>
+              </div>
+              <img src="/Assets/KMZ Hub/General-Reports.webp" alt="General Reports" loading="lazy" />
+            </div>
           </div>
-          <div class="ss-item">
-            <div class="ss-label-row"><span class="ss-slash">//</span><span class="ss-label">General Reports PDF</span></div>
-            <img src="/Assets/KMZ Hub/General-Reports-PDF.webp" alt="General Reports PDF" loading="lazy" />
+                    <div class="ss-item" data-category="reports">
+            <div class="ss-window-frame">
+              <div class="ss-window-bar">
+                <div class="ss-window-dots">
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                </div>
+                <span class="ss-window-title">General Reports PDF</span>
+                <span class="ss-window-badge">Reports</span>
+              </div>
+              <img src="/Assets/KMZ Hub/General-Reports-PDF.webp" alt="General Reports PDF" loading="lazy" />
+            </div>
           </div>
-          <div class="ss-item">
-            <div class="ss-label-row"><span class="ss-slash">//</span><span class="ss-label">Shifts Report</span></div>
-            <img src="/Assets/KMZ Hub/Shifts-Report.webp" alt="Shifts Report" loading="lazy" />
+                    <div class="ss-item" data-category="reports">
+            <div class="ss-window-frame">
+              <div class="ss-window-bar">
+                <div class="ss-window-dots">
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                </div>
+                <span class="ss-window-title">Shifts Report</span>
+                <span class="ss-window-badge">Reports</span>
+              </div>
+              <img src="/Assets/KMZ Hub/Shifts-Report.webp" alt="Shifts Report" loading="lazy" />
+            </div>
           </div>
-          <div class="ss-item">
-            <div class="ss-label-row"><span class="ss-slash">//</span><span class="ss-label">Devices</span></div>
-            <img src="/Assets/KMZ Hub/Devices.webp" alt="Devices" loading="lazy" />
+                    <div class="ss-item" data-category="sessions">
+            <div class="ss-window-frame">
+              <div class="ss-window-bar">
+                <div class="ss-window-dots">
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                </div>
+                <span class="ss-window-title">Devices</span>
+                <span class="ss-window-badge">Sessions</span>
+              </div>
+              <img src="/Assets/KMZ Hub/Devices.webp" alt="Devices" loading="lazy" />
+            </div>
           </div>
-          <div class="ss-item">
-            <div class="ss-label-row"><span class="ss-slash">//</span><span class="ss-label">Printing Settings</span></div>
-            <img src="/Assets/KMZ Hub/Printing-Settings.webp" alt="Printing Settings" loading="lazy" />
+                    <div class="ss-item" data-category="reports">
+            <div class="ss-window-frame">
+              <div class="ss-window-bar">
+                <div class="ss-window-dots">
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                </div>
+                <span class="ss-window-title">Printing Settings</span>
+                <span class="ss-window-badge">Reports</span>
+              </div>
+              <img src="/Assets/KMZ Hub/Printing-Settings.webp" alt="Printing Settings" loading="lazy" />
+            </div>
           </div>
-          <div class="ss-item">
-            <div class="ss-label-row"><span class="ss-slash">//</span><span class="ss-label">Recycle Bin</span></div>
-            <img src="/Assets/KMZ Hub/Recycle-Bin.webp" alt="Recycle Bin" loading="lazy" />
+                    <div class="ss-item" data-category="reports">
+            <div class="ss-window-frame">
+              <div class="ss-window-bar">
+                <div class="ss-window-dots">
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                  <span class="ss-window-dot"></span>
+                </div>
+                <span class="ss-window-title">Recycle Bin</span>
+                <span class="ss-window-badge">Reports</span>
+              </div>
+              <img src="/Assets/KMZ Hub/Recycle-Bin.webp" alt="Recycle Bin" loading="lazy" />
+            </div>
           </div>
         </div>
       </div>
