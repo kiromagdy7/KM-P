@@ -31,3 +31,28 @@ img{display:block;max-width:100%}
 @media(min-width:1024px){.desktop-only{display:block}}
 .hidden{display:none}
 .section-label{font-size:12px;text-transform:uppercase;letter-spacing:0.2em;color:var(--muted);margin-bottom:24px}
+
+/* Image Fallback System */
+img.img-has-error {display: none !important;}
+img.img-loading-attempt {opacity: 0 !important;}
+.img-fallback {width: 100%;height: 100%;min-height: 140px;display: flex;flex-direction: column;align-items: center;justify-content: center;gap: 10px;padding: 16px;background: var(--section-bg);border: 1px dashed var(--border);border-radius: 6px;color: var(--muted);text-align: center;box-sizing: border-box;transition: all 0.2s ease;user-select: none;}
+.img-fallback:hover {border-color: rgba(37, 99, 235, 0.4);}
+.img-fallback-icon-wrap {width: 42px;height: 42px;border-radius: 10px;background: rgba(37, 99, 235, 0.08);border: 1px solid rgba(37, 99, 235, 0.15);display: flex;align-items: center;justify-content: center;color: var(--accent);flex-shrink: 0;transition: transform 0.2s ease;}
+.dark .img-fallback-icon-wrap {background: rgba(37, 99, 235, 0.14);border-color: rgba(37, 99, 235, 0.28);}
+.img-fallback:hover .img-fallback-icon-wrap {transform: scale(1.05);}
+.img-fallback-icon {width: 22px;height: 22px;display: block;}
+.img-fallback-text-group {display: flex;flex-direction: column;align-items: center;gap: 3px;max-width: 90%;}
+.img-fallback-title {font-size: 13px;font-weight: 600;color: var(--text);font-family: monospace;letter-spacing: 0.03em;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100%;}
+.img-fallback-msg {font-size: 11px;color: var(--muted);letter-spacing: 0.02em;}
+.img-fallback-retry {margin-top: 4px;display: inline-flex;align-items: center;gap: 6px;padding: 5px 12px;border-radius: 4px;font-size: 11.5px;font-family: monospace;font-weight: 600;color: var(--text);background: var(--bg);border: 1px solid var(--border);cursor: pointer;transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);}
+.img-fallback-retry:hover {border-color: var(--accent);color: var(--accent);transform: translateY(-1px);box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);}
+.img-fallback-retry:active {transform: translateY(0);}
+.img-fallback-retry svg {width: 13px;height: 13px;transition: transform 0.3s ease;}
+.img-fallback-retry.is-retrying svg {animation: img-fallback-spin 0.8s linear infinite;}
+@keyframes img-fallback-spin {from { transform: rotate(0deg); }to { transform: rotate(360deg); }}
+.img-fallback.compact {min-height: 40px;padding: 6px 10px;flex-direction: row;gap: 8px;}
+.img-fallback.compact .img-fallback-icon-wrap {width: 24px;height: 24px;border-radius: 4px;}
+.img-fallback.compact .img-fallback-icon {width: 14px;height: 14px;}
+.img-fallback.compact .img-fallback-title {font-size: 11px;}
+.img-fallback.compact .img-fallback-msg {display: none;}
+.img-fallback.compact .img-fallback-retry {padding: 3px 8px;font-size: 10px;margin-top: 0;}

@@ -191,6 +191,9 @@
 .dark .ss-item .ss-img-wrap.loading::after{background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,0.08) 50%,transparent 100%)}
 @keyframes ss-shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
 .ss-item .ss-img-wrap.loading img{opacity:0}
+.ss-item .ss-img-wrap.has-error{cursor:default}
+.ss-item .ss-img-wrap.has-error .zoom-icon{display:none!important}
+.ss-item .ss-img-wrap .img-fallback{border:none;border-radius:0;background:var(--section-bg);height:100%}
 .ss-placeholder{aspect-ratio:16/9;background:var(--section-bg);border:1px solid var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
 .ss-placeholder svg{width:32px;height:32px;color:#D4D4D4}
 .dark .ss-placeholder svg{color:#404040}

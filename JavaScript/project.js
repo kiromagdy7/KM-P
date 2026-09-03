@@ -23,7 +23,8 @@
       if (img.complete && img.naturalWidth > 0) { ssRemoveLoading(); }
       else { img.addEventListener('load', ssRemoveLoading); img.addEventListener('error', ssRemoveLoading); }
 
-      wrap.addEventListener('click', function () {
+      wrap.addEventListener('click', function (e) {
+        if (e && e.target && (e.target.closest('.img-fallback-retry') || wrap.classList.contains('has-error'))) return;
         var visibleImgs = document.querySelectorAll('.ss-item:not(.is-hidden) img');
         var idx = 0;
         var imgs = [];

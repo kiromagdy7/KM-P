@@ -82,3 +82,16 @@ cursor:pointer;padding:0;overflow:hidden;flex-shrink:0;opacity:0.38;transform:sc
   .lightbox-top-bar{padding:0 10px}
   .lightbox-bottom-bar{padding-bottom:10px}
 }
+
+/* Lightbox Error Fallback */
+.lightbox-fallback{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:32px 24px;background:rgba(20,20,22,0.9);border:1px dashed rgba(255,255,255,0.18);border-radius:10px;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);max-width:420px;width:88vw;text-align:center;color:#f4f4f5;box-shadow:0 20px 50px rgba(0,0,0,0.7);z-index:5;user-select:none}
+.lightbox-fallback-icon{width:50px;height:50px;border-radius:12px;background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.25);display:flex;align-items:center;justify-content:center;color:#f87171}
+.lightbox-fallback-icon svg{width:24px;height:24px;display:block}
+.lightbox-fallback-text{display:flex;flex-direction:column;align-items:center;gap:4px;max-width:100%}
+.lightbox-fallback-title{font-size:14px;font-weight:600;font-family:monospace;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.lightbox-fallback-msg{font-size:12px;color:#a1a1aa;line-height:1.4}
+.lightbox-fallback-retry{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:6px;font-size:12.5px;font-family:monospace;font-weight:600;color:#fff;background:var(--accent,#2563eb);border:1px solid transparent;cursor:pointer;transition:all 0.2s ease;margin-top:4px}
+.lightbox-fallback-retry:hover{background:var(--accent-hover,#1d4ed8);transform:translateY(-1px);box-shadow:0 4px 16px rgba(37,99,235,0.4)}
+.lightbox-fallback-retry:active{transform:translateY(0)}
+.lightbox-fallback-retry svg{width:14px;height:14px;transition:transform 0.3s ease}
+.lightbox-fallback-retry.is-retrying svg{animation:lb-spin 0.6s linear infinite}
