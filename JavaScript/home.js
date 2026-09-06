@@ -30,7 +30,9 @@
           navLinks.forEach(function (link) {
             link.classList.remove("active");
             var section = link.getAttribute("data-section");
-            if (section && entry.target.id === section) { link.classList.add("active"); }
+            if (section && entry.target.id === section) {
+              link.classList.add("active");
+            }
           });
         }
       });
@@ -38,15 +40,54 @@
     sections.forEach(function (section) { observer.observe(section); });
   }
 
-  var modal = document.getElementById("successModal");
+  var modal = document.getElementById("contactModal") || document.getElementById("successModal");
   var modalClose = document.getElementById("modalCloseBtn");
+  var successIcon = modal ? modal.querySelector(".modal-icon-success") : null;
+  var errorIcon = modal ? modal.querySelector(".modal-icon-error") : null;
+  var modalEyebrow = document.getElementById("modalEyebrow");
+  var modalTitle = document.getElementById("modalTitle");
+  var modalDesc = document.getElementById("modalDesc");
 
-  if (contactForm && submitBtn) {
+  function showModal(isSuccess) {
+    if (!modal) return;
+    if (isSuccess) {
+      modal.classList.remove("modal-is-error");
+      modal.classList.add("modal-is-success");
+      if (successIcon) { successIcon.style.display = "flex"; }
+      if (errorIcon) { errorIcon.style.display = "none"; }
+      if (modalEyebrow) { modalEyebrow.textContent = "Contact"; }
+      if (modalTitle) { modalTitle.textContent = "Message sent"; }
+      if (modalDesc) { modalDesc.textContent = "Thank you for reaching out. Your message has been received and will be reviewed within a day."; }
+      if (modalClose) { modalClose.textContent = "Got it"; }
+    } else {
+      modal.classList.remove("modal-is-success");
+      modal.classList.add("modal-is-error");
+      if (successIcon) { successIcon.style.display = "none"; }
+      if (errorIcon) { errorIcon.style.display = "flex"; }
+      if (modalEyebrow) { modalEyebrow.textContent = "Error"; }
+      if (modalTitle) { modalTitle.textContent = "Sending failed"; }
+      if (modalDesc) { modalDesc.textContent = "Something went wrong while delivering your message. Please try again or email contact@kiromagdy.com directly."; }
+      if (modalClose) { modalClose.textContent = "Try again"; }
+    }
+    modal.classList.add("open");
+    document.body.style.overflow = "hidden";
+    if (modalClose) { modalClose.focus(); }
+  }
+
+  function closeModal() {
+    if (!modal) return;
+    modal.classList.remove("open");
+    document.body.style.overflow = "";
+  }
+
+  if (contactForm) {
     contactForm.addEventListener("submit", function (e) {
       e.preventDefault();
-      var orig = submitBtn.innerHTML;
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = "Sending...";
+      var origBtnHtml = submitBtn ? submitBtn.innerHTML : "Send Message";
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Sending...";
+      }
 
       var data = new FormData(contactForm);
 
@@ -55,29 +96,40 @@
         body: data,
         headers: { "Accept": "application/json" }
       })
-      .then(function (res) { return res.json(); })
+      .then(function (res) {
+        if (!res.ok) { throw new Error("Status " + res.status); }
+        return res.json();
+      })
       .then(function () {
         contactForm.reset();
-        submitBtn.innerHTML = orig;
-        submitBtn.disabled = false;
-        if (modal) { modal.classList.add("open"); }
-      })
-      .catch(function () {
-        submitBtn.innerHTML = "Failed \u2717";
-        setTimeout(function () {
-          submitBtn.innerHTML = orig;
+        if (submitBtn) {
+          submitBtn.innerHTML = origBtnHtml;
           submitBtn.disabled = false;
-        }, 3000);
+        }
+        showModal(true);
+      })
+      .catch(function (err) {
+        console.error("Submission error:", err);
+        if (submitBtn) {
+          submitBtn.innerHTML = origBtnHtml;
+          submitBtn.disabled = false;
+        }
+        showModal(false);
       });
     });
   }
 
-  if (modalClose && modal) {
-    modalClose.addEventListener("click", function () {
-      modal.classList.remove("open");
-    });
+  if (modal) {
+    if (modalClose) {
+      modalClose.addEventListener("click", closeModal);
+    }
     modal.addEventListener("click", function (e) {
-      if (e.target === modal) { modal.classList.remove("open"); }
+      if (e.target === modal) { closeModal(); }
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && modal.classList.contains("open")) {
+        closeModal();
+      }
     });
   }
 
@@ -123,31 +175,9 @@
     else { heroImg.addEventListener('load', heroRemoveLoading); heroImg.addEventListener('error', heroRemoveLoading); }
   }
 
-  var certCards = document.querySelectorAll('.cert-card');
-  if (certCards.length > 0) {
-    var certImgs = [];
-    certCards.forEach(function (card) {
-      var src = card.getAttribute('data-cert-src');
-      var title = card.querySelector('.cert-title');
-      if (src) {
-        certImgs.push({
-          src: src,
-          alt: title ? title.textContent.trim() : ''
-        });
-      }
-    });
-
-    certCards.forEach(function (card, index) {
-      card.addEventListener('click', function (e) {
-        if (typeof window.openLightbox === 'function') {
-          window.openLightbox(certImgs, index);
-        }
-      });
-    });
-  }
 
   // MOTION SYSTEM 
-  // 1. Hero Entrance Choreography
+  // 1. Hero Entrance
   function triggerHeroLoaded() {
     document.body.classList.add('hero-loaded');
   }
@@ -184,7 +214,7 @@
     }
   }
 
-  // 3. Live Animated Stats Counter
+  // 3. Animated Stats Counter
   var statsSection = document.querySelector('.stats-section');
   if (statsSection) {
     var counterRan = false;

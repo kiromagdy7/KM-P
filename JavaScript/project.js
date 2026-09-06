@@ -309,10 +309,12 @@
     if (frame) frame.classList.add('interactive-card');
   });
 
-  var moreCards = document.querySelectorAll('.more-card');
+  var moreCards = document.querySelectorAll('.more-grid .recent-project-card, .more-card');
   moreCards.forEach(function (mc, i) {
-    mc.classList.add('interactive-card', 'scroll-reveal');
-    mc.style.setProperty('--reveal-delay', (i % 3) + 1);
+    mc.classList.add('scroll-reveal');
+    if (!mc.style.getPropertyValue('--reveal-delay')) {
+      mc.style.setProperty('--reveal-delay', (i % 3) + 1);
+    }
   });
 
   var scrollRevealElements = document.querySelectorAll('.scroll-reveal');

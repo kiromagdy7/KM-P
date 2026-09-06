@@ -31,16 +31,44 @@
     const hamSvg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
     const closeSvg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
 
+    function openMenu() {
+      mobileDropdown.classList.add("open");
+      document.body.style.overflow = "hidden";
+      hamburger.setAttribute("aria-expanded", "true");
+      if (hamburgerIcon) { hamburgerIcon.innerHTML = closeSvg; }
+    }
+
+    function closeMenu() {
+      mobileDropdown.classList.remove("open");
+      document.body.style.overflow = "";
+      hamburger.setAttribute("aria-expanded", "false");
+      if (hamburgerIcon) { hamburgerIcon.innerHTML = hamSvg; }
+    }
+
     hamburger.addEventListener("click", function () {
-      mobileDropdown.classList.toggle("open");
-      if (hamburgerIcon) { hamburgerIcon.innerHTML = mobileDropdown.classList.contains("open") ? closeSvg : hamSvg; }
+      if (mobileDropdown.classList.contains("open")) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
     });
 
     document.querySelectorAll('.mobile-dropdown a').forEach(function (link) {
       link.addEventListener("click", function () {
-        mobileDropdown.classList.remove("open");
-        if (hamburgerIcon) { hamburgerIcon.innerHTML = hamSvg; }
+        closeMenu();
       });
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && mobileDropdown.classList.contains("open")) {
+        closeMenu();
+      }
+    });
+
+    window.addEventListener("resize", function () {
+      if (window.innerWidth >= 768 && mobileDropdown.classList.contains("open")) {
+        closeMenu();
+      }
     });
   }
 
@@ -224,7 +252,8 @@
 
   function handleImageFailure(img) {
     if (!img || img.dataset.failedFinal === 'true') return;
-    getOriginalSrc(img);
+    var orig = getOriginalSrc(img);
+    if (!orig || !orig.trim()) return;
     scheduleNextRetry(img);
   }
 
