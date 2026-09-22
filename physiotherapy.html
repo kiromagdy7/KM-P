@@ -1,0 +1,753 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dr. Michael — Physiotherapy &amp; Clinical Nutrition | Kirollos Magdy</title>
+    <meta
+      name="description"
+      content="Physiotherapy is a live clinical website for a real client, presenting Dr. Michael Nabil's physiotherapy and clinical nutrition practice in a clear, welcoming way."
+    />
+    <meta
+      name="keywords"
+      content="Kirollos Magdy, Physiotherapy, Dr. Michael Nabil, Physical Therapy, Clinical Nutrition, Therapeutic Nutrition, Next.js, React, Tailwind CSS, Framer Motion, Dokki Clinic, Front-End Developer, Web Development"
+    />
+    <link rel="canonical" href="https://kiromagdy.com/physiotherapy" />
+    <meta name="author" content="Kirollos Magdy" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="icon" type="image/svg+xml" href="/Assets/icon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/Assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <link rel="stylesheet" href="/Css/base.css" />
+    <link rel="stylesheet" href="/Css/preloader.css" />
+    <link rel="stylesheet" href="/Css/navbar.css" />
+    <link rel="stylesheet" href="/Css/project.css" />
+    <link rel="stylesheet" href="/Css/lightbox.css" />
+    <link rel="stylesheet" href="/Css/footer.css" />
+    <meta property="og:title" content="Dr. Michael — Physiotherapy &amp; Clinical Nutrition | Kirollos Magdy" />
+    <meta
+      property="og:description"
+      content="Physiotherapy is a live clinical website for a real client, presenting Dr. Michael Nabil's physiotherapy and clinical nutrition practice in a clear, welcoming way."
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://kiromagdy.com/physiotherapy" />
+    <meta property="og:image" content="https://kiromagdy.com/Assets/Work/Physiotherapy.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/webp" />
+    <meta property="og:image:alt" content="Dr. Michael Physiotherapy &amp; Clinical Nutrition Website" />
+    <meta property="og:updated_time" content="2026-09-23T00:00:00Z" />
+    <meta property="article:published_time" content="2026-09-23T00:00:00Z" />
+    <meta property="article:modified_time" content="2026-09-23T00:00:00Z" />
+    <meta property="og:site_name" content="Kirollos Magdy" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Dr. Michael — Physiotherapy &amp; Clinical Nutrition | Kirollos Magdy" />
+    <meta
+      name="twitter:description"
+      content="Physiotherapy is a live clinical website for a real client, presenting Dr. Michael Nabil's physiotherapy and clinical nutrition practice in a clear, welcoming way."
+    />
+    <meta name="twitter:image" content="https://kiromagdy.com/Assets/Work/Physiotherapy.webp" />
+    <meta name="twitter:url" content="https://kiromagdy.com/physiotherapy" />
+    <meta name="twitter:image:alt" content="Dr. Michael Physiotherapy &amp; Clinical Nutrition Website" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Dr. Michael Physiotherapy & Clinical Nutrition",
+        "description": "A clinic website for Dr. Michael Nabil, presenting physiotherapy and clinical nutrition services in Dokki in a clear, patient-friendly way.",
+        "url": "https://dr-michaelpt.com/",
+        "image": "https://kiromagdy.com/Assets/Work/Physiotherapy.webp",
+        "inLanguage": "ar",
+        "creator": {
+          "@type": "Person",
+          "name": "Kirollos Magdy",
+          "url": "https://kiromagdy.com/"
+        },
+        "dateCreated": "2026-09-23",
+        "dateModified": "2026-09-23",
+        "keywords": "Physiotherapy, Physical Therapy, Clinical Nutrition, Dr. Michael Nabil, Next.js, React, Tailwind CSS, Framer Motion, Dokki Clinic, Kirollos Magdy"
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://kiromagdy.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Projects",
+            "item": "https://kiromagdy.com/work"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Physiotherapy",
+            "item": "https://kiromagdy.com/physiotherapy"
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div class="page-loader" id="pageLoader">
+      <div class="loader">
+        <div class="loader__bar"></div>
+        <div class="loader__bar"></div>
+        <div class="loader__bar"></div>
+        <div class="loader__bar"></div>
+        <div class="loader__bar"></div>
+        <div class="loader__ball"></div>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <div class="container">
+        <a class="logo" href="/">Kirollos<span>.</span></a>
+        <ul class="nav-center" id="navCenter">
+          <li><a href="/#home" data-section="home">Home</a></li>
+          <li><a href="/#about" data-section="about">About</a></li>
+          <li><a href="/#work" data-section="work" class="active">Work</a></li>
+          <li><a href="/#certificates" data-section="certificates">Certificates</a></li>
+          <li><a href="/#expertise" data-section="expertise">Expertise</a></li>
+          <li><a href="/#contact" data-section="contact">Contact</a></li>
+        </ul>
+        <div class="nav-right">
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+            <svg id="themeIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+          <a href="/CV/CV_Kirollos_Magdy.pdf" download class="cv-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download CV
+          </a>
+          <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span id="hamburgerIcon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="mobile-dropdown" id="mobileDropdown" aria-hidden="true">
+      <div class="mobile-overlay-glow" aria-hidden="true"></div>
+      <div class="inner">
+        <div class="mobile-nav-top">
+          <span class="mobile-nav-eyebrow">Menu</span>
+          <div class="mobile-nav-links">
+            <a href="/#home" class="mobile-nav-link" data-section="home">
+              <div class="mobile-nav-link-left">
+                <span class="mobile-link-idx">01</span>
+                <span class="mobile-link-mask">
+                  <span class="mobile-link-text">Home</span>
+                </span>
+              </div>
+              <svg class="mobile-link-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
+            <a href="/#about" class="mobile-nav-link" data-section="about">
+              <div class="mobile-nav-link-left">
+                <span class="mobile-link-idx">02</span>
+                <span class="mobile-link-mask">
+                  <span class="mobile-link-text">About</span>
+                </span>
+              </div>
+              <svg class="mobile-link-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
+            <a href="/#work" class="mobile-nav-link" data-section="work">
+              <div class="mobile-nav-link-left">
+                <span class="mobile-link-idx">03</span>
+                <span class="mobile-link-mask">
+                  <span class="mobile-link-text">Work</span>
+                </span>
+              </div>
+              <svg class="mobile-link-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
+            <a href="/#certificates" class="mobile-nav-link" data-section="certificates">
+              <div class="mobile-nav-link-left">
+                <span class="mobile-link-idx">04</span>
+                <span class="mobile-link-mask">
+                  <span class="mobile-link-text">Certificates</span>
+                </span>
+              </div>
+              <svg class="mobile-link-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
+            <a href="/#expertise" class="mobile-nav-link" data-section="expertise">
+              <div class="mobile-nav-link-left">
+                <span class="mobile-link-idx">05</span>
+                <span class="mobile-link-mask">
+                  <span class="mobile-link-text">Expertise</span>
+                </span>
+              </div>
+              <svg class="mobile-link-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
+            <a href="/#contact" class="mobile-nav-link" data-section="contact">
+              <div class="mobile-nav-link-left">
+                <span class="mobile-link-idx">06</span>
+                <span class="mobile-link-mask">
+                  <span class="mobile-link-text">Contact</span>
+                </span>
+              </div>
+              <svg class="mobile-link-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="mobile-nav-footer">
+          <a href="/CV/CV_Kirollos_Magdy.pdf" download class="cv-btn-mobile">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+            Download CV
+          </a>
+
+          <div class="mobile-social-row">
+            <a href="mailto:contact@kiromagdy.com" class="mobile-social-link" aria-label="Email">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              <span>Email</span>
+            </a>
+            <a href="https://github.com/kiromagdy7" target="_blank" rel="noopener noreferrer" class="mobile-social-link" aria-label="GitHub">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              <span>GitHub</span>
+            </a>
+            <a href="https://www.linkedin.com/in/kirollosmagdy7/" target="_blank" rel="noopener noreferrer" class="mobile-social-link" aria-label="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://wa.me/+201270200486" target="_blank" rel="noopener noreferrer" class="mobile-social-link" aria-label="WhatsApp">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+              <span>WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <section class="project-detail-header" id="overview">
+        <div class="container">
+          <div class="project-breadcrumb" aria-label="Breadcrumb">
+            <a href="/#home">Home</a>
+            <span class="bc-sep">/</span>
+            <a href="/#work">Work</a>
+            <span class="bc-sep">/</span>
+            <span class="bc-current">Physiotherapy</span>
+          </div>
+          <div class="project-detail-grid">
+            <div class="project-detail-left">
+              <div class="project-meta-strip">
+                <div class="meta-segment project-id">
+                  <span class="meta-num">01</span>
+                  <span class="meta-slash">/</span>
+                  <span class="meta-cat">Healthcare &amp; Wellness</span>
+                </div>
+                <div class="meta-segment">
+                  <span class="meta-label">Platform</span>
+                  <span class="meta-val">Live Client Website</span>
+                </div>
+                <div class="meta-segment">
+                  <span class="meta-dot enterprise"></span>
+                  <span class="meta-val">Production</span>
+                </div>
+              </div>
+              <h1 class="h-display">Physiotherapy<span class="project-title-sub">Dr. Michael Nabil Clinic</span></h1>
+              <p class="project-desc-text">
+                Physiotherapy is a live clinical website made for a real client — Dr. Michael Nabil, a physiotherapy and clinical nutrition specialist based in Dokki. The goal was to bring his two specialties, physical rehabilitation and therapeutic nutrition, into one clear space, so a visitor can understand his approach, see how a treatment plan actually comes together, and reach out for a consultation without any friction.
+              </p>
+              <div class="project-tech-strip">
+                <span class="tech-tag">Next.js</span>
+                <span class="tech-tag">React.js</span>
+                <span class="tech-tag">Tailwind CSS</span>
+                <span class="tech-tag">Framer Motion</span>
+              </div>
+            </div>
+            <div class="project-detail-right">
+              <div class="project-actions">
+                <a class="action-btn primary" href="https://dr-michaelpt.com/" target="_blank" rel="noopener noreferrer">
+                  <span>Visit Live Website</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </a>
+                <div class="action-btn proprietary">
+                  <span>Repository Access</span>
+                  <span class="prop-tag">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    Private Repo
+                  </span>
+                </div>
+                <button type="button" class="action-btn share-btn" aria-label="Share project link">
+                  <span>Share Project Link</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                </button>
+              </div>
+              <div class="ss-meta-grid">
+                <div class="ss-meta-item">
+                  <div class="ss-label">SCREENSHOTS</div>
+                  <div class="ss-val ss-num">10</div>
+                </div>
+                <div class="ss-meta-item">
+                  <div class="ss-label">PROJECT TYPE</div>
+                  <div class="ss-val">
+                    <span>Client Work</span>
+                  </div>
+                </div>
+                <div class="ss-meta-item">
+                  <div class="ss-label">STATUS</div>
+                  <div class="ss-val">
+                    <svg class="ss-icon accent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    <span>Live</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="project-subnav" aria-label="Project Sub Navigation">
+        <div class="container">
+          <div class="project-subnav-inner">
+            <div class="project-subnav-links">
+              <a href="#overview" class="project-subnav-link active">01. Overview</a>
+              <a href="#highlights" class="project-subnav-link">02. Highlights</a>
+              <a href="#tech-specs" class="project-subnav-link">03. Tech Stack</a>
+              <a href="#screenshots" class="project-subnav-link">04. Screenshots (10)</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="project-highlights-section" id="highlights">
+        <div class="container">
+          <div class="highlights-header">
+            <h2>Built around the patient.</h2>
+          </div>
+          <div class="highlights-grid">
+            <div class="highlight-card">
+              <div class="hl-top">
+                <span class="hl-num">[01]</span>
+                <div class="hl-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                </div>
+              </div>
+              <h3 class="hl-title">Two specialties, one clear plan</h3>
+              <p class="hl-desc">Physical rehabilitation and clinical nutrition are presented as one connected approach rather than two separate services, so a visitor understands how a real treatment plan for orthopedic, neurological, scoliosis, or sports injury cases comes together with nutrition support.</p>
+              <span class="hl-tag">Physiotherapy &amp; Nutrition</span>
+            </div>
+            <div class="highlight-card">
+              <div class="hl-top">
+                <span class="hl-num">[02]</span>
+                <div class="hl-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+                </div>
+              </div>
+              <h3 class="hl-title">A consultation request that's easy to finish</h3>
+              <p class="hl-desc">The intake form only asks for what's actually needed — name and phone, with email optional — and sits alongside direct WhatsApp and phone links, so a patient can reach the clinic in whichever way is easiest for them.</p>
+              <span class="hl-tag">Consultation Form</span>
+            </div>
+            <div class="highlight-card">
+              <div class="hl-top">
+                <span class="hl-num">[03]</span>
+                <div class="hl-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                </div>
+              </div>
+              <h3 class="hl-title">Motion that supports the content</h3>
+              <p class="hl-desc">Framer Motion adds gentle transitions between sections and small state changes throughout the page, built on top of Next.js for fast loading and Tailwind CSS for a layout that holds up cleanly on every screen size.</p>
+              <span class="hl-tag">Next.js &amp; Framer Motion</span>
+            </div>
+          </div>
+
+          <div class="tech-matrix-grid" id="tech-specs">
+            <div class="matrix-card">
+              <div class="matrix-header">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                <h3>Application</h3>
+              </div>
+              <ul class="matrix-list">
+                <li class="matrix-item">Next.js project architecture</li>
+                <li class="matrix-item">React component-based UI</li>
+                <li class="matrix-item">Production client website</li>
+              </ul>
+            </div>
+            <div class="matrix-card">
+              <div class="matrix-header">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                <h3>Interface</h3>
+              </div>
+              <ul class="matrix-list">
+                <li class="matrix-item">Tailwind CSS utility styling</li>
+                <li class="matrix-item">Responsive layouts for every screen size</li>
+                <li class="matrix-item">Clear, readable Arabic typography</li>
+              </ul>
+            </div>
+            <div class="matrix-card">
+              <div class="matrix-header">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                <h3>Interaction</h3>
+              </div>
+              <ul class="matrix-list">
+                <li class="matrix-item">Framer Motion transitions</li>
+                <li class="matrix-item">Purposeful scroll and reveal motion</li>
+                <li class="matrix-item">Smooth CTA buttons &amp; touch states</li>
+              </ul>
+            </div>
+            <div class="matrix-card">
+              <div class="matrix-header">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <h3>Patient Journey</h3>
+              </div>
+              <ul class="matrix-list">
+                <li class="matrix-item">Consultation request form</li>
+                <li class="matrix-item">Direct WhatsApp &amp; phone contact</li>
+                <li class="matrix-item">Clinic location &amp; hours</li>
+                <li class="matrix-item">Online follow-up for remote patients</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="screenshots-section" id="screenshots">
+        <div class="container">
+          <div class="ss-header">
+            <h2>Screenshots.</h2>
+          </div>
+
+          <div class="gallery-toolbar">
+            <div class="gallery-filters">
+              <button type="button" class="gallery-filter-btn active" data-filter="all">All (10)</button>
+              <button type="button" class="gallery-filter-btn" data-filter="landing">Landing &amp; Profile</button>
+              <button type="button" class="gallery-filter-btn" data-filter="services">Specialties &amp; Care</button>
+              <button type="button" class="gallery-filter-btn" data-filter="care-flow">Roadmap &amp; Booking</button>
+            </div>
+            <div class="gallery-search-wrap">
+              <svg class="gallery-search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <input type="text" class="gallery-search-input" placeholder="Filter screens by name..." aria-label="Filter screens by name" />
+            </div>
+          </div>
+
+          <div class="gallery-status-bar">
+            <span class="gallery-count-text">Showing 10 of 10 screens</span>
+            <span>Click any image to zoom &amp; inspect</span>
+          </div>
+
+          <div class="ss-grid">
+            <div class="ss-item" data-category="landing">
+              <div class="ss-window-frame">
+                <div class="ss-window-bar">
+                  <div class="ss-window-dots">
+                    <span class="ss-window-dot"></span>
+                    <span class="ss-window-dot"></span>
+                    <span class="ss-window-dot"></span>
+                  </div>
+                  <span class="ss-window-title">Hero Section</span>
+                  <span class="ss-window-badge">Landing</span>
+                </div>
+                <img src="/Assets/Physiotherapy/Hero.webp" alt="Physiotherapy hero section" loading="lazy" />
+              </div>
+            </div>
+
+            <div class="ss-item" data-category="landing">
+              <div class="ss-window-frame">
+                <div class="ss-window-bar">
+                  <div class="ss-window-dots">
+                    <span class="ss-window-dot"></span>
+                    <span class="ss-window-dot"></span>
+                    <span class="ss-window-dot"></span>
+                  </div>
+                  <span class="ss-window-title">About Dr. Michael</span>
+                  <span class="ss-window-badge">Profile</span>
+                </div>
+                <img src="/Assets/Physiotherapy/Who iam.webp" alt="About Dr. Michael Nabil profile section" loading="lazy" />
+              </div>
+            </div>
+
+            <div class="ss-item" data-category="services">
+              <div class="ss-window-frame">
+                <div class="ss-window-bar">
+                  <div class="ss-window-dots">
+                    <span class="ss-window-dot"></span>
+                    <span class="ss-window-dot"></span>
+                    <span class="ss-window-dot"></span>
+                  </div>
+                  <span class="ss-window-title">Dual Specializations</span>
+                  <span class="ss-window-badge">Specialties</span>
+                </div>
+                <img src="/Assets/Physiotherapy/Specializations.webp" alt="Physiotherapy and clinical nutrition specializations" loading="lazy" />
+              </div>
+            </div>
+
+            <div class="ss-item" data-category="services">
+              <div class="ss-window-frame">
+                <div class="ss-window-bar">
+                  <div class="ss-window-dots">
+                    <span class="ss-window-dot"></span>
+                    <span class="ss-window-dot"></span>
+                    <span class="ss-window-dot"></span>
+                  </div>
+                  <span class="ss-window-title">Care Philosophy</span>
+                  <span class="ss-window-badge">Services</span>
+                </div>
+                <img src="/Assets/Physiotherapy/Services.webp" alt="Evidence-based care philosophy section" loading="lazy" />
+              </div>
+            </div>
+
+            <div class="ss-item" data-category="services">
+              <div class="ss-window-frame">
+                <div class="ss-window-bar">
+                  <div class="ss-window-dots">
+                    <span class="ss-window-dot"></span>
+                    <span class="ss-window-dot"></span>
+                    <span class="ss-window-dot"></span>
+                  </div>
+                  <span class="ss-window-title">Sustainable Nutrition</span>
+                  <span class="ss-window-badge">Nutrition</span>
+                </div>
+                <img src="/Assets/Physiotherapy/Diet.webp" alt="Therapeutic nutrition and balanced diet philosophy" loading="lazy" />
+              </div>
+            </div>
+
+            <div class="ss-item" data-category="services">
+              <div class="ss-window-frame">
+                <div class="ss-window-bar">
+                  <div class="ss-window-dots">
+                    <span class="ss-window-dot"></span>
+                    <span class="ss-window-dot"></span>
+                    <span class="ss-window-dot"></span>
+                  </div>
+                  <span class="ss-window-title">Online Follow-Up &amp; Telehealth</span>
+                  <span class="ss-window-badge">Services</span>
+                </div>
+                <img src="/Assets/Physiotherapy/Online services.webp" alt="Online consultation and remote care options" loading="lazy" />
+              </div>
+            </div>
+
+            <div class="ss-item" data-category="care-flow">
+              <div class="ss-window-frame">
+                <div class="ss-window-bar">
+                  <div class="ss-window-dots">
+                    <span class="ss-window-dot"></span>
+                    <span class="ss-window-dot"></span>
+                    <span class="ss-window-dot"></span>
+                  </div>
+                  <span class="ss-window-title">Care Journey &amp; Roadmap</span>
+                  <span class="ss-window-badge">Process</span>
+                </div>
+                <img src="/Assets/Physiotherapy/Who to start.webp" alt="Step-by-step patient care journey" loading="lazy" />
+              </div>
+            </div>
+
+            <div class="ss-item" data-category="care-flow">
+              <div class="ss-window-frame">
+                <div class="ss-window-bar">
+                  <div class="ss-window-dots">
+                    <span class="ss-window-dot"></span>
+                    <span class="ss-window-dot"></span>
+                    <span class="ss-window-dot"></span>
+                  </div>
+                  <span class="ss-window-title">Consultation Request Form</span>
+                  <span class="ss-window-badge">Booking</span>
+                </div>
+                <img src="/Assets/Physiotherapy/Form.webp" alt="Appointment booking and inquiry form" loading="lazy" />
+              </div>
+            </div>
+
+            <div class="ss-item" data-category="care-flow">
+              <div class="ss-window-frame">
+                <div class="ss-window-bar">
+                  <div class="ss-window-dots">
+                    <span class="ss-window-dot"></span>
+                    <span class="ss-window-dot"></span>
+                    <span class="ss-window-dot"></span>
+                  </div>
+                  <span class="ss-window-title">Location &amp; Clinic Hours</span>
+                  <span class="ss-window-badge">Visit</span>
+                </div>
+                <img src="/Assets/Physiotherapy/Location.webp" alt="Clinic location map and operating hours" loading="lazy" />
+              </div>
+            </div>
+
+            <div class="ss-item" data-category="landing">
+              <div class="ss-window-frame">
+                <div class="ss-window-bar">
+                  <div class="ss-window-dots">
+                    <span class="ss-window-dot"></span>
+                    <span class="ss-window-dot"></span>
+                    <span class="ss-window-dot"></span>
+                  </div>
+                  <span class="ss-window-title">Footer &amp; Channels</span>
+                  <span class="ss-window-badge">Contact</span>
+                </div>
+                <img src="/Assets/Physiotherapy/Footer.webp" alt="Clinic footer and social media links" loading="lazy" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="more-projects-section">
+        <div class="container">
+          <div class="more-header scroll-reveal">
+            <div class="more-header-left">
+              <div class="editorial-eyebrow"><span class="editorial-dash"></span> Keep exploring</div>
+              <h2>More projects</h2>
+            </div>
+            <div class="more-header-right">
+              <a href="/work" class="all-projects-link">
+                All projects <span class="all-projects-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </div>
+          <div class="more-grid">
+            <a href="/tahwega-cafe" class="recent-project-card scroll-reveal" style="--reveal-delay: 1;">
+              <div class="project-img-box">
+                <div class="project-img-placeholder" aria-hidden="true">
+                  <svg class="project-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                    <polyline points="21 15 16 10 5 21"/>
+                  </svg>
+                </div>
+                <img class="project-img" src="/Assets/Work/Tahwiga%20Cafe.webp" alt="Tahwega Cafe website" loading="lazy" />
+                <span class="project-category-chip">Hospitality &amp; Food Service</span>
+              </div>
+              <div class="project-info">
+                <div class="project-title-row">
+                  <h3 class="project-card-title">Tahwega Cafe</h3>
+                  <svg class="project-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </div>
+                <p class="project-card-summary">Live client website that makes a café’s coffee, juices, location, and personality easy to discover.</p>
+                <div class="project-tags">
+                  <span class="tech-pill">Next.js</span>
+                  <span class="tech-pill">React</span>
+                  <span class="tech-pill">Tailwind CSS</span>
+                  <span class="tech-pill">Framer Motion</span>
+                </div>
+              </div>
+            </a>
+
+            <a href="/jewelry-system" class="recent-project-card scroll-reveal" style="--reveal-delay: 2;">
+              <div class="project-img-box">
+                <div class="project-img-placeholder" aria-hidden="true">
+                  <svg class="project-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                    <polyline points="21 15 16 10 5 21"/>
+                  </svg>
+                </div>
+                <img class="project-img" src="/Assets/Work/Jewelry%20System.webp" alt="Jewelry System" loading="lazy" />
+                <span class="project-category-chip">ERP &amp; Financial</span>
+              </div>
+              <div class="project-info">
+                <div class="project-title-row">
+                  <h3 class="project-card-title">Jewelry System</h3>
+                  <svg class="project-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </div>
+                <p class="project-card-summary">Enterprise .NET 10 ERP with formula pricing, dual-currency accounting, and QuestPDF invoices.</p>
+                <div class="project-tags">
+                  <span class="tech-pill">ASP.NET Core</span>
+                  <span class="tech-pill">C#</span>
+                  <span class="tech-pill">SQL Server</span>
+                  <span class="tech-pill">QuestPDF</span>
+                </div>
+              </div>
+            </a>
+
+            <a href="/kmz-hub" class="recent-project-card scroll-reveal" style="--reveal-delay: 3;">
+              <div class="project-img-box">
+                <div class="project-img-placeholder" aria-hidden="true">
+                  <svg class="project-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                    <polyline points="21 15 16 10 5 21"/>
+                  </svg>
+                </div>
+                <img class="project-img" src="/Assets/Work/KMZ%20Hub.webp" alt="KMZ Hub" loading="lazy" />
+                <span class="project-category-chip">Gaming Center &amp; POS</span>
+              </div>
+              <div class="project-info">
+                <div class="project-title-row">
+                  <h3 class="project-card-title">KMZ Hub</h3>
+                  <svg class="project-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </div>
+                <p class="project-card-summary">Offline-first desktop platform with PlayStation timers, cafeteria POS, and thermal printing.</p>
+                <div class="project-tags">
+                  <span class="tech-pill">.NET MAUI</span>
+                  <span class="tech-pill">Blazor Hybrid</span>
+                  <span class="tech-pill">C#</span>
+                  <span class="tech-pill">SQLite</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-inner">
+          <div class="copy">&copy; <span class="year">2026</span> Kirollos Magdy. All rights reserved.</div>
+          <div class="footer-links">
+            <a href="https://github.com/kiromagdy7" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/kirollosmagdy7/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="mailto:contact@kiromagdy.com" aria-label="Email">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/JavaScript/base.js"></script>
+    <script src="/JavaScript/lightbox.js"></script>
+    <script src="/JavaScript/project.js"></script>
+  </body>
+</html>
