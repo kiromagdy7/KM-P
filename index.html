@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kirollos Magdy — Full-Stack .NET Developer</title>
     <meta name="description" content="Explore Kirollos Magdy's full-stack .NET portfolio: ASP.NET Core, C#, React, Next.js, and .NET MAUI projects, certificates, and production-ready solutions."/>
-    <meta name="keywords" content="Kirollos Magdy, Kirollos, Kiro Magdy, Kiro, Kero Magdy, Kero, Koko Magdy, Koko, Kerolos, Kerollos, Kiryllos, kiromagdy7, kiromagdy_7, kirollos7, kiromagdy77, kirollosmagdy7, Full-Stack Developer, Developer, Dev, .NET Developer, ASP.NET Developer, ASP.NET Core Developer, Next.js Developer, Next JS Developer, React Developer, React JS Developer, DEPI Certified, IEEE React Bootcamp, Microsoft AI Advanced, Google AI Training, Certified .NET Developer, كيرلس مجدي, كرولوس مجدي, كيرو مجدي, كيرو, كوكو مجدي, كوكو, كرلس, كرلس مجدي"/>
     <link rel="canonical" href="https://kiromagdy.com/" />
     <meta name="author" content="Kirollos Magdy" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <link rel="icon" type="image/svg+xml" href="/Assets/icon.svg" />
     <link rel="apple-touch-icon" sizes="180x180" href="/Assets/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <meta name="theme-color" content="#0a0a0a" />
+    <meta name="theme-color" content="#ffffff" />
+    <script>(function(){try{if(localStorage.getItem("theme")==="dark"){document.documentElement.classList.add("dark");document.querySelector('meta[name="theme-color"]').setAttribute("content","#000000");}}catch(e){}})();</script>
+    <noscript><style>.page-loader{display:none!important}.hero-reveal,.hero-photo-reveal,.project-reveal,.scroll-reveal{opacity:1!important;transform:none!important;filter:none!important}</style></noscript>
     <link rel="preload" as="image" href="/Assets/main.webp" type="image/webp" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -53,36 +54,24 @@
       {
         "@context": "https://schema.org",
         "@type": "Person",
+        "@id": "https://kiromagdy.com/#person",
         "name": "Kirollos Magdy",
         "alternateName": [
           "Kiro Magdy",
-          "Kirollos Magdy",
-          "Kiro",
-          "Kirollos",
-          "Magdy",
           "Kero Magdy",
-          "Kero",
-          "Koko Magdy",
-          "Koko",
+          "Kirollos",
           "Kerolos",
           "Kerollos",
           "Kiryllos",
-          "kiromagdy7",
-          "kiromagdy_7",
-          "kirollos7",
-          "kiromagdy77",
-          "kirollosmagdy7",
           "كيرلس مجدي",
           "كرولوس مجدي",
-          "كيرو مجدي",
-          "كيرو",
-          "كوكو مجدي",
-          "كوكو",
-          "كرلس",
-          "كرلس مجدي"
+          "كيرو مجدي"
         ],
         "url": "https://kiromagdy.com/",
-        "image": "https://kiromagdy.com/Assets/OG.webp",
+        "image": "https://kiromagdy.com/Assets/main.webp",
+        "email": "contact@kiromagdy.com",
+        "address": { "@type": "PostalAddress", "addressLocality": "Alexandria", "addressCountry": "EG" },
+        "mainEntityOfPage": { "@id": "https://kiromagdy.com/#profile" },
         "jobTitle": "Full-Stack .NET Developer",
                 "description": "Full Stack .NET Developer with hands-on experience building and deploying web and desktop applications using ASP.NET Core, C#, SQL Server, React.js, and WPF/.NET MAUI. Delivered 12+ projects spanning ERP systems, business web apps, and reservation-based systems, including production systems actively serving real business clients. Strong focus on clean architecture, data integrity, security, and performance. Handles the full delivery cycle — from system design to server configuration and live production deployment.",
         "hasCredential": [
@@ -179,11 +168,26 @@
       {
         "@context": "https://schema.org",
         "@type": "WebSite",
+        "@id": "https://kiromagdy.com/#website",
         "name": "Kirollos Magdy",
         "alternateName": ["Kiro Magdy", "Kirollos Magdy Portfolio", "كيرلس مجدي"],
         "url": "https://kiromagdy.com/",
         "inLanguage": "en",
+        "publisher": { "@id": "https://kiromagdy.com/#person" },
         "dateModified": "2026-09-23"
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "@id": "https://kiromagdy.com/#profile",
+        "url": "https://kiromagdy.com/",
+        "name": "Kirollos Magdy — Full-Stack .NET Developer",
+        "inLanguage": "en",
+        "dateModified": "2026-09-23",
+        "isPartOf": { "@id": "https://kiromagdy.com/#website" },
+        "mainEntity": { "@id": "https://kiromagdy.com/#person" }
       }
     </script>
   </head>
@@ -244,7 +248,7 @@
             </svg>
             Download CV
           </a>
-          <button class="hamburger" id="hamburger" aria-label="Menu">
+          <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
             <span id="hamburgerIcon">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -1036,6 +1040,7 @@
             </div>
           </div>
           <form class="contact-right scroll-reveal" style="--reveal-delay: 2;" id="contactForm" action="https://formspree.io/f/mpwlerqp" method="POST">
+            <div class="hp-field" aria-hidden="true"><label for="contactHp">Leave this field empty</label><input type="text" id="contactHp" name="_gotcha" tabindex="-1" autocomplete="off" /></div>
             <div class="form-group">
               <label for="name">Name</label>
               <input type="text" id="name" name="name" required />

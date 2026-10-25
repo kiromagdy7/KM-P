@@ -83,6 +83,12 @@
   if (contactForm) {
     contactForm.addEventListener("submit", function (e) {
       e.preventDefault();
+      var honeypot = contactForm.querySelector('input[name="_gotcha"]');
+      if (honeypot && honeypot.value) {
+        contactForm.reset();
+        showModal(true);
+        return;
+      }
       var origBtnHtml = submitBtn ? submitBtn.innerHTML : "Send Message";
       if (submitBtn) {
         submitBtn.disabled = true;

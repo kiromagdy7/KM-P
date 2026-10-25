@@ -6,11 +6,7 @@
     <title>Teta's Kitchen | Kirollos Magdy — Full-Stack .NET Developer</title>
     <meta
       name="description"
-      content="Explore Teta's Kitchen, a warm culinary heritage and recipe platform built with pure semantic HTML5, 60KB custom CSS, and 22.5KB Vanilla JavaScript featuring in-place inline profile editing, live search, and regex input masking."
-    />
-    <meta
-      name="keywords"
-      content="Kirollos Magdy, Kirollos, Kiro Magdy, Kiro, Kero Magdy, Kero, Koko Magdy, Koko, Kerolos, Kerollos, Kiryllos, kiromagdy7, kiromagdy_7, kirollos7, kiromagdy77, kirollosmagdy7, Front-End Developer, Web Developer, .NET Developer, Teta's Kitchen, مطبخ الجدة, Culinary Heritage, Recipe Platform, CSS, Vanilla JavaScript, In-Place Editing, Poppins, CSS Custom Properties"
+      content="Teta's Kitchen is a warm recipe and culinary heritage website built with pure HTML, CSS and vanilla JavaScript, with live search and inline editing."
     />
     <link rel="canonical" href="https://kiromagdy.com/teta-kitchen" />
     <meta name="author" content="Kirollos Magdy" />
@@ -18,7 +14,9 @@
     <link rel="icon" type="image/svg+xml" href="/Assets/icon.svg" />
     <link rel="apple-touch-icon" sizes="180x180" href="/Assets/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <meta name="theme-color" content="#0a0a0a" />
+    <meta name="theme-color" content="#ffffff" />
+    <script>(function(){try{if(localStorage.getItem("theme")==="dark"){document.documentElement.classList.add("dark");document.querySelector('meta[name="theme-color"]').setAttribute("content","#000000");}}catch(e){}})();</script>
+    <noscript><style>.page-loader{display:none!important}.hero-reveal,.hero-photo-reveal,.project-reveal,.scroll-reveal{opacity:1!important;transform:none!important;filter:none!important}</style></noscript>
     <link rel="stylesheet" href="/Css/base.css" />
     <link rel="stylesheet" href="/Css/preloader.css" />
     <link rel="stylesheet" href="/Css/navbar.css" />
@@ -28,7 +26,7 @@
     <meta property="og:title" content="Teta's Kitchen | Kirollos Magdy — Full-Stack .NET Developer" />
     <meta
       property="og:description"
-      content="Explore Teta's Kitchen, a warm culinary heritage and recipe platform built with pure semantic HTML5, 60KB custom CSS, and 22.5KB Vanilla JavaScript featuring in-place inline profile editing, live search, and regex input masking."
+      content="Teta's Kitchen is a warm recipe and culinary heritage website built with pure HTML, CSS and vanilla JavaScript, with live search and inline editing."
     />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://kiromagdy.com/teta-kitchen" />
@@ -47,7 +45,7 @@
     />
     <meta
       name="twitter:description"
-      content="Explore Teta's Kitchen, a warm culinary heritage and recipe platform built with pure semantic HTML5, 60KB custom CSS, and 22.5KB Vanilla JavaScript featuring in-place inline profile editing, live search, and regex input masking."
+      content="Teta's Kitchen is a warm recipe and culinary heritage website built with pure HTML, CSS and vanilla JavaScript, with live search and inline editing."
     />
     <meta name="twitter:image" content="https://kiromagdy.com/Assets/OG.webp" />
     <meta name="twitter:url" content="https://kiromagdy.com/teta-kitchen" />
@@ -58,7 +56,7 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "WebApplication",
+        "@type": "WebSite",
         "name": "Teta's Kitchen",
         "description": "A warm culinary heritage and recipe web platform built with pure semantic HTML5, ~60KB handcrafted CSS with 120+ Flexbox layouts, and ~22.5KB Vanilla JavaScript. Features in-place inline profile editing with contenteditable, real-time recipe search with smart outside-click dismissal, strict client-side regex input masking, and dynamic toast error shake notifications.",
         "url": "https://kiromagdy.com/teta-kitchen",
@@ -72,8 +70,6 @@
         },
         "dateCreated": "2025-02-01",
         "dateModified": "2026-09-23",
-        "applicationCategory": "LifestyleApplication",
-        "operatingSystem": "Web Browser",
         "keywords": "Teta's Kitchen, مطبخ الجدة, Recipe Platform, Culinary Heritage, CSS, Vanilla JavaScript, In-Place Editing, Regex Validation, Poppins Typography, Front-End"
       }
     </script>
@@ -134,7 +130,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             Download CV
           </a>
-          <button class="hamburger" id="hamburger" aria-label="Menu">
+          <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
             <span id="hamburgerIcon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
             </span>

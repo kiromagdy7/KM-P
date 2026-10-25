@@ -6,7 +6,19 @@
   const hamburgerIcon = document.getElementById("hamburgerIcon");
   const mobileDropdown = document.getElementById("mobileDropdown");
 
-  if (localStorage.getItem("theme") === "dark") { html.classList.add("dark"); }
+  function readTheme() {
+    try { return localStorage.getItem("theme"); } catch (e) { return null; }
+  }
+  function saveTheme(value) {
+    try { localStorage.setItem("theme", value); } catch (e) {}
+  }
+  function syncThemeColor() {
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) { meta.setAttribute("content", html.classList.contains("dark") ? "#000000" : "#ffffff"); }
+  }
+
+  if (readTheme() === "dark") { html.classList.add("dark"); }
+  syncThemeColor();
 
   document.querySelectorAll(".year").forEach(function (el) {
     el.textContent = new Date().getFullYear();
@@ -21,7 +33,8 @@
   if (themeToggle) {
     themeToggle.addEventListener("click", function () {
       html.classList.toggle("dark");
-      localStorage.setItem("theme", html.classList.contains("dark") ? "dark" : "light");
+      saveTheme(html.classList.contains("dark") ? "dark" : "light");
+      syncThemeColor();
       updateIcon();
     });
   }
@@ -33,6 +46,7 @@
 
     function openMenu() {
       mobileDropdown.classList.add("open");
+      mobileDropdown.setAttribute("aria-hidden", "false");
       document.body.style.overflow = "hidden";
       hamburger.setAttribute("aria-expanded", "true");
       if (hamburgerIcon) { hamburgerIcon.innerHTML = closeSvg; }
@@ -40,6 +54,7 @@
 
     function closeMenu() {
       mobileDropdown.classList.remove("open");
+      mobileDropdown.setAttribute("aria-hidden", "true");
       document.body.style.overflow = "";
       hamburger.setAttribute("aria-expanded", "false");
       if (hamburgerIcon) { hamburgerIcon.innerHTML = hamSvg; }

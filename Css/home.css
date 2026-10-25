@@ -344,3 +344,4 @@ font-size:16px;transition:background 0.2s,color 0.2s,transform 0.15s ease}
 .modal-btn:active{transform:scale(0.98)}
 
 @media(prefers-reduced-motion:reduce){.tech-ticker-track{animation:none!important;transform:none!important}.glow-orb,.hero-reveal,.hero-photo-reveal,.scroll-reveal,.interactive-card,.about-stat-item,.service-bento-card,.btn-fill::after,.badge .dot::after,.modal-overlay,.modal-card,.modal-icon-wrap,.modal-check-path,.modal-x-path-1,.modal-x-path-2,.modal-btn{animation:none!important;transition:none!important;transform:none!important;opacity:1!important;filter:none!important}.modal-check-path,.modal-x-path-1,.modal-x-path-2{stroke-dashoffset:0!important}.modal-icon-pulse{display:none!important}}
+.hp-field{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
