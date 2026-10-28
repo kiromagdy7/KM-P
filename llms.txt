@@ -1,0 +1,32 @@
+# Kirollos Magdy
+
+> Kirollos Magdy (also written Kiro Magdy, Kerolos Magdy, كيرلس مجدي) is a Full-Stack .NET Developer based in Alexandria, Egypt. He builds web and desktop applications with ASP.NET Core, C#, SQL Server, React.js, Next.js and .NET MAUI, and handles the full delivery cycle from system design to server configuration and live production deployment.
+
+This is his personal portfolio site, kiromagdy.com. It lists his selected projects, certificates and contact details. Several projects are live systems used by real business clients.
+
+## Profile
+
+- [Home](https://kiromagdy.com/): About, skills, certificates, recent projects and contact details
+- [CV (PDF)](https://kiromagdy.com/CV/CV_Kirollos_Magdy.pdf): Résumé
+- [Selected work](https://kiromagdy.com/work): All projects in one list
+
+## Projects
+
+- [Jewelry System](https://kiromagdy.com/jewelry-system): Enterprise .NET 10 ERP for jewelers with dynamic formula pricing, dual-currency accounting and QuestPDF invoices
+- [KMZ Hub](https://kiromagdy.com/kmz-hub): Offline-first Windows desktop app (.NET 10 MAUI Blazor Hybrid) for PlayStation centers with multi-rate timers, POS and thermal printing
+- [Travely](https://kiromagdy.com/travely): .NET 9 ASP.NET Core MVC hotel booking platform with automated night pricing, Stripe checkout, BCrypt auth and an admin dashboard
+- [Physiotherapy](https://kiromagdy.com/physiotherapy): Live clinic website for Dr. Michael Nabil's physiotherapy and clinical nutrition practice in Dokki, built with Next.js, React and Tailwind CSS
+- [Tahwega Cafe](https://kiromagdy.com/tahwega-cafe): Live cafe website for a real client, presenting its menu, location and character
+- [Teta's Kitchen](https://kiromagdy.com/teta-kitchen): Recipe and culinary heritage website in pure HTML, CSS and vanilla JavaScript, with live search and inline editing
+- [Word of the Lord](https://kiromagdy.com/word-of-the-lord): Digital platform for Coptic Christian teachings, sermons, Bible reading and liturgical texts
+- [Code Crate](https://kiromagdy.com/code-crate): 6-page e-learning frontend with 12 programming and design courses across 4 learning tracks
+- [Div Store](https://kiromagdy.com/div-store): 18-page electronics e-commerce frontend prototype with product variant selectors and localStorage state
+- [IP Inspector](https://kiromagdy.com/ip-inspector): Real-time IP intelligence tool showing public IPv4 details, connection metrics and geolocation on interactive maps
+
+## Contact and profiles
+
+- Email: contact@kiromagdy.com
+- [LinkedIn](https://www.linkedin.com/in/kirollosmagdy7/)
+- [GitHub](https://github.com/kiromagdy7)
+- [Facebook](https://www.facebook.com/kiromagdyz77/)
+- [Instagram](https://www.instagram.com/kiromagdy_7)
