@@ -1,0 +1,16 @@
+/* Hi, I'm Kirollos. Most people call me Kiro. Thanks for looking under the hood. */
+
+/* WHO BUILT THIS */
+Name:      Kirollos Magdy
+Role:      Full-stack .NET developer
+Location:  Alexandria, Egypt
+Email:     contact@kiromagdy.com
+GitHub:    https://github.com/kiromagdy7
+LinkedIn:  https://www.linkedin.com/in/kirollosmagdy7
+
+/* THE SITE */
+Built with:  Next.js (static export), React, TypeScript, Tailwind CSS
+Hosted on:   Cloudflare Workers static assets
+Fonts:       Geist and Geist Mono
+
+/* If you are a developer reading this instead of the site itself: respect. Say hi. */

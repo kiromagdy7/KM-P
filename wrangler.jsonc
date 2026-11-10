@@ -1,15 +1,12 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "portfolio-26",
-  "compatibility_date": "2026-08-09",
-  "observability": {
-    "enabled": true
-  },
+  "compatibility_date": "2026-11-01",
+  "observability": { "enabled": true },
+  // Only the build output is uploaded. Source files, .git and config stay private.
   "assets": {
-    "directory": ".",
+    "directory": "./out",
+    "html_handling": "auto-trailing-slash",
     "not_found_handling": "404-page"
-  },
-  "compatibility_flags": [
-    "nodejs_compat"
-  ]
+  }
 }

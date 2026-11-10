@@ -1,0 +1,42 @@
+# Kirollos Magdy
+
+> Kirollos Magdy (also written Kiro Magdy, Kerolos Magdy, كيرلس مجدي) is a full-stack .NET developer based in Alexandria, Egypt. He builds websites and web applications, Windows desktop software, and POS and ERP systems for shops and businesses, and handles each project end to end: database, back end, interface and deployment. He works with clients worldwide in Arabic and English.
+
+This is his personal site, kiromagdy.com. It describes the services he offers, shows finished projects with real screenshots, and lists every way to contact him. Every page is available in English and in Arabic; the Arabic version of any page is at the same path under /ar.
+
+## Services
+
+- [POS and ERP systems](https://kiromagdy.com/services/business-systems): Custom sales, stock, accounting and permission systems for shops, workshops and multi-branch businesses, with Arabic invoices and receipts
+- [Websites and web apps](https://kiromagdy.com/services/websites): Business websites and web applications with accounts, bookings and online payment, in Arabic and English
+- [Desktop software](https://kiromagdy.com/services/desktop-software): Windows programs that work offline and connect to thermal printers and barcode scanners
+- [All services](https://kiromagdy.com/services): Overview and how a project runs
+
+## Projects
+
+- [Jewelry System](https://kiromagdy.com/work/jewelry-system): ERP for jewelry shops, in production for a client across four branches. Weight-based formula pricing, stock in grams across branches, supplier accounts in money and metal, Arabic invoices. ASP.NET Core (.NET 10), SQL Server
+- [KMZ Hub](https://kiromagdy.com/work/kmz-hub): His own product, in use at two centers. Offline Windows desktop software for PlayStation centers: room timers at multiple rates, cafeteria sales, thermal receipts, shift cash counts. .NET MAUI Blazor Hybrid, SQLite
+- [Dr. Michael Nabil Clinic](https://kiromagdy.com/work/physiotherapy): Live website for a physiotherapy and clinical nutrition clinic in Dokki. Next.js, React, Tailwind CSS
+- [Tahwega Cafe](https://kiromagdy.com/work/tahwega-cafe): Live café website presenting the menu, atmosphere and location. Next.js, React, Tailwind CSS
+- [Travely](https://kiromagdy.com/work/travely): Hotel booking platform with automatic night pricing, Stripe checkout and an admin back office. ASP.NET Core MVC (.NET 9), SQL Server
+- [IP Inspector](https://kiromagdy.com/work/ip-inspector): Web tool showing public IP details, connection metrics and location on an interactive map
+- [Teta's Kitchen](https://kiromagdy.com/work/teta-kitchen): Recipe website in plain HTML, CSS and JavaScript with live search and in-place editing
+- [Word of the Lord](https://kiromagdy.com/work/word-of-the-lord): Coptic Orthodox website with a Bible reader, Agpeya prayers and a sermon directory
+- [Code Crate](https://kiromagdy.com/work/code-crate): Six-page e-learning front end with 12 courses in four tracks
+- [Div Store](https://kiromagdy.com/work/div-store): 18-page electronics store front end with product variants
+- [All work](https://kiromagdy.com/work): Every project in one list
+
+## Arabic version (النسخة العربية)
+
+- [الصفحة الرئيسية](https://kiromagdy.com/ar): كيرلس مجدي، مطوّر مواقع وبرامج ديسكتوب وأنظمة POS و ERP في الإسكندرية، مصر
+- [الخدمات](https://kiromagdy.com/ar/services): أنظمة نقاط البيع و ERP، المواقع وتطبيقات الويب، برامج ويندوز للديسكتوب
+- [الأعمال](https://kiromagdy.com/ar/work): كل المشاريع مع صور حقيقية لكل شاشة
+- [تواصل](https://kiromagdy.com/ar/contact): نموذج المراسلة وكل طرق التواصل
+
+## Contact
+
+- [Contact page](https://kiromagdy.com/contact): Message form and all channels
+- Email: contact@kiromagdy.com
+- Phone and WhatsApp: +20 109 203 5237
+- [LinkedIn](https://www.linkedin.com/in/kirollosmagdy7/)
+- [GitHub](https://github.com/kiromagdy7)
+- [CV (PDF)](https://kiromagdy.com/cv/Kirollos-Magdy-CV.pdf)
