@@ -6,7 +6,7 @@ import { iconButtonClass } from "@/components/ui";
 import { useI18n } from "@/i18n/provider";
 
 /** Length of the theme switch animation, in milliseconds. */
-const DURATION = 1050;
+const DURATION = 900;
 /** Same curve as `--ease-out-soft` in globals.css. */
 const EASING = "cubic-bezier(0.16, 1, 0.3, 1)";
 

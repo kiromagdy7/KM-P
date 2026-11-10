@@ -43,7 +43,7 @@ export function HomeLogo({ href, label, className, children }: HomeLogoProps) {
   }
 
   return (
-    <Link href={href} aria-label={label} className={className} onClick={onClick}>
+    <Link href={href} aria-label={label} dir="ltr" lang="en" className={className} onClick={onClick}>
       {children}
     </Link>
   );

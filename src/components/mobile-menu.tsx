@@ -39,7 +39,7 @@ export function MobileMenu({ items, homeHref }: { items: NavItem[]; homeHref: st
         className="dialog-fade m-0 h-dvh w-screen bg-paper text-ink backdrop:bg-transparent open:flex open:flex-col"
       >
         <div className="container-site flex h-16 shrink-0 items-center justify-between border-b border-line">
-          <Link href={homeHref} onClick={close} className="text-lg font-semibold tracking-[-0.03em]">
+          <Link href={homeHref} onClick={close} dir="ltr" lang="en" className="font-sans text-lg font-semibold tracking-[-0.03em]">
             {t.site.shortName}
             <span className="text-accent">.</span>
           </Link>

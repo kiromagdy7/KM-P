@@ -218,7 +218,7 @@
   }
 
   /* Negative tracking pulls joined Arabic letters apart, so it is switched off everywhere. */
-  :lang(ar) * {
+  :lang(ar) {
     letter-spacing: 0 !important;
   }
 

@@ -199,7 +199,7 @@ export type Dictionary = typeof en;
 const ar: Dictionary = {
   site: {
     name: "كيرلس مجدي",
-    shortName: "كيرلس",
+    shortName: "Kirollos",
     role: "مطوّر برمجيات Full-Stack",
     jobTitle: "مطوّر برمجيات Full-Stack",
     place: "الإسكندرية، مصر",

@@ -22,7 +22,7 @@ export function SiteHeader({ locale }: { locale: Locale }) {
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-paper/85 backdrop-blur-md">
       <div className="container-site flex h-16 items-center justify-between gap-4">
-        <HomeLogo href={home} label={t.nav.homeLinkLabel} className="text-lg font-semibold tracking-[-0.03em]">
+        <HomeLogo href={home} label={t.nav.homeLinkLabel} className="font-sans text-lg font-semibold tracking-[-0.03em]">
           {t.site.shortName}
           <span className="text-accent">.</span>
         </HomeLogo>
