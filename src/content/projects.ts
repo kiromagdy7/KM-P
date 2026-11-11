@@ -887,7 +887,7 @@ export const projects: Project[] = [
   {
     "slug": "physiotherapy",
     "title": "Dr. Michael Nabil Clinic",
-    "tagline": "Physiotherapy and nutrition clinic website",
+    "tagline": "Physiotherapy clinic website",
     "category": "Healthcare and Wellness",
     "kind": "client",
     "status": "Live",
@@ -1730,7 +1730,7 @@ export const projects: Project[] = [
   {
     "slug": "word-of-the-lord",
     "title": "Word of the Lord",
-    "tagline": "Coptic Orthodox reading and prayer website",
+    "tagline": "Coptic Orthodox prayer website",
     "category": "Spiritual Platform",
     "kind": "personal",
     "status": "Live",
