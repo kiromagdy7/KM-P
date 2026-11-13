@@ -1597,6 +1597,181 @@ export const projects: Project[] = [
     "os": "Web Browser"
   },
   {
+    "slug": "athl-furniture",
+    "title": "ATHL Furniture",
+    "tagline": "Furniture brand website",
+    "category": "Furniture and Interior Design",
+    "kind": "personal",
+    "status": "Live",
+    "platform": "Website",
+    "duration": "2 weeks",
+    "year": 2026,
+    "summary": "A one-page website for a furniture and interior brand: collections, craftsmanship, rooms, reviews and an inquiry form, with calm, slow motion.",
+    "intro": "A website for a furniture brand that sells solid oak pieces and natural textiles. It is designed the way a showroom feels: quiet colors, large photos and plenty of space. Visitors see the three collections, read how the pieces are made, walk through furnished rooms, read what customers say, and send an inquiry from the same page. It is a good fit for a furniture shop, an interior design studio or any brand that sells through photos.",
+    "technical": "A statically exported Next.js 16 / React 19 site in TypeScript, styled with Tailwind CSS 4 and animated with Framer Motion (scroll-triggered fade, rise and blur reveals with staggered children). Images are WebP served through next/image with blur placeholders, the type pairs Cormorant Garamond with Plus Jakarta Sans via next/font, and the build is deployed to Cloudflare Workers static assets.",
+    "note": "ATHL is a concept brand I made to show this kind of website. The studio address, e-mail and customer quotes on the page are sample content.",
+    "facts": [],
+    "stack": [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Framer Motion"
+    ],
+    "tech": [
+      "Next.js 16 (static export)",
+      "React 19 & TypeScript",
+      "Tailwind CSS 4",
+      "Framer Motion",
+      "next/image & next/font",
+      "Cloudflare Workers"
+    ],
+    "liveUrl": "https://athl-furniture.kiromagdy123.workers.dev",
+    "highlightsHeading": "Built like a showroom",
+    "highlights": [
+      {
+        "title": "Photos do the selling",
+        "body": "Each section is built around large photos: the collections as cards, the craftsmanship next to the workshop, and the rooms in a magazine-style grid. Photos zoom in slowly on hover and are cropped per card so the furniture always stays in frame."
+      },
+      {
+        "title": "Calm, slow motion",
+        "body": "Headings, text and photos fade in and rise into place as the visitor scrolls, one after the other. The movement is slow on purpose, to match a brand that sells calm rather than discounts."
+      },
+      {
+        "title": "An inquiry in one step",
+        "body": "The contact section sits on the same page with the e-mail, studio address and opening hours beside a short form: name, e-mail and a few words about the space. The header link and the hero button both lead straight to it."
+      },
+      {
+        "title": "Comfortable on a phone",
+        "body": "The layout rearranges itself for every screen. On a phone the menu folds into a button, the photo grids stack, and the buttons grow to full width so they are easy to tap."
+      }
+    ],
+    "specs": [
+      {
+        "title": "Application",
+        "items": [
+          "Next.js 16 static export",
+          "React 19 & TypeScript",
+          "Deployed on Cloudflare Workers"
+        ]
+      },
+      {
+        "title": "Interface",
+        "items": [
+          "Tailwind CSS 4 styling",
+          "Serif and sans font pairing",
+          "Responsive layouts for every screen size"
+        ]
+      },
+      {
+        "title": "Interaction",
+        "items": [
+          "Framer Motion scroll reveals",
+          "Header that turns solid on scroll",
+          "Back-to-top button after the hero"
+        ]
+      },
+      {
+        "title": "Performance",
+        "items": [
+          "WebP images with blur placeholders",
+          "Self-hosted fonts via next/font",
+          "Pre-rendered HTML, no server needed"
+        ]
+      }
+    ],
+    "groups": [
+      {
+        "id": "landing",
+        "label": "Landing"
+      },
+      {
+        "id": "products",
+        "label": "Collections and rooms"
+      },
+      {
+        "id": "contact",
+        "label": "Reviews and contact"
+      },
+      {
+        "id": "mobile",
+        "label": "On a phone"
+      }
+    ],
+    "shots": [
+      {
+        "file": "hero",
+        "title": "Hero",
+        "group": "landing",
+        "alt": "ATHL Furniture hero section with a living room photo"
+      },
+      {
+        "file": "collections",
+        "title": "Collections",
+        "group": "products",
+        "alt": "ATHL Furniture collections: living, study and rest"
+      },
+      {
+        "file": "craftsmanship",
+        "title": "Craftsmanship",
+        "group": "products",
+        "alt": "ATHL Furniture craftsmanship section with a woodworking photo"
+      },
+      {
+        "file": "spaces",
+        "title": "Spaces",
+        "group": "products",
+        "alt": "ATHL Furniture furnished rooms in a photo grid"
+      },
+      {
+        "file": "reflections",
+        "title": "Customer Reviews",
+        "group": "contact",
+        "alt": "ATHL Furniture customer quotes"
+      },
+      {
+        "file": "contact",
+        "title": "Contact & Inquiry Form",
+        "group": "contact",
+        "alt": "ATHL Furniture contact details and inquiry form"
+      },
+      {
+        "file": "footer",
+        "title": "Footer",
+        "group": "contact",
+        "alt": "ATHL Furniture footer"
+      },
+      {
+        "file": "mobile-hero",
+        "title": "Phone: Hero",
+        "group": "mobile",
+        "alt": "ATHL Furniture hero section on a phone"
+      },
+      {
+        "file": "mobile-menu",
+        "title": "Phone: Menu",
+        "group": "mobile",
+        "alt": "ATHL Furniture menu opened on a phone"
+      }
+    ],
+    "cover": "hero",
+    "coverPosition": "center",
+    "seoDescription": "ATHL Furniture is a furniture brand website by Kirollos Magdy: collections, craftsmanship, furnished rooms, reviews and an inquiry form, built with Next.js, Tailwind CSS and Framer Motion.",
+    "keywords": [
+      "ATHL Furniture",
+      "furniture website",
+      "furniture store website",
+      "interior design website",
+      "Next.js",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Kirollos Magdy"
+    ],
+    "created": "2026-11-13",
+    "schemaType": "CreativeWork",
+    "appCategory": null,
+    "os": null
+  },
+  {
     "slug": "travely",
     "title": "Travely",
     "tagline": "Hotel booking platform",
