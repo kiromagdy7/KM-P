@@ -100,7 +100,7 @@ const en = {
   work: {
     title: "Work",
     intro:
-      "{count} projects, from business systems in daily use to smaller builds that sharpened a specific skill. Every image is a real screenshot of the finished product.",
+      "{count} projects, from business systems in daily use to smaller builds that sharpened a specific skill. Every image is a real screenshot, captured from the running system.",
     commissioned: "Client work and products",
     personal: "Personal projects",
     ctaHeading: "Have a project in mind?",
@@ -118,7 +118,7 @@ const en = {
     underTheHood: "Under the hood",
     underTheHoodLede: "For the technical reader: what it is built with and how it is put together.",
     screenshots: "Screenshots",
-    screenshotsLede: "{count} screens from the finished product. Select one to view it full size.",
+    screenshotsLede: "{count} real screens, captured from the running system. Select one to view it full size.",
     screenshotAlt: "{title} screenshot",
     ctaHeading: "Need something like this?",
     ctaBody: "Tell me how your business works and I will suggest what to build, how long it takes and what it costs.",
@@ -288,7 +288,7 @@ const ar: Dictionary = {
   work: {
     title: "الأعمال",
     intro:
-      "{count} مشاريع، من أنظمة تعمل يومياً لدى عملاء إلى مشاريع أصغر طوّرتُ بها مهارة محددة. كل صورة هنا لقطة حقيقية من المنتج النهائي.",
+      "{count} مشاريع، من أنظمة تعمل يومياً لدى عملاء إلى مشاريع أصغر طوّرتُ بها مهارة محددة. كل صورة هنا لقطة حقيقية، ملتقطة من النظام وهو يعمل.",
     commissioned: "مشاريع العملاء والمنتجات",
     personal: "مشاريع شخصية",
     ctaHeading: "هل لديك مشروع في ذهنك؟",
@@ -306,7 +306,7 @@ const ar: Dictionary = {
     underTheHood: "التفاصيل التقنية",
     underTheHoodLede: "للقارئ التقني: التقنيات المستخدمة وطريقة بناء النظام.",
     screenshots: "صور الشاشات",
-    screenshotsLede: "{count} شاشة من المنتج النهائي. اختر أي صورة لعرضها بالحجم الكامل.",
+    screenshotsLede: "{count} شاشة حقيقية، ملتقطة من النظام وهو يعمل. اختر أي صورة لعرضها بالحجم الكامل.",
     screenshotAlt: "لقطة من {title}",
     ctaHeading: "تحتاج شيئاً مشابهاً؟",
     ctaBody: "أخبرني كيف يسير عملك وسأقترح عليك ما يجب بناؤه، وكم يستغرق، وكم يكلّف.",

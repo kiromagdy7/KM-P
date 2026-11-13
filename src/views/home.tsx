@@ -177,10 +177,11 @@ export function HomeView({ locale }: { locale: Locale }) {
             </article>
           ) : null}
 
-          <Stagger className="mt-16 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+          {/* Four cards under the featured project, two per row. */}
+          <Stagger className="mt-16 grid gap-x-8 gap-y-14 sm:grid-cols-2">
             {rest.map((project) => (
               <StaggerItem key={project.slug}>
-                <ProjectCard project={project} locale={locale} />
+                <ProjectCard project={project} locale={locale} sizes="(min-width: 40rem) 46vw, 92vw" />
               </StaggerItem>
             ))}
           </Stagger>

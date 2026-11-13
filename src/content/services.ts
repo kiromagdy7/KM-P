@@ -119,7 +119,7 @@ const en: Service[] = [
         body: "I set up the domain, hosting and SSL, and hand over a site that is live and yours.",
       },
     ],
-    projects: ["physiotherapy", "tahwega-cafe", "travely"],
+    projects: ["physiotherapy", "tahwega-cafe", "wistore"],
     faqs: [
       {
         question: "Can I update the content myself?",
@@ -296,7 +296,7 @@ const ar: Service[] = [
         body: "أجهّز الدومين والاستضافة وشهادة SSL، وأسلّمك موقعاً يعمل وملكيته لك.",
       },
     ],
-    projects: ["physiotherapy", "tahwega-cafe", "travely"],
+    projects: ["physiotherapy", "tahwega-cafe", "wistore"],
     faqs: [
       {
         question: "هل أستطيع تعديل المحتوى بنفسي؟",

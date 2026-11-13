@@ -1111,6 +1111,271 @@
       1280
     ]
   },
+  "/images/work/wistore/about.webp": {
+    "w": 1425,
+    "h": 900,
+    "v": [
+      640
+    ]
+  },
+  "/images/work/wistore/brands.webp": {
+    "w": 1425,
+    "h": 900,
+    "v": [
+      640
+    ]
+  },
+  "/images/work/wistore/builder-add-elements.webp": {
+    "w": 1600,
+    "h": 900,
+    "v": [
+      640,
+      1280
+    ]
+  },
+  "/images/work/wistore/builder-add-sections.webp": {
+    "w": 1600,
+    "h": 900,
+    "v": [
+      640,
+      1280
+    ]
+  },
+  "/images/work/wistore/builder-layers.webp": {
+    "w": 1600,
+    "h": 900,
+    "v": [
+      640,
+      1280
+    ]
+  },
+  "/images/work/wistore/builder-mobile-preview.webp": {
+    "w": 1600,
+    "h": 900,
+    "v": [
+      640,
+      1280
+    ]
+  },
+  "/images/work/wistore/builder-section-properties.webp": {
+    "w": 1600,
+    "h": 900,
+    "v": [
+      640,
+      1280
+    ]
+  },
+  "/images/work/wistore/builder-text-editing.webp": {
+    "w": 1600,
+    "h": 900,
+    "v": [
+      640,
+      1280
+    ]
+  },
+  "/images/work/wistore/categories.webp": {
+    "w": 1425,
+    "h": 900,
+    "v": [
+      640
+    ]
+  },
+  "/images/work/wistore/contact.webp": {
+    "w": 1425,
+    "h": 900,
+    "v": [
+      640
+    ]
+  },
+  "/images/work/wistore/custom-fields.webp": {
+    "w": 1425,
+    "h": 900,
+    "v": [
+      640
+    ]
+  },
+  "/images/work/wistore/dashboard-dark.webp": {
+    "w": 1425,
+    "h": 900,
+    "v": [
+      640
+    ]
+  },
+  "/images/work/wistore/dashboard.webp": {
+    "w": 1425,
+    "h": 900,
+    "v": [
+      640
+    ]
+  },
+  "/images/work/wistore/domains.webp": {
+    "w": 1425,
+    "h": 900,
+    "v": [
+      640
+    ]
+  },
+  "/images/work/wistore/email-campaign.webp": {
+    "w": 1425,
+    "h": 900,
+    "v": [
+      640
+    ]
+  },
+  "/images/work/wistore/home-comparison.webp": {
+    "w": 1425,
+    "h": 900,
+    "v": [
+      640
+    ]
+  },
+  "/images/work/wistore/home-features.webp": {
+    "w": 1425,
+    "h": 900,
+    "v": [
+      640
+    ]
+  },
+  "/images/work/wistore/home-how-it-works.webp": {
+    "w": 1425,
+    "h": 900,
+    "v": [
+      640
+    ]
+  },
+  "/images/work/wistore/home.webp": {
+    "w": 1425,
+    "h": 900,
+    "v": [
+      640
+    ]
+  },
+  "/images/work/wistore/notification-create.webp": {
+    "w": 1425,
+    "h": 900,
+    "v": [
+      640
+    ]
+  },
+  "/images/work/wistore/platform-settings.webp": {
+    "w": 1425,
+    "h": 900,
+    "v": [
+      640
+    ]
+  },
+  "/images/work/wistore/product-custom-fields.webp": {
+    "w": 1425,
+    "h": 900,
+    "v": [
+      640
+    ]
+  },
+  "/images/work/wistore/product-images.webp": {
+    "w": 1425,
+    "h": 900,
+    "v": [
+      640
+    ]
+  },
+  "/images/work/wistore/product-offers.webp": {
+    "w": 1425,
+    "h": 900,
+    "v": [
+      640
+    ]
+  },
+  "/images/work/wistore/product-seo.webp": {
+    "w": 1425,
+    "h": 900,
+    "v": [
+      640
+    ]
+  },
+  "/images/work/wistore/product-variants.webp": {
+    "w": 1425,
+    "h": 900,
+    "v": [
+      640
+    ]
+  },
+  "/images/work/wistore/products-dark.webp": {
+    "w": 1425,
+    "h": 900,
+    "v": [
+      640
+    ]
+  },
+  "/images/work/wistore/products.webp": {
+    "w": 1425,
+    "h": 900,
+    "v": [
+      640
+    ]
+  },
+  "/images/work/wistore/profile.webp": {
+    "w": 1425,
+    "h": 900,
+    "v": [
+      640
+    ]
+  },
+  "/images/work/wistore/register.webp": {
+    "w": 1425,
+    "h": 900,
+    "v": [
+      640
+    ]
+  },
+  "/images/work/wistore/security-dark.webp": {
+    "w": 1425,
+    "h": 900,
+    "v": [
+      640
+    ]
+  },
+  "/images/work/wistore/security.webp": {
+    "w": 1425,
+    "h": 900,
+    "v": [
+      640
+    ]
+  },
+  "/images/work/wistore/sign-in.webp": {
+    "w": 1425,
+    "h": 900,
+    "v": [
+      640
+    ]
+  },
+  "/images/work/wistore/storefront-catalog.webp": {
+    "w": 1430,
+    "h": 1400,
+    "v": [
+      640
+    ]
+  },
+  "/images/work/wistore/storefront.webp": {
+    "w": 1430,
+    "h": 960,
+    "v": [
+      640
+    ]
+  },
+  "/images/work/wistore/users-management.webp": {
+    "w": 1425,
+    "h": 900,
+    "v": [
+      640
+    ]
+  },
+  "/images/work/wistore/website-settings.webp": {
+    "w": 1425,
+    "h": 900,
+    "v": [
+      640
+    ]
+  },
   "/images/work/word-of-the-lord/agpeya.webp": {
     "w": 1920,
     "h": 922,

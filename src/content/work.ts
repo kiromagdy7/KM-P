@@ -53,4 +53,4 @@ export function getProject(locale: Locale, slug: string): Project | undefined {
 export const projectSlugs = projects.map((project) => project.slug);
 
 /** Shown on the home page, in this order. The first one gets the large slot. */
-export const featuredSlugs = ["jewelry-system", "kmz-hub", "physiotherapy", "tahwega-cafe"];
+export const featuredSlugs = ["jewelry-system", "kmz-hub", "wistore", "physiotherapy", "tahwega-cafe"];

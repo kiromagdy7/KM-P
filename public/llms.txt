@@ -17,6 +17,7 @@ This is his personal site, kiromagdy.com. It describes the services he offers, s
 - [KMZ Hub](https://kiromagdy.com/work/kmz-hub): His own product, in use at two centers. Offline Windows desktop software for PlayStation centers: room timers at multiple rates, cafeteria sales, thermal receipts, shift cash counts. .NET MAUI Blazor Hybrid, SQLite
 - [Dr. Michael Nabil Clinic](https://kiromagdy.com/work/physiotherapy): Live website for a physiotherapy and clinical nutrition clinic in Dokki. Next.js, React, Tailwind CSS
 - [Tahwega Cafe](https://kiromagdy.com/work/tahwega-cafe): Live café website presenting the menu, atmosphere and location. Next.js, React, Tailwind CSS
+- [Wistore](https://kiromagdy.com/work/wistore): Online store builder SaaS, built solo. Shop owners add products with variants and offers and design their storefront in a visual builder written from scratch. ASP.NET Core Web API (.NET 10), Next.js 16, SQL Server
 - [Travely](https://kiromagdy.com/work/travely): Hotel booking platform with automatic night pricing, Stripe checkout and an admin back office. ASP.NET Core MVC (.NET 9), SQL Server
 - [IP Inspector](https://kiromagdy.com/work/ip-inspector): Web tool showing public IP details, connection metrics and location on an interactive map
 - [Teta's Kitchen](https://kiromagdy.com/work/teta-kitchen): Recipe website in plain HTML, CSS and JavaScript with live search and in-place editing

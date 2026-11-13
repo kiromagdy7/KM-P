@@ -1199,6 +1199,404 @@ export const projects: Project[] = [
     "os": null
   },
   {
+    "slug": "wistore",
+    "title": "Wistore",
+    "tagline": "Online store builder for local brands",
+    "category": "E-Commerce SaaS",
+    "kind": "personal",
+    "status": "Demo",
+    "platform": "Web application",
+    "duration": "About 4 months",
+    "year": 2026,
+    "summary": "A platform where a shop owner signs up, adds products and designs their own online store in a visual builder. Designed and built solo.",
+    "intro": "A platform for shop owners who want their own online store without hiring a developer. They sign up, name the store, add products with sizes, colors and offers, then design the store page in a visual builder: pick ready sections, click any text or button to restyle it, check how it looks on a phone, and publish. Each store gets its own address. I designed and built the platform, the builder and the admin side myself.",
+    "technical": "A multi-tenant e-commerce SaaS: a .NET 10 Web API in Clean Architecture (API, Application, Domain, Infrastructure) with EF Core 10 on SQL Server, and a Next.js 16 / React 19 front end in TypeScript. The store builder is written from scratch on a single reducer: 7 section types, free-positioned text, buttons, images, shapes and dividers, separate desktop, tablet and mobile versions of every section, 50-step undo, debounced auto-save and a draft/published split with signed preview tokens. The API covers JWT with rotating refresh tokens and reuse detection, Google sign-in, e-mail OTP, 90 rate-limit rules, SignalR notifications, Hangfire-scheduled e-mail campaigns and WebP image conversion to Cloudflare R2.",
+    "note": "This build covers accounts, the product catalog, the store builder, the public storefront, notifications and e-mail campaigns, all working end to end. Cart, checkout and online payments are outside its scope. The screenshots use demo products.",
+    "facts": [
+      { "value": "33", "label": "pages" },
+      { "value": "138", "label": "API endpoints" },
+      { "value": "36", "label": "database tables" },
+      { "value": "7", "label": "ready-made store sections" }
+    ],
+    "stack": [
+      "ASP.NET Core",
+      "Next.js",
+      "SQL Server",
+      "SignalR"
+    ],
+    "tech": [
+      "ASP.NET Core Web API (.NET 10)",
+      "C#",
+      "Entity Framework Core 10",
+      "SQL Server (36 DbSets)",
+      "Next.js 16 (App Router)",
+      "React 19 & TypeScript",
+      "Tailwind CSS 4 & shadcn/ui",
+      "Zustand, React Hook Form & Zod",
+      "SignalR",
+      "Hangfire",
+      "Cloudflare R2 & SkiaSharp",
+      "Brevo e-mail API",
+      "Google OAuth 2.0 & JWT"
+    ],
+    "liveUrl": null,
+    "highlightsHeading": "How it works",
+    "highlights": [
+      {
+        "title": "A visual store builder, written from scratch",
+        "body": "The owner builds the store page from 7 ready sections (hero banner, featured products, categories, collection banner, product grid, brands, blank section) and adds text, buttons, images, shapes and dividers on top. Clicking an element opens a formatting toolbar and a properties panel; elements can be dragged and resized with snapping guides. A layers panel lists every section and element. No builder library is used: the whole editor runs on one reducer."
+      },
+      {
+        "title": "Separate phone and tablet layouts, undo and auto-save",
+        "body": "Every section keeps its own desktop, tablet and mobile version, so a change made for phones does not break the desktop page. The builder remembers the last 50 steps for undo and redo, saves the draft 1.5 seconds after the last change, and shows the save state in the toolbar."
+      },
+      {
+        "title": "Draft, preview and publish",
+        "body": "Edits go to a draft that customers never see. Preview asks the server for a signed token that expires after 15 minutes, so only the owner can open the draft. Publish copies the draft to the live store, and Reset draft goes back to the last published version."
+      },
+      {
+        "title": "A storefront for every store",
+        "body": "Each store has its own address, checked against a list of reserved names. The public page is rendered on the server from the published layout and filled with the store's real products, categories and brands. A store with nothing published shows an under-construction page."
+      },
+      {
+        "title": "Products with sizes, colors and stock",
+        "body": "A product takes option groups such as Size and Color, and the system generates every combination (4 sizes and 2 colors give 8 variants). Each variant has its own SKU, price, cost, stock, weight and on/off switch, editable in bulk. Products also carry a compare-at price, tags, a rich-text description and a digital-product mode."
+      },
+      {
+        "title": "Offers, custom fields and categories",
+        "body": "Two offer types: quantity discounts in tiers (buy 2 for 10% off, buy 4 for 15% off) and bundles (buy 2, get 1 free). Owners define their own product fields in 9 types, from text and numbers to color and yes/no. Categories nest to any depth and can be generated from ready presets matched to the store type."
+      },
+      {
+        "title": "Search preview for every product",
+        "body": "Each product has its own link, meta title and meta description, with a preview of how it would appear in Google and a checklist score for title length, description length, link readability and keywords."
+      },
+      {
+        "title": "Sign-up and account security",
+        "body": "Sign-up is by a 6-digit e-mail code or a Google account. Sessions use 15-minute access tokens with refresh tokens that rotate on every use and are stored hashed; if an old one is replayed, every session of that account is closed. Five wrong passwords lock the account for 15 minutes. 90 rate-limit rules cover the API, from 2 contact messages per 15 minutes to 120 reads per minute."
+      },
+      {
+        "title": "Live notifications and e-mail campaigns",
+        "body": "The platform admin writes a notification or an e-mail campaign, picks the audience (everyone, specific users, a role, a country, a gender or a sign-up date range), sees how many people it reaches, and sends it now or schedules it. Notifications arrive instantly over SignalR. Campaigns go out in batches of 300 with up to 3 retries per recipient, and every e-mail has an unsubscribe link."
+      },
+      {
+        "title": "Images converted and stored in the cloud",
+        "body": "Uploaded product photos, logos and builder images are converted to WebP on the server and stored on Cloudflare R2. A product image can also be added from a link."
+      }
+    ],
+    "specs": [
+      {
+        "title": "Backend and Architecture",
+        "items": [
+          ".NET 10 Web API, Clean Architecture (4 projects)",
+          "19 Controllers & 138 Endpoints",
+          "51 FluentValidation Validators",
+          "389 C# Files (~17,500 Lines)"
+        ]
+      },
+      {
+        "title": "Data and Background Work",
+        "items": [
+          "SQL Server & EF Core 10 (36 DbSets)",
+          "Fluent API Configurations & Soft Delete",
+          "Hangfire Recurring Jobs (Every Minute)",
+          "SignalR Hub with Auto-Reconnect"
+        ]
+      },
+      {
+        "title": "Security",
+        "items": [
+          "JWT + Rotating Refresh Tokens (SHA-256)",
+          "BCrypt Passwords & E-mail OTP Codes",
+          "90 Sliding-Window Rate-Limit Rules",
+          "AES-Encrypted Provider Keys, CSP Headers"
+        ]
+      },
+      {
+        "title": "Frontend and Builder",
+        "items": [
+          "Next.js 16, React 19 & TypeScript",
+          "292 Files (~47,000 Lines), 162 Components",
+          "Reducer-Based Builder, 7 Section Types",
+          "Light & Dark Themes, Tiptap & Monaco Editors"
+        ]
+      }
+    ],
+    "groups": [
+      {
+        "id": "builder",
+        "label": "Store builder"
+      },
+      {
+        "id": "storefront",
+        "label": "Storefront"
+      },
+      {
+        "id": "catalog",
+        "label": "Products and catalog"
+      },
+      {
+        "id": "dashboard",
+        "label": "Dashboard and account"
+      },
+      {
+        "id": "admin",
+        "label": "Platform admin"
+      },
+      {
+        "id": "site",
+        "label": "Marketing site and sign-in"
+      }
+    ],
+    "shots": [
+      {
+        "file": "home",
+        "title": "Home Page",
+        "group": "site",
+        "alt": "Wistore: Home Page screen"
+      },
+      {
+        "file": "builder-text-editing",
+        "title": "Builder: Editing Text",
+        "group": "builder",
+        "alt": "Wistore: store builder with a heading selected, formatting toolbar and properties panel"
+      },
+      {
+        "file": "builder-section-properties",
+        "title": "Builder: Section Properties",
+        "group": "builder",
+        "alt": "Wistore: store builder with a section selected and its size, spacing and background settings"
+      },
+      {
+        "file": "builder-add-sections",
+        "title": "Builder: Add a Section",
+        "group": "builder",
+        "alt": "Wistore: panel of ready-made store sections in the builder"
+      },
+      {
+        "file": "builder-add-elements",
+        "title": "Builder: Add an Element",
+        "group": "builder",
+        "alt": "Wistore: panel of text, button, shape and divider presets in the builder"
+      },
+      {
+        "file": "builder-layers",
+        "title": "Builder: Layers",
+        "group": "builder",
+        "alt": "Wistore: layers panel listing the sections of the store page"
+      },
+      {
+        "file": "builder-mobile-preview",
+        "title": "Builder: Mobile Layout",
+        "group": "builder",
+        "alt": "Wistore: store builder showing the phone layout of the page"
+      },
+      {
+        "file": "storefront",
+        "title": "Storefront",
+        "group": "storefront",
+        "alt": "Wistore: public storefront with hero banner and featured products"
+      },
+      {
+        "file": "storefront-catalog",
+        "title": "Storefront: Categories and Products",
+        "group": "storefront",
+        "alt": "Wistore: storefront categories, collection banner, product grid and brands"
+      },
+      {
+        "file": "products",
+        "title": "Products",
+        "group": "catalog",
+        "alt": "Wistore: Products screen"
+      },
+      {
+        "file": "products-dark",
+        "title": "Products (Dark Theme)",
+        "group": "catalog",
+        "alt": "Wistore: Products screen in the dark theme"
+      },
+      {
+        "file": "product-variants",
+        "title": "Product Variants",
+        "group": "catalog",
+        "alt": "Wistore: product option groups and generated variants"
+      },
+      {
+        "file": "product-offers",
+        "title": "Product Offers",
+        "group": "catalog",
+        "alt": "Wistore: quantity discount tiers on a product"
+      },
+      {
+        "file": "product-seo",
+        "title": "Product SEO",
+        "group": "catalog",
+        "alt": "Wistore: product meta title, description, Google preview and SEO score"
+      },
+      {
+        "file": "product-images",
+        "title": "Product Images",
+        "group": "catalog",
+        "alt": "Wistore: Product Images screen"
+      },
+      {
+        "file": "product-custom-fields",
+        "title": "Product Custom Fields",
+        "group": "catalog",
+        "alt": "Wistore: custom field values on a product"
+      },
+      {
+        "file": "categories",
+        "title": "Categories",
+        "group": "catalog",
+        "alt": "Wistore: nested product categories"
+      },
+      {
+        "file": "brands",
+        "title": "Brands",
+        "group": "catalog",
+        "alt": "Wistore: Brands screen"
+      },
+      {
+        "file": "custom-fields",
+        "title": "Custom Fields",
+        "group": "catalog",
+        "alt": "Wistore: Custom Fields screen"
+      },
+      {
+        "file": "dashboard",
+        "title": "Dashboard",
+        "group": "dashboard",
+        "alt": "Wistore: Dashboard screen"
+      },
+      {
+        "file": "dashboard-dark",
+        "title": "Dashboard (Dark Theme)",
+        "group": "dashboard",
+        "alt": "Wistore: Dashboard screen in the dark theme"
+      },
+      {
+        "file": "website-settings",
+        "title": "Website Information",
+        "group": "dashboard",
+        "alt": "Wistore: website name, link and logo settings"
+      },
+      {
+        "file": "domains",
+        "title": "Domains",
+        "group": "dashboard",
+        "alt": "Wistore: store address settings"
+      },
+      {
+        "file": "profile",
+        "title": "Profile",
+        "group": "dashboard",
+        "alt": "Wistore: Profile screen"
+      },
+      {
+        "file": "security",
+        "title": "Security",
+        "group": "dashboard",
+        "alt": "Wistore: sign-in e-mails and password settings"
+      },
+      {
+        "file": "security-dark",
+        "title": "Security (Dark Theme)",
+        "group": "dashboard",
+        "alt": "Wistore: Security screen in the dark theme"
+      },
+      {
+        "file": "users-management",
+        "title": "Users Management",
+        "group": "admin",
+        "alt": "Wistore: Users Management screen"
+      },
+      {
+        "file": "notification-create",
+        "title": "Create a Notification",
+        "group": "admin",
+        "alt": "Wistore: notification form with audience, schedule and live preview"
+      },
+      {
+        "file": "email-campaign",
+        "title": "Create an E-mail Campaign",
+        "group": "admin",
+        "alt": "Wistore: e-mail campaign form with live preview"
+      },
+      {
+        "file": "platform-settings",
+        "title": "Platform Settings",
+        "group": "admin",
+        "alt": "Wistore: e-mail provider settings"
+      },
+      {
+        "file": "home-how-it-works",
+        "title": "Home: How It Works",
+        "group": "site",
+        "alt": "Wistore: three-step section on the home page"
+      },
+      {
+        "file": "home-features",
+        "title": "Home: Features",
+        "group": "site",
+        "alt": "Wistore: features section on the home page"
+      },
+      {
+        "file": "home-comparison",
+        "title": "Home: Comparison",
+        "group": "site",
+        "alt": "Wistore: comparison section on the home page"
+      },
+      {
+        "file": "about",
+        "title": "About",
+        "group": "site",
+        "alt": "Wistore: About screen"
+      },
+      {
+        "file": "contact",
+        "title": "Contact and FAQ",
+        "group": "site",
+        "alt": "Wistore: Contact and FAQ screen"
+      },
+      {
+        "file": "sign-in",
+        "title": "Sign In",
+        "group": "site",
+        "alt": "Wistore: Sign In screen"
+      },
+      {
+        "file": "register",
+        "title": "Register",
+        "group": "site",
+        "alt": "Wistore: Register screen"
+      }
+    ],
+    "cover": "home",
+    "coverPosition": "center",
+    "seoDescription": "Wistore is an online store builder SaaS built with .NET 10 and Next.js 16: visual page builder, product variants, offers, storefronts and e-mail campaigns.",
+    "keywords": [
+      "Wistore",
+      "Online Store Builder",
+      "E-Commerce SaaS",
+      "Website Builder",
+      "Multi-Tenant",
+      ".NET 10",
+      "ASP.NET Core Web API",
+      "Clean Architecture",
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "SQL Server",
+      "SignalR",
+      "Hangfire",
+      "Cloudflare R2"
+    ],
+    "created": "2026-06-10",
+    "schemaType": "SoftwareApplication",
+    "appCategory": "BusinessApplication",
+    "os": "Web Browser"
+  },
+  {
     "slug": "travely",
     "title": "Travely",
     "tagline": "Hotel booking platform",
