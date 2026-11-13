@@ -56,7 +56,7 @@ export const projects: Project[] = [
   {
     "slug": "jewelry-system",
     "title": "Jewelry System",
-    "tagline": "ERP for jewelry shops and gold workshops",
+    "tagline": "ERP for jewelry shops and workshops",
     "category": "ERP and Financial",
     "kind": "client",
     "status": "In production",
@@ -887,7 +887,7 @@ export const projects: Project[] = [
   {
     "slug": "physiotherapy",
     "title": "Dr. Michael Nabil Clinic",
-    "tagline": "Physiotherapy clinic website",
+    "tagline": "Physiotherapy website",
     "category": "Healthcare and Wellness",
     "kind": "client",
     "status": "Live",

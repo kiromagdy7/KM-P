@@ -29,7 +29,7 @@ const en = {
     workTitle: "Work: ERP, POS, desktop and web projects",
     workDescription:
       "Projects by Kirollos Magdy: a jewelry ERP in production, an offline PlayStation center system, live client websites, a hotel booking platform and more, each with real screenshots.",
-    servicesTitle: "Services: websites, desktop software, POS and ERP systems",
+    servicesTitle: "Services: websites, desktop software, POS and ERP",
     servicesDescription:
       "What Kirollos Magdy builds for businesses: POS and ERP systems, websites and web applications, and Windows desktop software. Based in Alexandria, Egypt, working with clients worldwide.",
     contactTitle: "Contact",
