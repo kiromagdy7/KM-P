@@ -69,12 +69,18 @@ export function MobileMenu({ items, homeHref }: { items: NavItem[]; homeHref: st
         </nav>
 
         <div className="container-site shrink-0 animate-rise space-y-4 border-t border-line py-5 [animation-delay:380ms]">
-          <div className="grid grid-cols-2 gap-3">
-            <a href={whatsappUrl(t.site.whatsappMessage)} target="_blank" rel="noopener noreferrer" className={buttonClass("primary")}>
+          {/* Side by side while both labels fit on one line; otherwise each takes a full row. */}
+          <div className="flex flex-wrap gap-3">
+            <a
+              href={whatsappUrl(t.site.whatsappMessage)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={buttonClass("primary", "md", "flex-1 whitespace-nowrap")}
+            >
               <WhatsAppIcon className="size-4" />
               {t.actions.whatsapp}
             </a>
-            <a href={site.cv} download className={buttonClass("secondary")}>
+            <a href={site.cv} download className={buttonClass("secondary", "md", "flex-1 whitespace-nowrap")}>
               <Download className="size-4" aria-hidden />
               {t.actions.downloadCv}
             </a>

@@ -93,6 +93,8 @@
   --animate-beacon: beacon 2.2s cubic-bezier(0, 0, 0.2, 1) infinite;
   --animate-halo: halo 2.4s ease-in-out infinite;
   --animate-nudge: nudge 1.8s ease-in-out infinite;
+  /* Two pulses on a review card reached from the "Client rating" link, then a light accent border stays. */
+  --animate-review-glow: review-glow 1.4s var(--ease-out-soft) 0.35s 2 both;
 
   @keyframes rise {
     from {
@@ -149,6 +151,21 @@
     }
     50% {
       box-shadow: 0 0 0 0.09em color-mix(in srgb, var(--accent) 0%, transparent);
+    }
+  }
+
+  @keyframes review-glow {
+    0% {
+      border-color: var(--line);
+      box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 0%, transparent);
+    }
+    35% {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 22%, transparent), 0 0 32px 4px color-mix(in srgb, var(--accent) 28%, transparent);
+    }
+    100% {
+      border-color: color-mix(in srgb, var(--accent) 55%, var(--line));
+      box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 0%, transparent);
     }
   }
 

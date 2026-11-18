@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { CtaBand } from "@/components/cta-band";
 import { Gallery, type GalleryItem } from "@/components/gallery";
 import { JsonLd } from "@/components/json-ld";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion";
 import { ProjectCard } from "@/components/project-card";
+import { GoogleRating, ReviewCard, Stars } from "@/components/reviews";
 import { SiteImage } from "@/components/site-image";
 import { SiteLink as Link } from "@/components/site-link";
 import { buttonClass, Section } from "@/components/ui";
+import { reviewForProject } from "@/content/reviews";
 import { getProject, getProjects } from "@/content/work";
 import { fill, localePath, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
@@ -65,6 +67,8 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
     };
   });
 
+  const review = reviewForProject(project.slug);
+
   const cover = project.shots.find((shot) => shot.file === project.cover);
 
   // Suggest the next three projects in the list, wrapping around at the end.
@@ -108,6 +112,23 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
                   <dd className="text-end font-medium">{detail.value}</dd>
                 </div>
               ))}
+              {review ? (
+                // Jumps to the client's review further down, which then glows.
+                <div className="border-b border-line">
+                  <a
+                    href="#review"
+                    aria-label={t.project.clientRatingAria}
+                    className="group flex items-center justify-between gap-6 py-3"
+                  >
+                    <span className="text-muted transition-colors duration-200 group-hover:text-ink">{t.project.clientRating}</span>
+                    <span className="inline-flex items-center gap-2 font-medium">
+                      <Stars className="text-[0.9375rem]" />
+                      <span className="tabular-nums">5.0</span>
+                      <ArrowDown className="size-3.5 text-muted transition-transform duration-300 group-hover:translate-y-0.5 group-hover:text-ink" aria-hidden />
+                    </span>
+                  </a>
+                </div>
+              ) : null}
             </dl>
           </div>
 
@@ -146,6 +167,14 @@ export function ProjectView({ locale, slug }: { locale: Locale; slug: string }) 
               ))}
             </Stagger>
           </Section>
+
+          {review ? (
+            <Section id="review" title={t.reviews.projectTitle} aside={<GoogleRating locale={locale} stacked />}>
+              <Reveal className="max-w-[48rem]">
+                <ReviewCard review={review} locale={locale} large showProject={false} glowOnTarget />
+              </Reveal>
+            </Section>
+          ) : null}
 
           <Section id="stack" title={t.project.underTheHood} lede={t.project.underTheHoodLede}>
             <Reveal>

@@ -5,10 +5,12 @@ import { FaqList } from "@/components/faq-list";
 import { JsonLd } from "@/components/json-ld";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion";
 import { ProjectCard } from "@/components/project-card";
+import { GoogleRating, ReviewCard } from "@/components/reviews";
 import { SiteImage } from "@/components/site-image";
 import { SiteLink as Link } from "@/components/site-link";
 import { buttonClass, Section } from "@/components/ui";
 import { getHome } from "@/content/home";
+import { reviews } from "@/content/reviews";
 import { getServices } from "@/content/services";
 import { site } from "@/content/site";
 import { featuredSlugs, getProject, getProjects } from "@/content/work";
@@ -29,16 +31,17 @@ export function homeMetadata(locale: Locale): Metadata {
   });
 }
 
-// Each word of the name slides up from behind a mask. The words sit inline, so the
-// name fits on one line when the screen is wide enough and wraps to two otherwise.
-// The extra padding keeps
-// the mask from cutting off letter tails ("g", "y") and, in Arabic, the dots
-// and strokes that sit above and below the line.
+// Each word of the name slides up from behind a mask. On phones the name is sized
+// from the screen width so it always fits on one line; beside the portrait (md and
+// up) it may wrap to two. The extra padding keeps the mask from cutting off letter
+// tails ("g", "y"), the end of the last letter, and, in Arabic, the dots and strokes
+// that sit above and below the line.
 const nameLineMask =
-  "-mb-[0.14em] inline-block overflow-hidden pb-[0.14em] align-top rtl:-mt-[0.16em] rtl:-mb-[0.34em] rtl:pt-[0.16em] rtl:pb-[0.34em]";
+  "-mb-[0.14em] -me-[0.06em] inline-block overflow-hidden pe-[0.06em] pb-[0.14em] align-top rtl:-mt-[0.16em] rtl:-mb-[0.34em] rtl:pt-[0.16em] rtl:pb-[0.34em]";
 // The Arabic surname ends in a letter that drops well below the line, so the last line gets a deeper mask.
+// The extra room at the end (pe, cancelled by -me) keeps the glowing dot's halo from being clipped.
 const lastNameLineMask =
-  "-mb-[0.14em] inline-block overflow-hidden pb-[0.14em] align-top rtl:-mt-[0.16em] rtl:-mb-[0.2em] rtl:pt-[0.16em] rtl:pb-[0.56em]";
+  "-mb-[0.14em] -me-[0.14em] inline-block overflow-hidden pe-[0.14em] pb-[0.14em] align-top rtl:-mt-[0.16em] rtl:-mb-[0.2em] rtl:pt-[0.16em] rtl:pb-[0.56em]";
 
 // Arrows point the way the text reads: right in English, left in Arabic.
 const arrowClass = "size-4 transition-transform duration-300 group-hover:translate-x-1 rtl:-scale-x-100 rtl:group-hover:-translate-x-1";
@@ -68,8 +71,11 @@ export function HomeView({ locale }: { locale: Locale }) {
       <section aria-labelledby="hero-heading" className="relative">
         <div className="container-site grid min-h-[calc(100svh-4.0625rem)] items-center gap-12 py-12 md:grid-cols-[minmax(0,7fr)_minmax(0,4.6fr)] md:gap-10 lg:py-16">
           <div>
-            <p className="animate-rise text-[0.9375rem] text-muted">{t.hero.kicker}</p>
-            <h1 id="hero-heading" className="mt-5 text-center text-display font-bold md:text-start">
+            <p className="animate-rise text-center text-[0.9375rem] text-muted md:text-start">{t.hero.kicker}</p>
+            <h1
+              id="hero-heading"
+              className="mt-5 text-center text-display font-bold max-md:text-[length:min(calc((100vw-3.5rem)/7.2),6rem)] max-md:whitespace-nowrap md:text-start"
+            >
               <span className={nameLineMask}>
                 <span className="block animate-line-up [animation-delay:80ms]">{firstName}</span>
               </span>{" "}
@@ -80,6 +86,11 @@ export function HomeView({ locale }: { locale: Locale }) {
                 </span>
               </span>
             </h1>
+            {/* Proof right under the name: the Google rating, linked to the reviews themselves. */}
+            <div className="mt-6 flex animate-rise justify-center [animation-delay:260ms] md:justify-start">
+              {/* On the narrowest phones the review count drops to its own line. */}
+              <GoogleRating locale={locale} className="flex-wrap justify-center md:justify-start" />
+            </div>
             <p className="mt-8 max-w-[31ch] animate-rise text-[clamp(1.375rem,2.4vw,1.75rem)] leading-[1.3] font-medium tracking-[-0.02em] [animation-delay:320ms] rtl:mt-6 rtl:leading-[1.6]">
               {t.hero.lead}
             </p>
@@ -187,6 +198,18 @@ export function HomeView({ locale }: { locale: Locale }) {
           </Stagger>
         </div>
       </section>
+
+      {/* Reviews */}
+      <Section id="reviews" title={t.reviews.title} lede={t.reviews.lede} aside={<GoogleRating locale={locale} stacked />}>
+        {/* Columns let short and long reviews pack together without gaps. */}
+        <Stagger className="gap-6 md:columns-2" gap={0.1}>
+          {reviews.map((review) => (
+            <StaggerItem key={review.id} className="mb-6 break-inside-avoid">
+              <ReviewCard review={review} locale={locale} />
+            </StaggerItem>
+          ))}
+        </Stagger>
+      </Section>
 
       {/* Services */}
       <Section id="services" title={t.home.servicesTitle} lede={t.home.servicesLede}>
