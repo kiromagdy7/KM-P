@@ -24,7 +24,7 @@ export interface Review {
 /** The Google Business Profile. Update `count` when new reviews appear there. */
 export const googleReviews = {
   rating: 5,
-  count: 19,
+  count: 20,
   // Opens the reviews list of the profile directly (Place ID of "Kirollos Magdy").
   url: "https://search.google.com/local/reviews?placeid=ChIJoapXy69K9mYRO5IkMvcY8Gc",
 };
@@ -71,6 +71,15 @@ Many thanks and appreciation to you.`,
       "Eng. Kirollos is truly one of the most skilled and fastest engineers I have worked with ❤️❤️❤️\nIncredible quality of work 🙏🏻🙏🏻🙏🏻🌹",
   },
   {
+    id: "karen-ibrahem",
+    name: { en: "Karen Ibrahem", ar: "كارين إبراهيم" },
+    context: { en: "Client, café website", ar: "عميلة، موقع الكافيه" },
+    project: "tahwega-cafe",
+    lang: "ar",
+    text: "أشطر باشمهندس كيرو بجد عاملي ويب سايت للكافيه بتاعي وعملي كل حاجه بشكل منظم وجميل❤️❤️🥰",
+    translation: "Truly the most skilled engineer, Kiro. He built the website for my café and did everything in an organized and beautiful way ❤️❤️🥰",
+  },
+  {
     id: "david-fouad",
     name: { en: "David Fouad", ar: "ديفيد فؤاد" },
     context: { en: "Client", ar: "عميل" },
@@ -79,6 +88,16 @@ Many thanks and appreciation to you.`,
     text: "I highly recommend him. He is very professional and competent. He delivered everything within the timeframe we discussed at the beginning of the agreement. He is also very flexible when it comes to changes I asked for. It was an amazing experience working with him.",
     translation:
       "أنصح به بشدة. محترف جداً وكفء. سلّم كل شيء في المدة التي اتفقنا عليها في بداية الاتفاق. وهو أيضاً مرن جداً في التعديلات التي طلبتها. كانت تجربة رائعة أن أعمل معه.",
+  },
+  {
+    id: "mina-shenouda",
+    name: { en: "Mina Shenouda", ar: "مينا شنودة" },
+    context: { en: "Client", ar: "عميل" },
+    project: null,
+    lang: "en",
+    text: "He’s highly skilled, professional, and a pleasure to work with. The quality of his work is excellent, and his attention to detail really shows. I’d happily work with him again and highly recommend him.",
+    translation:
+      "ماهر جداً، ومحترف، والعمل معه ممتع. جودة عمله ممتازة، واهتمامه بالتفاصيل واضح فعلاً. يسعدني أن أعمل معه مرة أخرى، وأنصح به بشدة.",
   },
   {
     id: "hazem-elgammal",

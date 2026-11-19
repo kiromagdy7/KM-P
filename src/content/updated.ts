@@ -7,12 +7,12 @@
 // any page that is missing (a new project, for example).
 
 export const pageUpdated: Record<string, string> = {
-  "/": "2026-11-18",
+  "/": "2026-11-19",
   "/work": "2026-11-14",
   "/work/jewelry-system": "2026-11-18",
   "/work/kmz-hub": "2026-11-10",
   "/work/physiotherapy": "2026-11-18",
-  "/work/tahwega-cafe": "2026-11-10",
+  "/work/tahwega-cafe": "2026-11-19",
   "/work/wistore": "2026-11-13",
   "/work/athl-furniture": "2026-11-14",
   "/work/travely": "2026-11-10",
