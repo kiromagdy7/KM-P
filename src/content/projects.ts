@@ -1597,6 +1597,206 @@ export const projects: Project[] = [
     "os": "Web Browser"
   },
   {
+    "slug": "atrio-studio",
+    "title": "Atrio Studio",
+    "tagline": "Architecture studio website",
+    "category": "Architecture and Interior Design",
+    "kind": "personal",
+    "status": "Live",
+    "platform": "Website",
+    "duration": "2 weeks",
+    "year": 2026,
+    "summary": "A one-page website for an architecture and interior design studio, built around its own brand mark, with scroll-driven motion in every section.",
+    "intro": "A website for an architecture and interior design studio that takes on high-end homes and commercial buildings. The design goes for the feel of a printed architecture monograph: dark, photo-led sections alternate with light stone-colored ones, and the studio's own wordmark returns throughout the page. Visitors move from the studio's story to five services, a four-step process, a strip of finished projects and a detailed inquiry form. It is a good fit for an architect, an interior designer, a contractor or any firm whose work sells through its images.",
+    "technical": "A Next.js 16 / React 19 site in TypeScript, styled with Tailwind CSS 4 and animated with Framer Motion. The services are stacked full-screen panels: each one stays pinned while the next slides over it, scaling down and dimming the one beneath through scroll-linked transforms. The about statement lights up word by word as it scrolls past, the metrics count up when they enter the screen, and the projects run as an endless strip driven by an animation-frame loop that slows on hover and pauses off screen. Every motion honors the visitor's reduced-motion setting. Deployed to Cloudflare Workers.",
+    "note": "Atrio is a concept studio I made to show this kind of website. Its figures, locations, projects and e-mail are sample content, and the inquiry form does not send messages.",
+    "facts": [],
+    "stack": [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Framer Motion"
+    ],
+    "tech": [
+      "Next.js 16",
+      "React 19 & TypeScript",
+      "Tailwind CSS 4",
+      "Framer Motion (scroll-linked)",
+      "Cloudflare Workers"
+    ],
+    "liveUrl": "https://atrio-studio.kiromagdy123.workers.dev",
+    "highlightsHeading": "Designed like a monograph",
+    "highlights": [
+      {
+        "title": "A brand mark that carries the page",
+        "body": "The ATRIO wordmark, with its open rounded O, opens the page across the hero photo, returns in smaller forms inside the about and process sections, and closes the footer. Gold lines, thin grid rules and numbered labels keep every section in the same visual language."
+      },
+      {
+        "title": "Services that stack as you scroll",
+        "body": "Each of the five services fills the screen and stays in place while the next one slides over it. The panel underneath shrinks and darkens slightly, and a counter shows which of the five is on screen."
+      },
+      {
+        "title": "Text and numbers that respond to scrolling",
+        "body": "The studio's statement starts faded and lights up word by word as the visitor reads down. The three figures count up from zero the first time they come into view."
+      },
+      {
+        "title": "A projects strip that never ends",
+        "body": "Finished projects move sideways in a continuous loop. It slows down when the mouse is over it so a project can be looked at, and stops when it is off screen to save battery."
+      },
+      {
+        "title": "An inquiry form that qualifies the client",
+        "body": "Before the usual name and e-mail, the visitor picks the type of project and a budget range with tap-friendly buttons, so the studio knows what is being asked before replying."
+      },
+      {
+        "title": "Navigation that knows where you are",
+        "body": "The header highlights the section on screen, a thin bar along the top shows how far down the page the visitor is, and on phones the menu opens into a full-screen panel with the services listed under the links."
+      }
+    ],
+    "specs": [
+      {
+        "title": "Application",
+        "items": [
+          "Next.js 16 & React 19",
+          "TypeScript",
+          "Deployed on Cloudflare Workers"
+        ]
+      },
+      {
+        "title": "Interface",
+        "items": [
+          "Tailwind CSS 4 styling",
+          "Dark and light alternating sections",
+          "Responsive layouts for every screen size"
+        ]
+      },
+      {
+        "title": "Motion",
+        "items": [
+          "Scroll-linked stacking panels",
+          "Word-by-word scroll reveal & count-up figures",
+          "Endless strip on an animation-frame loop"
+        ]
+      },
+      {
+        "title": "Care",
+        "items": [
+          "Reduced-motion support throughout",
+          "Animations pause off screen",
+          "Active-section navigation & scroll progress"
+        ]
+      }
+    ],
+    "groups": [
+      {
+        "id": "landing",
+        "label": "Landing and about"
+      },
+      {
+        "id": "services",
+        "label": "Services and process"
+      },
+      {
+        "id": "work",
+        "label": "Projects and contact"
+      },
+      {
+        "id": "mobile",
+        "label": "On a phone"
+      }
+    ],
+    "shots": [
+      {
+        "file": "hero",
+        "title": "Hero",
+        "group": "landing",
+        "alt": "Atrio Studio hero with the ATRIO wordmark over an interior photo"
+      },
+      {
+        "file": "about",
+        "title": "About",
+        "group": "landing",
+        "alt": "Atrio Studio about section with the studio statement"
+      },
+      {
+        "file": "metrics",
+        "title": "Figures",
+        "group": "landing",
+        "alt": "Atrio Studio figures: years, projects and client satisfaction"
+      },
+      {
+        "file": "services-residential",
+        "title": "Services: Residential",
+        "group": "services",
+        "alt": "Atrio Studio residential interiors service panel"
+      },
+      {
+        "file": "services-commercial",
+        "title": "Services: Commercial",
+        "group": "services",
+        "alt": "Atrio Studio commercial facades service panel"
+      },
+      {
+        "file": "process",
+        "title": "Process",
+        "group": "services",
+        "alt": "Atrio Studio four-step process grid"
+      },
+      {
+        "file": "projects",
+        "title": "Projects",
+        "group": "work",
+        "alt": "Atrio Studio strip of finished projects"
+      },
+      {
+        "file": "contact",
+        "title": "Contact & Inquiry Form",
+        "group": "work",
+        "alt": "Atrio Studio contact details and inquiry form"
+      },
+      {
+        "file": "footer",
+        "title": "Footer",
+        "group": "work",
+        "alt": "Atrio Studio footer with the wordmark"
+      },
+      {
+        "file": "mobile-hero",
+        "title": "Phone: Hero",
+        "group": "mobile",
+        "alt": "Atrio Studio hero on a phone"
+      },
+      {
+        "file": "mobile-services",
+        "title": "Phone: Services",
+        "group": "mobile",
+        "alt": "Atrio Studio services on a phone"
+      },
+      {
+        "file": "mobile-menu",
+        "title": "Phone: Menu",
+        "group": "mobile",
+        "alt": "Atrio Studio menu opened on a phone"
+      }
+    ],
+    "cover": "hero",
+    "coverPosition": "center",
+    "seoDescription": "Atrio Studio is an architecture and interior design studio website by Kirollos Magdy, with scroll-driven motion, stacked service panels and an inquiry form, built with Next.js, Tailwind CSS and Framer Motion.",
+    "keywords": [
+      "Atrio Studio",
+      "architecture website",
+      "interior design website",
+      "architect website design",
+      "Next.js",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Kirollos Magdy"
+    ],
+    "created": "2026-11-20",
+    "schemaType": "CreativeWork",
+    "appCategory": null,
+    "os": null
+  },
+  {
     "slug": "athl-furniture",
     "title": "ATHL Furniture",
     "tagline": "Furniture brand website",
